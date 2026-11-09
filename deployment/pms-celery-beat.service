@@ -1,0 +1,27 @@
+[Unit]
+Description=Oman Skylight Celery Beat Scheduler
+After=network.target redis-server.service pms-celery.service
+Requires=redis-server.service
+
+[Service]
+Type=simple
+User=pms
+Group=www-data
+SupplementaryGroups=pms
+WorkingDirectory=/home/hamed/pms
+Environment=DJANGO_ENV=production
+Environment=DJANGO_DB_NAME=pms
+Environment=DJANGO_DB_USER=pms
+Environment=DJANGO_DB_HOST=/var/run/postgresql
+Environment=DJANGO_SECRET_KEY_FILE=/etc/pms.secret
+ExecStart=/home/hamed/pms/.venv/bin/celery -A config beat --loglevel=INFO --schedule=/var/lib/pms/celerybeat-schedule
+Restart=on-failure
+RestartSec=5
+StateDirectory=pms
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target

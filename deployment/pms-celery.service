@@ -1,0 +1,27 @@
+[Unit]
+Description=Oman Skylight Celery Worker
+After=network.target postgresql.service redis-server.service
+Requires=postgresql.service redis-server.service
+
+[Service]
+Type=simple
+User=pms
+Group=www-data
+SupplementaryGroups=pms
+WorkingDirectory=/home/hamed/pms
+Environment=DJANGO_ENV=production
+Environment=DJANGO_DB_NAME=pms
+Environment=DJANGO_DB_USER=pms
+Environment=DJANGO_DB_HOST=/var/run/postgresql
+Environment=DJANGO_SECRET_KEY_FILE=/etc/pms.secret
+ExecStart=/home/hamed/pms/.venv/bin/celery -A config worker --loglevel=INFO --concurrency=2
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/hamed/pms/media
+
+[Install]
+WantedBy=multi-user.target

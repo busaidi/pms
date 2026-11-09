@@ -1,0 +1,5483 @@
+msgid ""
+msgstr "Project-Id-Version: Oman Skylight PMS\\nLanguage: ar\\nContent-Type: text/plain; charset=UTF-8\\nContent-Transfer-Encoding: 8bit\\nPlural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\\n"
+
+msgid "%(extension)s is %(status)s."
+msgstr "%(extension)s هو %(status)s."
+
+msgid "%(registry)s item %(item)s is already registered"
+msgstr "%(registry)s العنصر %(item)s مسجل بالفعل"
+
+msgid "%(unit)s has no active lease."
+msgstr "%(unit)s ليس لديه عقد إيجار نشط."
+
+msgid ", Oman"
+msgstr "، عُمان"
+
+msgid ". Our team will review your details and contact you about the next step."
+msgstr ". سيراجع فريقنا تفاصيلك ويتصل بك بشأن الخطوة التالية."
+
+msgid "/ month"
+msgstr "/ شهر"
+
+msgid "<ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>"
+msgstr "<ul><li>لا يمكن أن تكون كلمة مرورك مشابهة جدًا لمعلوماتك الشخصية الأخرى.</li><li> يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل.</li><li> لا يمكن أن تكون كلمة المرور الخاصة بك كلمة مرور شائعة الاستخدام.</li><li> لا يمكن أن تكون كلمة مرورك رقمية بالكامل.</li></ul>"
+
+msgid "A %(status)s ticket cannot move to %(new_status)s."
+msgstr "لا يمكن نقل تذكرة %(status)s إلى %(new_status)s."
+
+msgid "A brighter Oman."
+msgstr "سلطنة عمان أكثر إشراقًا."
+
+msgid "A calm, capable workspace for properties, tenants, leases, and the daily work that connects them."
+msgstr "مساحة عمل هادئة وقادرة للعقارات والمستأجرين والإيجارات والأعمال اليومية التي تربطهم."
+
+msgid "A cancellation reason is required."
+msgstr "يرجى ذكر سبب الإلغاء."
+
+msgid "A payment can only be allocated to its tenant's invoices."
+msgstr "لا يمكن تخصيص الدفعة إلا لفواتير المستأجر."
+
+msgid "A pending invitation already exists."
+msgstr "توجد دعوة معلقة بالفعل."
+
+msgid "A property type with this slug already exists."
+msgstr "نوع خاصية بهذا اللطيف موجود بالفعل."
+
+msgid "A property with a current whole-property lease cannot change to unit rental."
+msgstr "لا يمكن تغيير العقار الذي لديه عقد إيجار عقاري كامل حالي إلى إيجار وحدة."
+
+msgid "A property with current leases cannot be archived."
+msgstr "لا يمكن أرشفة عقار بعقود إيجار حالية."
+
+msgid "A property with current unit leases cannot change to whole-property rental."
+msgstr "لا يمكن تغيير العقار الذي يستأجر وحدة حالية إلى إيجار عقار كامل."
+
+msgid "A property with this slug already exists."
+msgstr "يوجد بالفعل عقار بهذا الاسم اللطيف."
+
+msgid "A rate with this period, currency, and start date already exists."
+msgstr "يوجد بالفعل سعر مع هذه الفترة والعملة وتاريخ البدء."
+
+msgid "A reason is required to cancel a ticket."
+msgstr "مطلوب سبب لإلغاء التذكرة."
+
+msgid "A reason is required to void an expense."
+msgstr "مطلوب سبب لإلغاء المصاريف."
+
+msgid "A recipient email address is required."
+msgstr "عنوان البريد الإلكتروني للمستلم مطلوب."
+
+msgid "A recipient phone number is required."
+msgstr "رقم هاتف المستلم مطلوب."
+
+msgid "A selected tenant already has an active lease."
+msgstr "المستأجر المحدد لديه بالفعل عقد إيجار نشط."
+
+msgid "A settled deposit must allocate the complete deposit."
+msgstr "يجب أن يخصص الإيداع الذي تمت تسويته الإيداع الكامل."
+
+msgid "A tenant with an active lease cannot be archived."
+msgstr "لا يمكن أرشفة المستأجر الذي لديه عقد إيجار نشط."
+
+msgid "A unit with a current lease cannot be archived."
+msgstr "لا يمكن أرشفة وحدة بعقد إيجار حالي."
+
+msgid "A unit with this name already exists at the property."
+msgstr "توجد وحدة بهذا الاسم بالفعل في العقار."
+
+msgid "A user with this email already exists."
+msgstr "يوجد مستخدم بهذا البريد الإلكتروني بالفعل."
+
+msgid "A well-managed home in"
+msgstr "منزل جيد الإدارة في"
+
+msgid "About"
+msgstr "حول"
+
+msgid "About this home"
+msgstr "حول هذا المنزل"
+
+msgid "Accept invitation · Oman Skylight"
+msgstr "قبول الدعوة"
+
+msgid "Accepted"
+msgstr "تم قبول"
+
+msgid "Access"
+msgstr "الوصول"
+
+msgid "Account"
+msgstr "الحساب"
+
+msgid "Account activated. You can now sign in."
+msgstr "تم تنشيط الحساب. يمكنك الآن تسجيل الدخول."
+
+msgid "Account name"
+msgstr "اسم الحساب"
+
+msgid "Account recovery"
+msgstr "استرداد الحساب"
+
+msgid "Account security"
+msgstr "أمان الحساب"
+
+msgid "Across current leases"
+msgstr "عبر عقود الإيجار الحالية"
+
+msgid "Action queue"
+msgstr "قائمة انتظار الإجراءات"
+
+msgid "Actions"
+msgstr "الإجراءات"
+
+msgid "Activate account"
+msgstr "تنشيط الحساب"
+
+msgid "Activate tenant access · Oman Skylight PMS"
+msgstr "تنشيط وصول المستأجر · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Active"
+msgstr "نشط"
+
+msgid "Active expenses"
+msgstr "النفقات النشطة"
+
+msgid "Active inventory"
+msgstr "المخزون النشط"
+
+msgid "Active leases ending in the next"
+msgstr "عقود الإيجار النشطة التي تنتهي في اليوم التالي"
+
+msgid "Active monthly rent"
+msgstr "الإيجار الشهري النشط"
+
+msgid "Active tenants"
+msgstr "المستأجرون النشطون"
+
+msgid "Active,Inactive"
+msgstr "نشط،غير نشط"
+
+msgid "Actual cost"
+msgstr "التكلفة الفعلية"
+
+msgid "Add"
+msgstr "إضافة"
+
+msgid "Add a property"
+msgstr "إضافة خاصية"
+
+msgid "Add amenity"
+msgstr "إضافة ميزة"
+
+msgid "Add an authenticator code after your password."
+msgstr "إضافة رمز مصادقة بعد كلمة المرور الخاصة بك."
+
+msgid "Add at least one positive day interval."
+msgstr "إضافة فاصل زمني إيجابي واحد على الأقل."
+
+msgid "Add attachment"
+msgstr "إضافة مرفق"
+
+msgid "Add category"
+msgstr "إضافة فئة"
+
+msgid "Add integration"
+msgstr "إضافة تكامل"
+
+msgid "Add meter"
+msgstr "إضافة عداد"
+
+msgid "Add photo"
+msgstr "إضافة صورة"
+
+msgid "Add property"
+msgstr "إضافة عقار"
+
+msgid "Add property rate"
+msgstr "إضافة سعر العقار"
+
+msgid "Add property type"
+msgstr "إضافة نوع العقار"
+
+msgid "Add rate"
+msgstr "إضافة سعر"
+
+msgid "Add schedule"
+msgstr "إضافة جدول"
+
+msgid "Add tenant"
+msgstr "إضافة مستأجر"
+
+msgid "Add the first property and its units to populate this view."
+msgstr "إضافة العقار الأول ووحداته لملء هذا العرض."
+
+msgid "Add the first unit utility meter."
+msgstr "أضف أول عداد مرافق للوحدة."
+
+msgid "Add type"
+msgstr "إضافة نوع"
+
+msgid "Add unit"
+msgstr "إضافة وحدة"
+
+msgid "Add unit type"
+msgstr "إضافة نوع وحدة"
+
+msgid "Address"
+msgstr "عنوان"
+
+msgid "Adjustment"
+msgstr "تعديل"
+
+msgid "Adjustment consumption"
+msgstr "استهلاك التعديل"
+
+msgid "Administration"
+msgstr "إدارة"
+
+msgid "Advance"
+msgstr "دفعة مقدمة"
+
+msgid "Advanced settings"
+msgstr "إعدادات متقدمة"
+
+msgid "Agreement"
+msgstr "اتفاقية"
+
+msgid "All"
+msgstr "الكل"
+
+msgid "All allowed by global role"
+msgstr "كل شيء مسموح به من قبل الدور العالمي"
+
+msgid "All applications"
+msgstr "جميع التطبيقات"
+
+msgid "All clear"
+msgstr "كل شيء واضح"
+
+msgid "All currencies"
+msgstr "جميع العملات"
+
+msgid "All inspections"
+msgstr "جميع عمليات التفتيش"
+
+msgid "All integrations"
+msgstr "كل التكاملات"
+
+msgid "All meters"
+msgstr "جميع الأمتار"
+
+msgid "All notifications marked as read."
+msgstr "تم وضع علامة مقروءة على جميع الإشعارات."
+
+msgid "All priorities"
+msgstr "جميع الأولويات"
+
+msgid "All properties"
+msgstr "جميع العقارات"
+
+msgid "All rows will be inserted together. If database state changes before commit, validation runs again and the transaction is cancelled."
+msgstr "سيتم إدراج جميع الصفوف معًا. إذا تغيرت حالة قاعدة البيانات قبل الالتزام، يتم تشغيل التحقق مرة أخرى ويتم إلغاء المعاملة."
+
+msgid "All statuses"
+msgstr "جميع الحالات"
+
+msgid "All tenants"
+msgstr "جميع المستأجرين"
+
+msgid "All tickets"
+msgstr "جميع التذاكر"
+
+msgid "Allocation amount must be positive."
+msgstr "يجب أن يكون مبلغ التخصيص موجبًا."
+
+msgid "Allocation currency does not match the invoice."
+msgstr "عملة التخصيص لا تتطابق مع الفاتورة."
+
+msgid "Allocation exceeds the balance for invoice %(invoice)s."
+msgstr "يتجاوز التخصيص رصيد الفاتورة %(invoice)s."
+
+msgid "Allocation total must be positive and cannot exceed the payment amount."
+msgstr "يجب أن يكون إجمالي التخصيص موجبًا ولا يمكن أن يتجاوز مبلغ الدفع."
+
+msgid "Amenities"
+msgstr "الميزات"
+
+msgid "Amenity could not be saved: "
+msgstr "تعذر حفظ الميزة:"
+
+msgid "Amenity deleted."
+msgstr "تم حذف الميزة."
+
+msgid "Amenity saved."
+msgstr "تم حفظ الميزة."
+
+msgid "Amount"
+msgstr "المبلغ"
+
+msgid "Amount due"
+msgstr "المبلغ المستحق"
+
+msgid "Amount exceeds the available invoice balance of %(amount)s."
+msgstr "يتجاوز المبلغ رصيد الفاتورة المتاح البالغ %(amount)s."
+
+msgid "An active priced offering is available for this rental model."
+msgstr "يتوفر عرض أسعار نشط لنموذج التأجير هذا."
+
+msgid "An adjustment cannot be zero."
+msgstr "لا يمكن أن يكون التعديل صفرًا."
+
+msgid "An email address is required."
+msgstr "عنوان البريد الإلكتروني مطلوب."
+
+msgid "An invoice with confirmed payments cannot be voided."
+msgstr "لا يمكن إبطال فاتورة بها مدفوعات مؤكدة."
+
+msgid "An unsupported reminder channel was selected."
+msgstr "تم تحديد قناة تذكير غير مدعومة."
+
+msgid "Any available unit"
+msgstr "أي وحدة متاحة"
+
+msgid "Api token"
+msgstr "رمز واجهة برمجة التطبيقات"
+
+msgid "Applicant"
+msgstr "مقدم الطلب"
+
+msgid "Applicant feedback"
+msgstr "ملاحظات مقدم الطلب"
+
+msgid "Applicants may only withdraw an application."
+msgstr "يجوز لمقدمي الطلبات سحب الطلب فقط."
+
+msgid "Application"
+msgstr "حالة الطلب"
+
+msgid "Application log"
+msgstr "سجل التطبيق"
+
+msgid "Application status updated."
+msgstr "تم تحديث حالة الطلب."
+
+msgid "Application withdrawn."
+msgstr "تم سحب الطلب."
+
+msgid "Application workspace"
+msgstr "مساحة عمل التطبيق"
+
+msgid "Application ·"
+msgstr "التطبيق ·"
+
+msgid "Applications"
+msgstr "التطبيقات"
+
+msgid "Applications · Oman Skylight PMS"
+msgstr "الطلبات · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Apply"
+msgstr "تقديم"
+
+msgid "Apply for"
+msgstr "التقدم إلى"
+
+msgid "Apply for a home at"
+msgstr "التقدم للحصول على منزل في"
+
+msgid "Apply now"
+msgstr "قدّم الآن"
+
+msgid "Apply to selected"
+msgstr "تنطبق على"
+
+msgid "Arabic"
+msgstr "العربية"
+
+msgid "Archive"
+msgstr "الأرشيف"
+
+msgid "Archive preserves rates, media and history. Current leases prevent archiving."
+msgstr "الأرشيف يحافظ على المعدلات والوسائط والتاريخ. تمنع عقود الإيجار الحالية الأرشفة."
+
+msgid "Archive property"
+msgstr "خاصية الأرشيف"
+
+msgid "Archived"
+msgstr "مؤرشف"
+
+msgid "Archived properties"
+msgstr "عقارات الأرشيف"
+
+msgid "Archived tenants"
+msgstr "المستأجرون المؤرشفون"
+
+msgid "Area sqm"
+msgstr "المساحة بالمتر المربع"
+
+msgid "Arrears"
+msgstr "المتأخرات"
+
+msgid "Asia/Muscat"
+msgstr "آسيا/مسقط"
+
+msgid "Assess every checklist item before completion."
+msgstr "تقييم كل عنصر من عناصر قائمة التحقق قبل الانتهاء."
+
+msgid "Assign a role globally or limit it to one property."
+msgstr "تعيين دور عالمي أو قصره على عقار واحد."
+
+msgid "Assign type…"
+msgstr "تعيين نوع..."
+
+msgid "Assigned %(count)s units to %(unit_type)s."
+msgstr "تعيين وحدات %(count)s إلى %(unit_type)s."
+
+msgid "Assigned or system roles cannot be deleted."
+msgstr "لا يمكن حذف الأدوار المعينة أو النظام."
+
+msgid "Assigned to"
+msgstr "تم التعيين إلى"
+
+msgid "Assignment"
+msgstr "الواجب"
+
+msgid "Attachment"
+msgstr "مرفق"
+
+msgid "Attachment uploaded."
+msgstr "تم تحميل المرفق."
+
+msgid "Attachments"
+msgstr "المرفقات"
+
+msgid "Attachments cannot exceed 10 MB."
+msgstr "لا يمكن أن تتجاوز المرفقات 10 ميجابايت."
+
+msgid "Audit history"
+msgstr "سجل التدقيق"
+
+msgid "Audit logs are immutable."
+msgstr "سجلات التدقيق غير قابلة للتغيير."
+
+msgid "Authentication code"
+msgstr "رمز المصادقة"
+
+msgid "Available"
+msgstr "متاح"
+
+msgid "Available portfolio"
+msgstr "المحفظة المتاحة"
+
+msgid "Available units"
+msgstr "الوحدات المتاحة"
+
+msgid "Back to expenses"
+msgstr "العودة إلى النفقات"
+
+msgid "Back to integrations"
+msgstr "العودة إلى عمليات الدمج"
+
+msgid "Back to leases"
+msgstr "العودة إلى عقود الإيجار"
+
+msgid "Back to properties"
+msgstr "العودة إلى العقارات"
+
+msgid "Back to security"
+msgstr "العودة إلى الأمان"
+
+msgid "Back to sign in"
+msgstr "العودة إلى تسجيل الدخول"
+
+msgid "Back to workspace"
+msgstr "العودة إلى مساحة العمل"
+
+msgid "Balance"
+msgstr "لا يمكن تغيير الرصيد"
+
+msgid "Bank name"
+msgstr "اسم البنك"
+
+msgid "Bank transfer"
+msgstr "التحويل المصرفي"
+
+msgid "Bathrooms"
+msgstr "الحمامات"
+
+msgid "Bedrooms"
+msgstr "غرف النوم"
+
+msgid "Bill"
+msgstr "الفاتورة"
+
+msgid "Billed readings and readings used by later entries cannot be changed."
+msgstr "القراءات والقراءات المفوترة المستخدمة في الإدخالات اللاحقة."
+
+msgid "Billed revenue"
+msgstr "الإيرادات المفوترة"
+
+msgid "Billing"
+msgstr "الفوترة"
+
+msgid "Billing day"
+msgstr "يوم الفوترة"
+
+msgid "Billing day must be between 1 and 28."
+msgstr "يجب أن يكون يوم الفوترة بين 1 و 28."
+
+msgid "Billing interval"
+msgstr "الفاصل الزمني للفوترة"
+
+msgid "Billing interval must be at least 1."
+msgstr "يجب أن يكون الفاصل الزمني للفوترة 1 على الأقل."
+
+msgid "Billing strategy"
+msgstr "استراتيجية الفوترة"
+
+msgid "Billing unit"
+msgstr "وحدة الفوترة"
+
+msgid "Block unit"
+msgstr "وحدة الكتلة"
+
+msgid "Boolean"
+msgstr "منطقي"
+
+msgid "Both"
+msgstr "كلاهما"
+
+msgid "Browse homes"
+msgstr "تصفح البيوت"
+
+msgid "By property"
+msgstr "حسب العقار"
+
+msgid "By submitting, you confirm the information is accurate and consent to being contacted about this application."
+msgstr "من خلال الإرسال، فإنك تؤكد أن المعلومات دقيقة وتوافق على الاتصال بك بشأن هذا الطلب."
+
+msgid "By unit"
+msgstr "حسب الوحدة"
+
+msgid "CSV columns: property, category, amount, currency, incurred_on, vendor, reference, description, notes."
+msgstr "أعمدة CSV: العقار، الفئة، المبلغ، العملة، incurred_on، البائع، المرجع، الوصف، الملاحظات."
+
+msgid "CSV data transfer"
+msgstr "نقل بيانات CSV"
+
+msgid "CSV data transfer · Oman Skylight PMS"
+msgstr "نقل بيانات CSV · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "CSV to preview"
+msgstr "CSV لمعاينة"
+
+msgid "CSV transfer"
+msgstr "نقل CSV"
+
+msgid "Cadence"
+msgstr "الإيقاع"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Canceled"
+msgstr "تم الإلغاء"
+
+msgid "Cancellation"
+msgstr "الإلغاء"
+
+msgid "Cancelled"
+msgstr "تم الإلغاء"
+
+msgid "Cannot publish: "
+msgstr "لا يمكن النشر:"
+
+msgid "Capabilities"
+msgstr "القدرات"
+
+msgid "Capacity"
+msgstr "السعة"
+
+msgid "Caption"
+msgstr "التسمية التوضيحية"
+
+msgid "Carry forward"
+msgstr "ترحيل"
+
+msgid "Cash"
+msgstr "نقدًا"
+
+msgid "Category"
+msgstr "الفئة"
+
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+msgid "Change password · Oman Skylight"
+msgstr "تغيير كلمة المرور · عُمان سكاي لايت"
+
+msgid "Change status"
+msgstr "تغيير الحالة"
+
+msgid "Change your password while keeping this session active."
+msgstr "غيّر كلمة المرور مع إبقاء هذه الجلسة نشطة."
+
+msgid "Channels"
+msgstr "القنوات"
+
+msgid "Charge"
+msgstr "الرسوم"
+
+msgid "Charges"
+msgstr "الرسوم"
+
+msgid "Check back for current availability."
+msgstr "تحقق مرة أخرى من الإتاحة الحالية."
+
+msgid "Check your email"
+msgstr "تحقق من بريدك الإلكتروني"
+
+msgid "Checklist"
+msgstr "قائمة التحقق"
+
+msgid "Choose TLS or SSL, not both."
+msgstr "اختر TLS أو SSL، وليس كليهما."
+
+msgid "Choose a CSV file."
+msgstr "اختر ملف CSV."
+
+msgid "Choose a city within the selected region."
+msgstr "اختر مدينة داخل المنطقة المحددة."
+
+msgid "Choose a different unit."
+msgstr "اختر وحدة مختلفة."
+
+msgid "Choose a password"
+msgstr "اختر كلمة مرور"
+
+msgid "Choose a password to activate your Oman Skylight account."
+msgstr "اختر كلمة مرور لتنشيط حسابك في عُمان سكاي لايت."
+
+msgid "Choose a unit before blocking it."
+msgstr "اختر وحدة قبل حظرها."
+
+msgid "Choose a valid attachment."
+msgstr "اختر مرفقًا صالحًا."
+
+msgid "Choose a valid deposit handling option."
+msgstr "حدد خيارًا صالحًا لمعالجة الإيداع."
+
+msgid "Circular extension dependency at %(extension)s"
+msgstr "تبعية التمديد الدائرية في %(extension)s"
+
+msgid "City ref"
+msgstr "مرجع المدينة"
+
+msgid "Classifications"
+msgstr "التصنيفات"
+
+msgid "Clone"
+msgstr "استنساخ"
+
+msgid "Code"
+msgstr "الرمز"
+
+msgid "Collections"
+msgstr "مجموعات"
+
+msgid "Color"
+msgstr "اللون"
+
+msgid "Comfortable homes supported by a responsive local property management team."
+msgstr "منازل مريحة يدعمها فريق إدارة عقارات محلي سريع الاستجابة."
+
+msgid "Comma-separated day intervals, for example 1, 3, 7."
+msgstr "فترات اليوم مفصولة بفواصل، على سبيل المثال 1، 3، 7."
+
+msgid "Complete"
+msgstr "مكتمل"
+
+msgid "Complete and lock"
+msgstr "إكمال وقفل"
+
+msgid "Complete move-out"
+msgstr "إكمال الخروج"
+
+msgid "Complete settlement"
+msgstr "تسوية كاملة"
+
+msgid "Completed"
+msgstr "عمليات الفحص المكتملة"
+
+msgid "Completed inspections are immutable."
+msgstr "غير قابلة للتغيير."
+
+msgid "Configuration"
+msgstr "التكوين"
+
+msgid "Configure"
+msgstr "تكوين"
+
+msgid "Configure scheduled upcoming, due-today, overdue, and lease-expiration notices."
+msgstr "تكوين الإشعارات المجدولة القادمة والمستحقة اليوم والمتأخرة وإشعارات انتهاء صلاحية الإيجار."
+
+msgid "Confirm"
+msgstr "تأكيد"
+
+msgid "Confirm outstanding balance"
+msgstr "تأكيد الرصيد المستحق"
+
+msgid "Confirm password"
+msgstr "تأكيد كلمة المرور"
+
+msgid "Confirm password · Oman Skylight"
+msgstr "تأكيد كلمة المرور · عُمان سكاي لايت"
+
+msgid "Confirm your password"
+msgstr "أكد كلمة المرور"
+
+msgid "Confirm your password before deleting a passkey."
+msgstr "أكد كلمة المرور قبل حذف مفتاح المرور."
+
+msgid "Confirm your password before regenerating recovery codes."
+msgstr "أكد كلمة المرور قبل إعادة إنشاء رموز الاسترداد."
+
+msgid "Confirmed"
+msgstr "تأكيد"
+
+msgid "Confirmed allocation"
+msgstr "التخصيص المؤكد"
+
+msgid "Confirmed allocations"
+msgstr "المخصصات المؤكدة"
+
+msgid "Consumption"
+msgstr "الاستهلاك"
+
+msgid "Contact & identity"
+msgstr "الاتصال والهوية"
+
+msgid "Contact us for current pricing."
+msgstr "الاتصال بنا للحصول على التسعير الحالي."
+
+msgid "Continue"
+msgstr "متابعة"
+
+msgid "Continue to payment"
+msgstr "متابعة الدفع"
+
+msgid "Control reusable property classifications and facility labels."
+msgstr "التحكم في تصنيفات الممتلكات القابلة لإعادة الاستخدام وملصقات المرافق."
+
+msgid "Convert to tenant"
+msgstr "تحويل إلى مستأجر"
+
+msgid "Converted tenant"
+msgstr "تحويل إلى مستأجر"
+
+msgid "Converted to tenant %(tenant)s."
+msgstr "تحويل إلى مستأجر %(tenant)s."
+
+msgid "Correct"
+msgstr "صحيح"
+
+msgid "Correction recorded."
+msgstr "تم تسجيل التصحيح."
+
+msgid "Create a custom role"
+msgstr "إنشاء دور مخصص"
+
+msgid "Create account"
+msgstr "إنشاء حساب"
+
+msgid "Create inspection"
+msgstr "إنشاء فحص"
+
+msgid "Create inventory or change the current filter."
+msgstr "إنشاء مخزون أو تغيير عامل التصفية الحالي."
+
+msgid "Create invitation"
+msgstr "إنشاء دعوة"
+
+msgid "Create lease"
+msgstr "إنشاء عقد إيجار"
+
+msgid "Create renewal"
+msgstr "إنشاء تجديد"
+
+msgid "Create role"
+msgstr "إنشاء دور"
+
+msgid "Create role · Oman Skylight"
+msgstr "إنشاء دور · عُمان سكاي لايت"
+
+msgid "Create template"
+msgstr "إنشاء قالب"
+
+msgid "Currency"
+msgstr "العملة"
+
+msgid "Current"
+msgstr "الحالية"
+
+msgid "Current availability"
+msgstr "التوافر الحالي"
+
+msgid "Current filtered register"
+msgstr "السجل المرشح الحالي"
+
+msgid "Current month"
+msgstr "الشهر الحالي"
+
+msgid "Current offer"
+msgstr "العرض الحالي"
+
+msgid "Current password"
+msgstr "كلمة المرور الحالية"
+
+msgid "Current portfolio"
+msgstr "المحفظة الحالية"
+
+msgid "Current reading"
+msgstr "القراءة الحالية"
+
+msgid "Current reading cannot be lower than the previous reading."
+msgstr "لا يمكن أن تكون القراءة الحالية أقل من القراءة السابقة."
+
+msgid "Custom"
+msgstr "مخصص"
+
+msgid "Daily"
+msgstr "يومي"
+
+msgid "Daily, weekly, monthly, and yearly schedules generate idempotent expense rows."
+msgstr "تنشئ الجداول اليومية والأسبوعية والشهرية والسنوية صفوف نفقات غير فعالة."
+
+msgid "Damage observations"
+msgstr "ملاحظات الأضرار"
+
+msgid "Data transfer"
+msgstr "نقل البيانات"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Date / period"
+msgstr "التاريخ / الفترة"
+
+msgid "Date of birth"
+msgstr "تاريخ الميلاد"
+
+msgid "Day"
+msgstr "اليوم"
+
+msgid "Days before"
+msgstr "قبل أيام"
+
+msgid "Deactivate access"
+msgstr "تعطيل الوصول"
+
+msgid "Deactivate account"
+msgstr "تعطيل الحساب"
+
+msgid "Deactivate my account"
+msgstr "تعطيل حسابي"
+
+msgid "Deactivate,Activate"
+msgstr "إلغاء التنشيط،تنشيط"
+
+msgid "Decision"
+msgstr "القرار"
+
+msgid "Deductions"
+msgstr "الخصومات"
+
+msgid "Default rental mode"
+msgstr "وضع الإيجار الافتراضي"
+
+msgid "Degraded"
+msgstr "المتدهورة"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Dependencies"
+msgstr "التبعيات"
+
+msgid "Deposit"
+msgstr "الإيداع"
+
+msgid "Deposit amount"
+msgstr "مبلغ الإيداع"
+
+msgid "Deposit handling"
+msgstr "معالجة الإيداع"
+
+msgid "Deposit paid at"
+msgstr "الإيداع المدفوع في"
+
+msgid "Deposit settlement completed."
+msgstr "اكتملت تسوية الإيداع."
+
+msgid "Deposit settlement:"
+msgstr "تسوية الودائع:"
+
+msgid "Description"
+msgstr "الوصف"
+
+msgid "Desired move in"
+msgstr "الانتقال المطلوب"
+
+msgid "Disable"
+msgstr "تعطيل"
+
+msgid "Disable access"
+msgstr "تعطيل الوصول"
+
+msgid "Disable sign-in while preserving leases, payments, and audit history."
+msgstr "تعطيل تسجيل الدخول مع الاحتفاظ بالعقود والمدفوعات وسجل التدقيق."
+
+msgid "Disable,Enable"
+msgstr "تعطيل،تمكين"
+
+msgid "Disabled"
+msgstr "تعطيل"
+
+msgid "Django extensions"
+msgstr "ملحقات جانغو"
+
+msgid "Document"
+msgstr "المستند"
+
+msgid "Document deleted."
+msgstr "تم حذف المستند."
+
+msgid "Document type"
+msgstr "نوع المستند"
+
+msgid "Document upload failed: "
+msgstr "فشل تحميل المستند:"
+
+msgid "Document uploaded."
+msgstr "تم تحميل المستند."
+
+msgid "Documents"
+msgstr "المستندات"
+
+msgid "Download"
+msgstr "تنزيل"
+
+msgid "Download PDF"
+msgstr "تنزيل ملف PDF"
+
+msgid "Download a template, preview validation, then commit every valid row in one transaction."
+msgstr "قم بتنزيل قالب، ومعاينة التحقق من الصحة، ثم التزم بكل صف صالح في معاملة واحدة."
+
+msgid "Draft"
+msgstr "مسودة"
+
+msgid "Dry-run rehearsal"
+msgstr "البروفة التجريبية"
+
+msgid "Due"
+msgstr "مستحقة"
+
+msgid "Due date"
+msgstr "تاريخ الاستحقاق"
+
+msgid "Due date must be on or after issue date."
+msgstr "يجب أن يكون تاريخ الاستحقاق في تاريخ الإصدار أو بعده."
+
+msgid "Due day"
+msgstr "يوم الاستحقاق"
+
+msgid "Due template"
+msgstr "القالب المستحق"
+
+msgid "Due today"
+msgstr "يوم الاستحقاق"
+
+msgid "E-wallet"
+msgstr "المحفظة الإلكترونية"
+
+msgid "Each code works once. Store them somewhere private; they will not be shown again."
+msgstr "كل رمز يعمل مرة واحدة. قم بتخزينها في مكان خاص ؛ لن يتم عرضها مرة أخرى."
+
+msgid "Edit"
+msgstr "تعديل"
+
+msgid "Edit profile"
+msgstr "تعديل الملف الشخصي"
+
+msgid "Edit ticket and assignment"
+msgstr "تعديل التذكرة والمهمة"
+
+msgid "Editable terms"
+msgstr "شروط قابلة للتعديل"
+
+msgid "Effective date"
+msgstr "تاريخ السريان"
+
+msgid "Effective price"
+msgstr "السعر الساري"
+
+msgid "Electricity"
+msgstr "الكهرباء"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Email address"
+msgstr "عنوان البريد الإلكتروني"
+
+msgid "Email address or phone number used only for this test."
+msgstr "عنوان البريد الإلكتروني أو رقم الهاتف المستخدم فقط لهذا الاختبار."
+
+msgid "Email address verified."
+msgstr "تم التحقق من عنوان البريد الإلكتروني."
+
+msgid "Email not verified"
+msgstr "لم يتم التحقق من البريد الإلكتروني"
+
+msgid "Email verified"
+msgstr "تم التحقق من البريد الإلكتروني"
+
+msgid "Emergency contact"
+msgstr "جهة الاتصال في حالات الطوارئ"
+
+msgid "Emergency contact name"
+msgstr "اسم جهة الاتصال في حالات الطوارئ"
+
+msgid "Emergency contact phone"
+msgstr "هاتف الاتصال في حالات الطوارئ"
+
+msgid "Enabled"
+msgstr "تم التمكين"
+
+msgid "Enabled,Disabled"
+msgstr "تم التمكين، تم التعطيل"
+
+msgid "Enabled,Not enabled"
+msgstr "تم التمكين،لم يتم التمكين"
+
+msgid "Encrypted secret"
+msgstr "سر مشفر"
+
+msgid "End"
+msgstr "إنهاء"
+
+msgid "End date"
+msgstr "تاريخ الانتهاء"
+
+msgid "End date cannot be before the start date."
+msgstr "لا يمكن أن يكون تاريخ الانتهاء قبل تاريخ البدء."
+
+msgid "End date must be on or after start date."
+msgstr "يجب أن يكون تاريخ الانتهاء في تاريخ البدء أو بعده."
+
+msgid "Ended"
+msgstr "انتهى"
+
+msgid "Endpoint"
+msgstr "نقطة النهاية"
+
+msgid "Ends"
+msgstr "انتهى"
+
+msgid "Ends on"
+msgstr "ينتهي في"
+
+msgid "English"
+msgstr "الإنجليزية"
+
+msgid "Enter a name for a custom utility."
+msgstr "أدخل اسمًا لأداة مساعدة مخصصة."
+
+msgid "Enter an authenticator or recovery code."
+msgstr "أدخل رمز المصادقة أو الاسترداد."
+
+msgid "Enter the current code from your authenticator app or one unused recovery code."
+msgstr "أدخل الرمز الحالي من تطبيق المصادقة أو رمز استرداد واحد غير مستخدم."
+
+msgid "Enter the same password as before, for verification."
+msgstr "أدخل نفس كلمة المرور كما كان من قبل، للتحقق."
+
+msgid "Environment variable name for signed provider webhooks; never enter the secret itself."
+msgstr "اسم متغير البيئة لخطافات الويب الموقعة لمزود الخدمة ؛ لا تقم أبدًا بإدخال السر نفسه."
+
+msgid "Estimated cost"
+msgstr "التكلفة المقدرة"
+
+msgid "Event listener result"
+msgstr "نتيجة مستمع الحدث"
+
+msgid "Every"
+msgstr "كل"
+
+msgid "Every deduction requires a reason."
+msgstr "يتطلب كل خصم سببًا."
+
+msgid "Expense amount must be positive."
+msgstr "يجب أن يكون مبلغ المصروفات موجبًا."
+
+msgid "Expense categories"
+msgstr "فئات المصروفات"
+
+msgid "Expense categories · Oman Skylight PMS"
+msgstr "فئات المصروفات · نظام إدارة المشروع لمنور عمان"
+
+msgid "Expense category saved."
+msgstr "تم حفظ فئة النفقات."
+
+msgid "Expense recorded."
+msgstr "النفقات المسجلة."
+
+msgid "Expense register"
+msgstr "سجل النفقات"
+
+msgid "Expense updated."
+msgstr "تم تحديث النفقات."
+
+msgid "Expense voided."
+msgstr "تم إلغاء النفقات."
+
+msgid "Expenses"
+msgstr "المصروفات"
+
+msgid "Expenses · Oman Skylight PMS"
+msgstr "المصروفات · نظام إدارة الممتلكات للكوة العمانية"
+
+msgid "Expirations"
+msgstr "انتهاء الصلاحية"
+
+msgid "Expired"
+msgstr "منتهية الصلاحية"
+
+msgid "Expires"
+msgstr "تنتهي صلاحيتها"
+
+msgid "Expires on"
+msgstr "تنتهي صلاحيته في"
+
+msgid "Explore our properties"
+msgstr "استكشف عقاراتنا"
+
+msgid "Export"
+msgstr "تصدير"
+
+msgid "Export CSV"
+msgstr "تصدير CSV"
+
+msgid "Extension"
+msgstr "ملحق"
+
+msgid "Extension %(extension)s is already registered"
+msgstr "ملحق %(extension)s مسجل بالفعل"
+
+msgid "Extension lifecycle probe"
+msgstr "مجس دورة حياة ملحق"
+
+msgid "Extension platform"
+msgstr "منصة ملحق"
+
+msgid "Facilities"
+msgstr "المرافق"
+
+msgid "Failed"
+msgstr "فشل"
+
+msgid "Fair"
+msgstr "معرض"
+
+msgid "Favicon url"
+msgstr "رابط أيقونة المفضلة"
+
+msgid "Field"
+msgstr "حقل"
+
+msgid "Fields marked with an asterisk are required."
+msgstr "الحقول التي تحمل علامة نجمة مطلوبة."
+
+msgid "File"
+msgstr "الملف"
+
+msgid "Files may not exceed 10 MB."
+msgstr "لا يجوز أن تتجاوز الملفات 10 ميجابايت."
+
+msgid "Filter"
+msgstr "تصفية"
+
+msgid "Filtered total"
+msgstr "الإجمالي المصفى"
+
+msgid "Finance"
+msgstr "المالية"
+
+msgid "Financial dashboard"
+msgstr "لوحة المعلومات المالية"
+
+msgid "Financial dashboard · Oman Skylight PMS"
+msgstr "لوحة المعلومات المالية · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Financial operations"
+msgstr "العمليات المالية"
+
+msgid "Financial report"
+msgstr "التقرير المالي"
+
+msgid "Find a place that feels right."
+msgstr "اعثر على مكان يبدو مناسبًا."
+
+msgid "Find your account"
+msgstr "ابحث عن حسابك"
+
+msgid "First name"
+msgstr "الاسم الأول"
+
+msgid "Flexible"
+msgstr "مرن"
+
+msgid "Floor"
+msgstr "الطابق"
+
+msgid "Floor plan"
+msgstr "مخطط الطابق"
+
+msgid "Forfeit"
+msgstr "المصادرة"
+
+msgid "Forgot your password?"
+msgstr "هل نسيت كلمة المرور ؟"
+
+msgid "From email"
+msgstr "بريد المرسل"
+
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+msgid "Full name and phone are required."
+msgstr "الاسم الكامل والهاتف مطلوبان."
+
+msgid "Furnished"
+msgstr "مفروشة"
+
+msgid "Furnishing"
+msgstr "الأثاث"
+
+msgid "Gallery & files"
+msgstr "معرض وملفات"
+
+msgid "Gallery items must use JPG, PNG, WebP, or GIF."
+msgstr "يجب أن تستخدم عناصر المعرض JPG أو PNG أو WebP أو GIF."
+
+msgid "Gas (legacy)"
+msgstr "الغاز (القديم)"
+
+msgid "Gateway"
+msgstr "البوابة"
+
+msgid "General"
+msgstr "عام"
+
+msgid "General notes"
+msgstr "ملاحظات عامة"
+
+msgid "General settings"
+msgstr "الإعدادات العامة"
+
+msgid "General settings · Oman Skylight"
+msgstr "الإعدادات العامة · عُمان سكاي لايت"
+
+msgid "Generate scheduled invoices"
+msgstr "إنشاء فواتير مجدولة"
+
+msgid "Generated %(count)s new invoices."
+msgstr "إنشاء فواتير جديدة %(count)s."
+
+msgid "Good"
+msgstr "صباح الخير"
+
+msgid "Good morning,"
+msgstr "صباح الخير،"
+
+msgid "HTTPS webhook"
+msgstr "ويب هوك HTTPS"
+
+msgid "High"
+msgstr "عالية"
+
+msgid "History"
+msgstr "السجل"
+
+msgid "Home"
+msgstr "الرئيسية"
+
+msgid "Home gallery"
+msgstr "معرض المنزل"
+
+msgid "Homepage description"
+msgstr "وصف الصفحة الرئيسية"
+
+msgid "Homepage title"
+msgstr "عنوان الصفحة الرئيسية"
+
+msgid "Homes across Muscat"
+msgstr "منازل في أنحاء مسقط"
+
+msgid "Homes for rent"
+msgstr "بيوت للإيجار"
+
+msgid "Homes in Oman · Oman Skylight"
+msgstr "بيوت في عمان · عُمان سكاي لايت"
+
+msgid "Host"
+msgstr "المضيف"
+
+msgid "Hybrid"
+msgstr "هجين"
+
+msgid "I saved these codes"
+msgstr "لقد حفظت هذه الرموز"
+
+msgid "IBAN:"
+msgstr "رقم الحساب المصرفي الدولي:"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "ID card"
+msgstr "بطاقة الهوية"
+
+msgid "ID number"
+msgstr "رقم الهوية"
+
+msgid "Iban"
+msgstr "رقم الآيبان"
+
+msgid "Icon"
+msgstr "أيقونة"
+
+msgid "Id number"
+msgstr "رقم الهوية"
+
+msgid "Idempotency key belongs to another payment request."
+msgstr "مفتاح عدم القدرة على العمل ينتمي إلى طلب دفع آخر."
+
+msgid "Identifier"
+msgstr "المعرف"
+
+msgid "Identity and access"
+msgstr "الهوية والوصول"
+
+msgid "If the address belongs to an active account, a time-limited link has been sent."
+msgstr "إذا كان العنوان ينتمي إلى حساب نشط، فقد تم إرسال رابط محدد الوقت."
+
+msgid "Image"
+msgstr "صورة"
+
+msgid "Import"
+msgstr "استيراد"
+
+msgid "Import CSV"
+msgstr "استيراد CSV"
+
+msgid "Import expenses"
+msgstr "نفقات الاستيراد"
+
+msgid "Import expenses · Oman Skylight PMS"
+msgstr "استيراد المصروفات · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Import preview expired. Preview the CSV again."
+msgstr "انتهت صلاحية معاينة الاستيراد. معاينة ملف CSV مرة أخرى."
+
+msgid "Import validated rows"
+msgstr "استيراد صفوف تم التحقق من صحتها"
+
+msgid "Imported %(count)s %(dataset)s rows in one transaction."
+msgstr "استيراد صفوف %(count)s %(dataset)s في معاملة واحدة."
+
+msgid "Imported %(count)s expenses."
+msgstr "نفقات %(count)s المستوردة."
+
+msgid "In progress"
+msgstr "جاري"
+
+msgid "In-app"
+msgstr "داخل التطبيق"
+
+msgid "Inbox"
+msgstr "صندوق الوارد"
+
+msgid "Incompatible"
+msgstr "غير متوافق"
+
+msgid "Incurred on"
+msgstr "تاريخ التكبد"
+
+msgid "Individual units"
+msgstr "الوحدات الفردية"
+
+msgid "Inheritance"
+msgstr "الميراث"
+
+msgid "Inspection completed and locked."
+msgstr "اكتمل الفحص وتم قفله."
+
+msgid "Inspection created."
+msgstr "تم إنشاء الفحص."
+
+msgid "Inspection date"
+msgstr "تاريخ الفحص"
+
+msgid "Inspection draft saved."
+msgstr "تم حفظ مسودة الفحص."
+
+msgid "Inspection item does not belong to this inspection."
+msgstr "عنصر الفحص لا ينتمي إلى هذا الفحص."
+
+msgid "Inspection notes"
+msgstr "ملاحظات الفحص"
+
+msgid "Inspection photo uploaded."
+msgstr "تم تحميل صورة الفحص."
+
+msgid "Inspection register"
+msgstr "سجل الفحص"
+
+msgid "Inspection template saved."
+msgstr "تم حفظ نموذج الفحص."
+
+msgid "Inspection templates"
+msgstr "قوالب التفتيش"
+
+msgid "Inspection templates · Oman Skylight PMS"
+msgstr "قوالب التفتيش · نظام إدارة الممتلكات للكوة العمانية"
+
+msgid "Inspection type"
+msgstr "نوع الفحص"
+
+msgid "Inspection workspace"
+msgstr "مساحة عمل التفتيش"
+
+msgid "Inspections"
+msgstr "عمليات التفتيش"
+
+msgid "Inspections · Oman Skylight PMS"
+msgstr "عمليات التفتيش"
+
+msgid "Inspector"
+msgstr "عُمان سكاي لايت"
+
+msgid "Instructions"
+msgstr "التعليمات"
+
+msgid "Integer"
+msgstr "المفتش"
+
+msgid "Integration settings saved."
+msgstr "تم حفظ إعدادات التكامل."
+
+msgid "Integrations"
+msgstr "عمليات التكامل"
+
+msgid "Integrations and extensions"
+msgstr "عمليات التكامل والتمديد"
+
+msgid "Intended move in timeframe"
+msgstr "الإطار الزمني المقصود للانتقال"
+
+msgid "Interval must be at least one."
+msgstr "يجب أن يكون الفاصل الزمني واحدًا على الأقل."
+
+msgid "Invalid link"
+msgstr "رابط غير صالح"
+
+msgid "Inventory"
+msgstr "المخزون"
+
+msgid "Inventory settings · Oman Skylight PMS"
+msgstr "إعدادات المخزون · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Inventory tools"
+msgstr "أدوات الجرد"
+
+msgid "Invitation created. Copy the secure link below."
+msgstr "تم إنشاء الدعوة. انسخ الرابط الآمن أدناه."
+
+msgid "Invitation renewed and sent."
+msgstr "تم تجديد الدعوة وإرسالها."
+
+msgid "Invite staff member"
+msgstr "دعوة موظف"
+
+msgid "Invite staff · Oman Skylight"
+msgstr "دعوة الموظفين · عُمان سكاي لايت"
+
+msgid "Invoice"
+msgstr "الفاتورة"
+
+msgid "Invoice %(invoice)s created."
+msgstr "تم إنشاء الفاتورة %(invoice)s."
+
+msgid "Invoice amount must be positive."
+msgstr "يجب أن يكون مبلغ الفاتورة موجبًا."
+
+msgid "Invoice is already closed."
+msgstr "الفاتورة مغلقة بالفعل."
+
+msgid "Invoice line amounts must be positive."
+msgstr "يجب أن تكون مبالغ سطر الفاتورة موجبة."
+
+msgid "Invoice reference"
+msgstr "مرجع الفاتورة"
+
+msgid "Invoice total cannot be negative."
+msgstr "لا يمكن أن يكون إجمالي الفاتورة سالبًا."
+
+msgid "Invoice voided."
+msgstr "تم إبطال الفاتورة."
+
+msgid "Invoice workspace"
+msgstr "مساحة عمل الفاتورة"
+
+msgid "Invoiced"
+msgstr "تم تحرير الفاتورة"
+
+msgid "Invoices"
+msgstr "الفواتير"
+
+msgid "Invoices · Oman Skylight PMS"
+msgstr "الفواتير · نظام إدارة الممتلكات للكوة العمانية"
+
+msgid "Is active"
+msgstr "نشط"
+
+msgid "Is enabled"
+msgstr "مفعّل"
+
+msgid "Is public"
+msgstr "عام"
+
+msgid "Is published"
+msgstr "منشور"
+
+msgid "Issue"
+msgstr "الإصدار"
+
+msgid "Issue date"
+msgstr "تاريخ الإصدار"
+
+msgid "Issued (legacy)"
+msgstr "تم إصداره (إرث)"
+
+msgid "Issued invoice balance"
+msgstr "تم إصدار رصيد الفاتورة"
+
+msgid "Issued, excluding void/cancelled"
+msgstr "تم إصداره، باستثناء الإبطال/الإلغاء"
+
+msgid "Item notes"
+msgstr "ملاحظات العنصر"
+
+msgid "JSON"
+msgstr "JSON"
+
+msgid "Join a clearer workspace."
+msgstr "انضم إلى مساحة عمل أكثر وضوحًا."
+
+msgid "Keep your contact details current."
+msgstr "حافظ على تحديث تفاصيل الاتصال الخاصة بك."
+
+msgid "Kind"
+msgstr "النوع"
+
+msgid "Label"
+msgstr "التسمية"
+
+msgid "Last check"
+msgstr "آخر فحص"
+
+msgid "Last name"
+msgstr "اسم العائلة"
+
+msgid "Latest reading"
+msgstr "أحدث قراءة"
+
+msgid "Latest records"
+msgstr "أحدث السجلات"
+
+msgid "Latitude"
+msgstr "خط العرض"
+
+msgid "Lease"
+msgstr "عقد الإيجار"
+
+msgid "Lease %(lease)s created."
+msgstr "تم إنشاء عقد الإيجار %(lease)s."
+
+msgid "Lease could not be updated: "
+msgstr "تعذر تحديث عقد الإيجار:"
+
+msgid "Lease expiration days"
+msgstr "أيام انتهاء عقد الإيجار"
+
+msgid "Lease expirations · Oman Skylight PMS"
+msgstr "انتهاء صلاحية عقد الإيجار · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Lease has an outstanding balance of %(amount)s. Confirm to proceed."
+msgstr "عقد الإيجار لديه رصيد مستحق قدره %(amount)s. تأكيد للمتابعة."
+
+msgid "Lease history"
+msgstr "تاريخ الإيجار"
+
+msgid "Lease moved to the new unit."
+msgstr "تم نقل عقد الإيجار إلى الوحدة الجديدة."
+
+msgid "Lease terminated."
+msgstr "تم إنهاء عقد الإيجار."
+
+msgid "Lease updated and its rent schedule refreshed."
+msgstr "تم تحديث عقد الإيجار وتحديث جدول الإيجار الخاص به."
+
+msgid "Lease workspace"
+msgstr "مساحة عمل الإيجار"
+
+msgid "Lease/agreement"
+msgstr "عقد إيجار"
+
+msgid "Leases"
+msgstr "عقود إيجار"
+
+msgid "Leases · Oman Skylight PMS"
+msgstr "عقود إيجار · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Leasing pipeline"
+msgstr "خط أنابيب التأجير"
+
+msgid "Lifecycle complete"
+msgstr "دورة الحياة كاملة"
+
+msgid "Line"
+msgstr "الخط"
+
+msgid "Line items"
+msgstr "البنود"
+
+msgid "Linked to"
+msgstr "مرتبطة"
+
+msgid "Live inventory"
+msgstr "المخزون المباشر"
+
+msgid "Live,Draft"
+msgstr "مباشر،مسودة"
+
+msgid "Locale"
+msgstr "الإعدادات المحلية"
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Logo url"
+msgstr "رابط الشعار"
+
+msgid "Longitude"
+msgstr "خط الطول"
+
+msgid "Low"
+msgstr "منخفض"
+
+msgid "Mail"
+msgstr "البريد"
+
+msgid "Mail settings"
+msgstr "إعدادات البريد"
+
+msgid "Mail settings saved."
+msgstr "تم حفظ إعدادات البريد."
+
+msgid "Maintenance"
+msgstr "الصيانة"
+
+msgid "Maintenance request %(ticket)s submitted."
+msgstr "تم تقديم طلب الصيانة %(ticket)s."
+
+msgid "Maintenance requests"
+msgstr "طلبات الصيانة"
+
+msgid "Maintenance ticket updated."
+msgstr "تم تحديث تذكرة الصيانة."
+
+msgid "Maintenance workspace"
+msgstr "مساحة عمل الصيانة"
+
+msgid "Maintenance · Oman Skylight PMS"
+msgstr "الصيانة · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Maintenance, rent, payment, and lease updates for your account."
+msgstr "تحديثات الصيانة والإيجار والدفع والإيجار لحسابك."
+
+msgid "Manage"
+msgstr "إدارة"
+
+msgid "Manage rental models, availability, pricing and publishing."
+msgstr "إدارة نماذج التأجير والإتاحة والتسعير والنشر."
+
+msgid "Managed property"
+msgstr "الممتلكات المدارة"
+
+msgid "Manager sign in"
+msgstr "تسجيل دخول المدير"
+
+msgid "Manual"
+msgstr "يدوي"
+
+msgid "Manual charge"
+msgstr "رسوم يدوية"
+
+msgid "Manual invoice"
+msgstr "فاتورة يدوية"
+
+msgid "Manual receipt"
+msgstr "إيصال يدوي"
+
+msgid "Manual setup key"
+msgstr "مفتاح الإعداد اليدوي"
+
+msgid "Mark all as read"
+msgstr "وضع علامة على الكل كمقروء"
+
+msgid "Mark all read"
+msgstr "وضع علامة على الكل كمقروء"
+
+msgid "Mark read"
+msgstr "وضع علامة على المقروء"
+
+msgid "Master data"
+msgstr "البيانات الرئيسية"
+
+msgid "Media metadata updated."
+msgstr "تم تحديث البيانات الوصفية للوسائط."
+
+msgid "Media removed."
+msgstr "تمت إزالة الوسائط."
+
+msgid "Media uploaded."
+msgstr "تم تحميل الوسائط."
+
+msgid "Medium"
+msgstr "متوسطة"
+
+msgid "Message"
+msgstr "رسالة"
+
+msgid "Meter configuration, continuous readings, adjustments, and invoice billing."
+msgstr "تكوين العداد والقراءات المستمرة والتعديلات وفوترة الفواتير."
+
+msgid "Meter reading recorded."
+msgstr "تم تسجيل قراءة العداد."
+
+msgid "Method"
+msgstr "الطريقة"
+
+msgid "Month"
+msgstr "الشهر"
+
+msgid "Monthly"
+msgstr "شهريًا"
+
+msgid "Monthly income"
+msgstr "الدخل الشهري"
+
+msgid "Monthly rent"
+msgstr "الإيجار الشهري"
+
+msgid "Move in"
+msgstr "الانتقال"
+
+msgid "Move lease"
+msgstr "نقل عقد الإيجار"
+
+msgid "Move out"
+msgstr "الانتقال"
+
+msgid "Move out & settle deposit"
+msgstr "الانتقال وتسوية الإيداع"
+
+msgid "Move secret values to the encrypted API token field: "
+msgstr "نقل القيم السرية إلى حقل رمز API المشفر:"
+
+msgid "Move unit"
+msgstr "نقل الوحدة"
+
+msgid "Move-in and move-out inspections must be linked to a lease."
+msgstr "يجب ربط عمليات فحص الانتقال والانتقال بعقد الإيجار."
+
+msgid "Move-in, move-out, and periodic condition records."
+msgstr "سجلات الدخول والخروج والحالة الدورية."
+
+msgid "Move-out completed."
+msgstr "اكتمل الانتقال."
+
+msgid "Moves"
+msgstr "التحركات"
+
+msgid "Muscat, Oman"
+msgstr "مسقط، عمان"
+
+msgid "Muscat, Sultanate of Oman"
+msgstr "مسقط، سلطنة عمان"
+
+msgid "My account"
+msgstr "حسابي"
+
+msgid "My applications"
+msgstr "طلباتي"
+
+msgid "My home · Oman Skylight"
+msgstr "بيتي · عُمان سكاي لايت"
+
+msgid "My homes and agreements"
+msgstr "بيتي واتفاقياتي"
+
+msgid "My invoices"
+msgstr "فواتيري"
+
+msgid "My leases"
+msgstr "عقودي"
+
+msgid "My payments"
+msgstr "مدفوعاتي"
+
+msgid "My portal"
+msgstr "بوابتي"
+
+msgid "My profile"
+msgstr "ملفي الشخصي"
+
+msgid "My profile · Oman Skylight"
+msgstr "ملفي الشخصي · عُمان سكاي لايت"
+
+msgid "My rental applications"
+msgstr "تطبيقات الإيجار الخاصة بي"
+
+msgid "NOI"
+msgstr "صافي الدخل التشغيلي"
+
+msgid "Name"
+msgstr "الاسم"
+
+msgid "Nationality"
+msgstr "الجنسية"
+
+msgid "Needs attention"
+msgstr "تحتاج إلى عناية"
+
+msgid "Net operating income"
+msgstr "صافي الدخل التشغيلي"
+
+msgid "New"
+msgstr "جديد"
+
+msgid "New account updates will appear here."
+msgstr "ستظهر تحديثات الحساب الجديدة هنا."
+
+msgid "New end date"
+msgstr "تاريخ انتهاء جديد"
+
+msgid "New homes are coming soon."
+msgstr "بيوت جديدة قريبًا."
+
+msgid "New leases will appear here."
+msgstr "ستظهر عقود إيجار جديدة هنا."
+
+msgid "New password"
+msgstr "كلمة المرور الجديدة"
+
+msgid "New password confirmation"
+msgstr "تأكيد كلمة المرور الجديدة"
+
+msgid "Next"
+msgstr "التالي"
+
+msgid "Next available unit of a type"
+msgstr "الوحدة التالية المتاحة من نوع"
+
+msgid "Next due"
+msgstr "التالي المستحق"
+
+msgid "No amenities assigned"
+msgstr "لم يتم تعيين أي ميزات"
+
+msgid "No applications found."
+msgstr "لم يتم العثور على طلبات."
+
+msgid "No applications match this filter."
+msgstr "لا توجد تطبيقات تطابق هذا الفلتر."
+
+msgid "No applications yet."
+msgstr "لا توجد طلبات حتى الآن."
+
+msgid "No attachments uploaded."
+msgstr "لم يتم تحميل أي مرفقات."
+
+msgid "No categories."
+msgstr "لا توجد فئات."
+
+msgid "No documents."
+msgstr "لا توجد مستندات."
+
+msgid "No eligible unit is available for this unit type."
+msgstr "لا توجد وحدة مؤهلة متاحة لهذا النوع من الوحدات."
+
+msgid "No email"
+msgstr "لا يوجد بريد إلكتروني"
+
+msgid "No event listener responded."
+msgstr "لم يرد أي مستمع للحدث."
+
+msgid "No expenses match these filters."
+msgstr "لا توجد نفقات تتطابق مع عوامل التصفية هذه."
+
+msgid "No floor"
+msgstr "لا يوجد طابق"
+
+msgid "No gallery items or documents."
+msgstr "لا توجد عناصر أو مستندات في المعرض."
+
+msgid "No inspections in scope."
+msgstr "لا توجد عمليات تفتيش في النطاق."
+
+msgid "No integrations configured."
+msgstr "لم يتم تكوين عمليات تكامل."
+
+msgid "No invoices found."
+msgstr "لم يتم العثور على فواتير."
+
+msgid "No invoices in this queue."
+msgstr "لا توجد فواتير في قائمة الانتظار هذه."
+
+msgid "No invoices match these filters."
+msgstr "لا توجد فواتير تتطابق مع عوامل التصفية هذه."
+
+msgid "No invoices yet."
+msgstr "لا توجد فواتير حتى الآن."
+
+msgid "No lease activity yet"
+msgstr "لا يوجد نشاط إيجار حتى الآن"
+
+msgid "No lease history."
+msgstr "لا يوجد سجل إيجار."
+
+msgid "No leases are linked to your account."
+msgstr "لا توجد عقود إيجار مرتبطة بحسابك."
+
+msgid "No leases expire in this period."
+msgstr "لا تنتهي صلاحية أي عقود إيجار في هذه الفترة."
+
+msgid "No leases found."
+msgstr "لم يتم العثور على عقود إيجار."
+
+msgid "No line items."
+msgstr "لا توجد بنود."
+
+msgid "No maintenance requests found."
+msgstr "لم يتم العثور على طلبات صيانة."
+
+msgid "No maintenance tickets match these filters."
+msgstr "لا توجد تذاكر صيانة تتطابق مع هذه الفلاتر."
+
+msgid "No matching costs"
+msgstr "لا توجد تكاليف مطابقة"
+
+msgid "No matching records."
+msgstr "لا توجد سجلات مطابقة."
+
+msgid "No message supplied."
+msgstr "لم يتم توفير رسالة."
+
+msgid "No meters configured."
+msgstr "لم يتم تكوين عدادات."
+
+msgid "No notifications yet."
+msgstr "لا توجد إشعارات حتى الآن."
+
+msgid "No open invoice is available for %(lease)s."
+msgstr "لا توجد فاتورة مفتوحة متاحة لـ %(lease)s."
+
+msgid "No payments found."
+msgstr "لم يتم العثور على دفعات."
+
+msgid "No payments recorded."
+msgstr "لم يتم تسجيل أي مدفوعات."
+
+msgid "No payments submitted."
+msgstr "لم يتم إرسال أي مدفوعات."
+
+msgid "No pending invitations."
+msgstr "لا توجد دعوات معلقة."
+
+msgid "No properties found"
+msgstr "لم يتم العثور على عقارات"
+
+msgid "No properties in scope."
+msgstr "لا توجد عقارات في النطاق."
+
+msgid "No property rates."
+msgstr "لا توجد أسعار للعقارات."
+
+msgid "No readings recorded."
+msgstr "لم يتم تسجيل قراءات."
+
+msgid "No recent confirmed payments."
+msgstr "لا توجد مدفوعات مؤكدة مؤخرًا."
+
+msgid "No records were imported."
+msgstr "لم يتم استيراد أي سجلات."
+
+msgid "No recurring costs configured."
+msgstr "لم يتم تكوين أي تكاليف متكررة."
+
+msgid "No reminder activity."
+msgstr "لا يوجد نشاط تذكير."
+
+msgid "No reminder deliveries yet."
+msgstr "لا توجد خدمات توصيل للتذكير حتى الآن."
+
+msgid "No renewal links."
+msgstr "لا توجد روابط تجديد."
+
+msgid "No schedule generated."
+msgstr "لم يتم إنشاء جدول زمني."
+
+msgid "No scheduled rent entries."
+msgstr "لا توجد إدخالات إيجار مجدولة."
+
+msgid "No slug"
+msgstr "لا توجد سبيكة"
+
+msgid "No status events recorded."
+msgstr "لا توجد أحداث حالة مسجلة."
+
+msgid "No templates configured."
+msgstr "لم يتم تكوين قوالب."
+
+msgid "No tenant documents are attached to this lease."
+msgstr "لا توجد مستندات للمستأجر مرفقة بعقد الإيجار هذا."
+
+msgid "No tenants found."
+msgstr "لم يتم العثور على مستأجرين."
+
+msgid "No unit moves."
+msgstr "لا تتحرك الوحدة."
+
+msgid "No unit types in this view."
+msgstr "لا توجد أنواع وحدات في طريقة العرض هذه."
+
+msgid "No units in this view."
+msgstr "لا توجد وحدات في هذا العرض."
+
+msgid "No updates yet."
+msgstr "لا توجد تحديثات حتى الآن."
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "Not applicable"
+msgstr "غير قابل للتطبيق"
+
+msgid "Not assessed"
+msgstr "غير مقيّم"
+
+msgid "Not checked"
+msgstr "غير محدد"
+
+msgid "Not enabled"
+msgstr "غير ممكّن"
+
+msgid "Not scheduled"
+msgstr "غير مجدول"
+
+msgid "Notes"
+msgstr "ملاحظات"
+
+msgid "Notice given"
+msgstr "تم إعطاء الإشعار"
+
+msgid "Notification"
+msgstr "إشعار"
+
+msgid "Notification selection"
+msgstr "اختيار الإشعار"
+
+msgid "Notifications"
+msgstr "إشعارات"
+
+msgid "Notifications · Oman Skylight PMS"
+msgstr "إشعارات · نظام إدارة المشروع للكوة العمانية"
+
+msgid "OMR"
+msgstr "ر.ع."
+
+msgid "OMR 0.000"
+msgstr "بالريال العماني 0.000 ريال عماني"
+
+msgid "Occupancy"
+msgstr "الإشغال"
+
+msgid "Occupancy rate"
+msgstr "معدل الإشغال"
+
+msgid "Occupants"
+msgstr "شاغلون"
+
+msgid "Occupied"
+msgstr "مشغولون"
+
+msgid "Offer snapshot"
+msgstr "لقطة عرض"
+
+msgid "Offering"
+msgstr "عرض"
+
+msgid "Oman Skylight"
+msgstr "عُمان سكاي لايت"
+
+msgid "Oman Skylight PMS"
+msgstr "نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Oman Skylight Property Management"
+msgstr "إدارة ممتلكات عُمان سكاي لايت"
+
+msgid "Omani rial (OMR)"
+msgstr "الريال العماني"
+
+msgid "One checklist item per line."
+msgstr "عنصر قائمة مرجعية واحد في كل سطر."
+
+msgid "One or more invoices do not exist."
+msgstr "فاتورة واحدة أو أكثر غير موجودة."
+
+msgid "One per line: reason | amount"
+msgstr "واحد في كل سطر: السبب | المبلغ"
+
+msgid "Ongoing"
+msgstr "مستمر"
+
+msgid "Only accepted applications can be converted."
+msgstr "يمكن تحويل الطلبات المقبولة فقط."
+
+msgid "Only active leases can be renewed."
+msgstr "يمكن تجديد عقود الإيجار النشطة فقط."
+
+msgid "Only active leases can be terminated."
+msgstr "يمكن إنهاء عقود الإيجار النشطة فقط."
+
+msgid "Only active leases can be updated."
+msgstr "يمكن تحديث عقود الإيجار النشطة فقط."
+
+msgid "Only an active unit lease can be moved."
+msgstr "يمكن نقل عقد إيجار وحدة نشط فقط."
+
+msgid "Only pending or confirmed payments can be allocated."
+msgstr "يمكن تخصيص المدفوعات المعلقة أو المؤكدة فقط."
+
+msgid "Only terminated leases can have a deposit settlement."
+msgstr "فقط عقود الإيجار التي تم إنهاؤها يمكن أن يكون لها تسوية إيداع."
+
+msgid "Open"
+msgstr "فتح"
+
+msgid "Open ended"
+msgstr "مفتوح المدة"
+
+msgid "Open lifecycle probe"
+msgstr "فتح اختبار دورة الحياة"
+
+msgid "Open maintenance"
+msgstr "أعمال الصيانة المفتوحة"
+
+msgid "Open navigation"
+msgstr "فتح قائمة التنقل"
+
+msgid "Open →"
+msgstr "فتح ←"
+
+msgid "Open-ended leases cannot be renewed."
+msgstr "لا يمكن تجديد عقود الإيجار مفتوحة المدة."
+
+msgid "OpenKos-compatible capability sets for every staff persona."
+msgstr "مجموعات قدرات متوافقة مع OpenKos لكل شخصية من الموظفين."
+
+msgid "Operating costs, receipts, recurring sources, and void history."
+msgstr "تكاليف التشغيل والإيصالات والمصادر المتكررة وتاريخ الفراغ."
+
+msgid "Operating expenses"
+msgstr "نفقات التشغيل"
+
+msgid "Operational briefing"
+msgstr "الإحاطة التشغيلية"
+
+msgid "Operations"
+msgstr "العمليات"
+
+msgid "Operator notes"
+msgstr "ملاحظات المشغل"
+
+msgid "Order and activate the categories available for cost entry."
+msgstr "طلب وتفعيل الفئات المتاحة لإدخال التكلفة."
+
+msgid "Organization name"
+msgstr "اسم المنظمة"
+
+msgid "Organization, currency, locale, and support contact."
+msgstr "جهة اتصال التنظيم والعملة واللغة والدعم."
+
+msgid "Other"
+msgstr "أخرى"
+
+msgid "Other (legacy)"
+msgstr "أخرى (قديمة)"
+
+msgid "Outstanding"
+msgstr "مستحقة"
+
+msgid "Outstanding amount"
+msgstr "مبلغ مستحق"
+
+msgid "Outstanding issued invoices"
+msgstr "فواتير صادرة مستحقة"
+
+msgid "Overdue"
+msgstr "متأخرة"
+
+msgid "Overdue intervals"
+msgstr "فترات متأخرة"
+
+msgid "Overdue rent"
+msgstr "إيجار متأخر"
+
+msgid "Overdue template"
+msgstr "القالب المتأخر"
+
+msgid "Overrides"
+msgstr "تجاوزات"
+
+msgid "Overview"
+msgstr "نظرة عامة"
+
+msgid "Overview · Oman Skylight PMS"
+msgstr "نظرة عامة · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Owner access is protected and cannot be changed here."
+msgstr "وصول المالك محمي ولا يمكن تغييره هنا."
+
+msgid "Page"
+msgstr "الصفحة"
+
+msgid "Paid"
+msgstr "مدفوعة"
+
+msgid "Paid:"
+msgstr "مدفوعة:"
+
+msgid "Partial"
+msgstr "جزئية"
+
+msgid "Partially paid"
+msgstr "مدفوعة جزئياً"
+
+msgid "Passkey deleted."
+msgstr "تم حذف مفتاح المرور."
+
+msgid "Passkeys"
+msgstr "مفاتيح المرور"
+
+msgid "Passport"
+msgstr "جواز السفر"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Password changed."
+msgstr "تم تغيير كلمة المرور."
+
+msgid "Password confirmation failed."
+msgstr "فشل تأكيد كلمة المرور."
+
+msgid "Password confirmed."
+msgstr "تم تأكيد كلمة المرور."
+
+msgid "Password reset"
+msgstr "تم إرسال رابط إعادة تعيين كلمة المرور"
+
+msgid "Password reset link sent."
+msgstr "تم إرسال رابط إعادة تعيين كلمة المرور."
+
+msgid "Password updated"
+msgstr "تم تحديث كلمة المرور"
+
+msgid "Path or environment variable name; never store a secret value here."
+msgstr "اسم متغير المسار أو البيئة ؛ لا تقم أبدًا بتخزين قيمة سرية هنا."
+
+msgid "Pause"
+msgstr "إيقاف مؤقت"
+
+msgid "Pay"
+msgstr "الدفع"
+
+msgid "Payment"
+msgstr "الدفع"
+
+msgid "Payment %(payment)s recorded as %(status)s."
+msgstr "تم تسجيل الدفع %(payment)s باسم %(status)s."
+
+msgid "Payment activity"
+msgstr "نشاط الدفع"
+
+msgid "Payment amount must be positive."
+msgstr "يجب أن يكون مبلغ الدفع إيجابيًا."
+
+msgid "Payment and invoice currencies must match."
+msgstr "يجب أن تتطابق عملات الدفع والفواتير."
+
+msgid "Payment attempt %(attempt)s started."
+msgstr "بدأت محاولة الدفع %(attempt)s."
+
+msgid "Payment attempt rechecked."
+msgstr "تمت إعادة التحقق من محاولة الدفع."
+
+msgid "Payment could not be recorded: "
+msgstr "تعذر تسجيل الدفع:"
+
+msgid "Payment currency must match the invoice."
+msgstr "يجب أن تتطابق عملة الدفع مع الفاتورة."
+
+msgid "Payment date"
+msgstr "تاريخ الدفع"
+
+msgid "Payment gateway"
+msgstr "بوابة الدفع"
+
+msgid "Payment gateway is disabled."
+msgstr "تم تعطيل بوابة الدفع."
+
+msgid "Payment gateway is unavailable."
+msgstr "بوابة الدفع غير متاحة."
+
+msgid "Payment gateway settings saved."
+msgstr "تم حفظ إعدادات بوابة الدفع."
+
+msgid "Payment has already been reviewed."
+msgstr "تمت مراجعة الدفع بالفعل."
+
+msgid "Payment has no invoice."
+msgstr "لا يوجد فاتورة للدفع."
+
+msgid "Payment history"
+msgstr "سجل الدفع"
+
+msgid "Payment instructions"
+msgstr "تعليمات الدفع"
+
+msgid "Payment instructions are ready below."
+msgstr "تعليمات الدفع جاهزة أدناه."
+
+msgid "Payment not recorded"
+msgstr "لم يتم تسجيل الدفع"
+
+msgid "Payment proof %(payment)s was submitted for review."
+msgstr "تم تقديم إثبات الدفع %(payment)s للمراجعة."
+
+msgid "Payment proof cannot exceed 10 MB."
+msgstr "لا يمكن أن يتجاوز إثبات الدفع 10 ميجابايت."
+
+msgid "Payment proof could not be submitted: "
+msgstr "تعذر تقديم إثبات الدفع:"
+
+msgid "Payment provider %(provider)s is not installed on this server."
+msgstr "لم يتم تثبيت موفر الدفع %(provider)s على هذا الخادم."
+
+msgid "Payment review saved."
+msgstr "تم حفظ مراجعة الدفع."
+
+msgid "Payment started"
+msgstr "بدأت عملية الدفع"
+
+msgid "Payments"
+msgstr "المدفوعات"
+
+msgid "Payments · Oman Skylight PMS"
+msgstr "المدفوعات · نظام إدارة الممتلكات للكوة العمانية"
+
+msgid "Pending"
+msgstr "معلقة"
+
+msgid "Pending assignment"
+msgstr "في انتظار التعيين"
+
+msgid "Pending invitations"
+msgstr "في انتظار الدعوات"
+
+msgid "Pending review"
+msgstr "في انتظار المراجعة"
+
+msgid "People"
+msgstr "الأشخاص"
+
+msgid "Per"
+msgstr "لكل"
+
+msgid "Period"
+msgstr "فترة"
+
+msgid "Period end cannot be before period start."
+msgstr "لا يمكن أن تكون نهاية الفترة قبل بدء الفترة."
+
+msgid "Period end must be on or after period start."
+msgstr "يجب أن تكون نهاية الفترة في أو بعد بداية الفترة."
+
+msgid "Periodic"
+msgstr "دوري"
+
+msgid "Personal details and workspace preferences."
+msgstr "التفاصيل الشخصية وتفضيلات مساحة العمل."
+
+msgid "Phone"
+msgstr "الهاتف"
+
+msgid "Platform settings"
+msgstr "إعدادات المنصة"
+
+msgid "Plugin"
+msgstr "المكون الإضافي"
+
+msgid "Poor"
+msgstr "ضعيف"
+
+msgid "Port"
+msgstr "المنفذ"
+
+msgid "Portal access only"
+msgstr "الوصول إلى البوابة فقط"
+
+msgid "Portfolio clarity"
+msgstr "وضوح المحفظة"
+
+msgid "Portfolio metrics"
+msgstr "مقاييس المحفظة"
+
+msgid "Portfolio occupancy"
+msgstr "إشغال المحفظة"
+
+msgid "Portfolio overview"
+msgstr "نظرة عامة على المحفظة"
+
+msgid "Postal code"
+msgstr "الرمز البريدي"
+
+msgid "Preferred language"
+msgstr "اللغة المفضلة"
+
+msgid "Preferred unit"
+msgstr "الوحدة المفضلة"
+
+msgid "Preview"
+msgstr "معاينة"
+
+msgid "Preview CSV"
+msgstr "معاينة CSV"
+
+msgid "Preview and validate CSV rows before saving financial records."
+msgstr "معاينة صفوف CSV والتحقق من صحتها قبل حفظ السجلات المالية."
+
+msgid "Preview import"
+msgstr "معاينة الاستيراد"
+
+msgid "Previous"
+msgstr "السابق"
+
+msgid "Previous:"
+msgstr "السابق:"
+
+msgid "Pricing"
+msgstr "التسعير"
+
+msgid "Primary navigation"
+msgstr "التنقل الأساسي"
+
+msgid "Primary tenant"
+msgstr "المستأجر الأساسي"
+
+msgid "Print"
+msgstr "طباعة"
+
+msgid "Print invoice"
+msgstr "طباعة الفاتورة"
+
+msgid "Prioritize overdue, due-today, upcoming, and settled invoices."
+msgstr "إعطاء الأولوية للفواتير المتأخرة والمستحقة اليوم والقادمة والتسوية."
+
+msgid "Priority"
+msgstr "الأولوية"
+
+msgid "Private files"
+msgstr "الملفات الخاصة"
+
+msgid "Processed %(count)s reminder deliveries."
+msgstr "عمليات التسليم التذكيرية %(count)s المعالجة."
+
+msgid "Professionally managed homes across Oman."
+msgstr "منازل مدارة باحترافية في جميع أنحاء عمان."
+
+msgid "Professionally managed homes, clear lease terms, and a local team ready to help."
+msgstr "بيوت مدارة باحترافية، وشروط إيجار واضحة، وفريق محلي جاهز للمساعدة."
+
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+msgid "Profile information"
+msgstr "معلومات الملف الشخصي"
+
+msgid "Profile updated."
+msgstr "تم تحديث الملف الشخصي."
+
+msgid "Profiles, access, documents and occupancy history."
+msgstr "الملفات الشخصية والوصول والمستندات وسجل الإشغال."
+
+msgid "Proof"
+msgstr "إثبات"
+
+msgid "Properties"
+msgstr "عقارات"
+
+msgid "Properties · Oman Skylight PMS"
+msgstr "العقارات · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Properties. People."
+msgstr "العقارات. الناس."
+
+msgid "Properties. People. A brighter Oman."
+msgstr "عقارات. الناس. سلطنة عمان أكثر إشراقًا."
+
+msgid "Property"
+msgstr "العقار"
+
+msgid "Property / unit"
+msgstr "العقار / الوحدة"
+
+msgid "Property Management"
+msgstr "إدارة العقار"
+
+msgid "Property archived. Its history remains available."
+msgstr "تم أرشفة العقار. لا يزال تاريخها متاحًا."
+
+msgid "Property created."
+msgstr "تم إنشاء العقار."
+
+msgid "Property gallery"
+msgstr "معرض العقارات"
+
+msgid "Property is now published."
+msgstr "تم نشر العقار الآن."
+
+msgid "Property manager"
+msgstr "مدير العقار"
+
+msgid "Property operations"
+msgstr "عمليات العقار"
+
+msgid "Property performance"
+msgstr "أداء العقار"
+
+msgid "Property rates"
+msgstr "أسعار العقار"
+
+msgid "Property restored."
+msgstr "استعادة العقار."
+
+msgid "Property scope"
+msgstr "نطاق العقار"
+
+msgid "Property sections"
+msgstr "أقسام العقار"
+
+msgid "Property type"
+msgstr "نوع العقار"
+
+msgid "Property type could not be saved: "
+msgstr "تعذر حفظ نوع العقار:"
+
+msgid "Property type saved."
+msgstr "تم حفظ نوع العقار."
+
+msgid "Property types"
+msgstr "أنواع العقارات"
+
+msgid "Property unpublished."
+msgstr "عقار غير منشور."
+
+msgid "Property updated."
+msgstr "تم تحديث العقار."
+
+msgid "Property workspace"
+msgstr "مساحة عمل العقار"
+
+msgid "Property-wide"
+msgstr "على مستوى العقار"
+
+msgid "Protect your account and review authentication methods."
+msgstr "حماية حسابك ومراجعة طرق المصادقة."
+
+msgid "Protected account"
+msgstr "الحساب المحمي"
+
+msgid "Provider"
+msgstr "مقدم الخدمة"
+
+msgid "Provider credentials are encrypted and never displayed after saving."
+msgstr "بيانات اعتماد المزود مشفرة ولا تظهر بعد الحفظ."
+
+msgid "Provider health, safe configuration references, and Django extension lifecycle."
+msgstr "صحة مقدم الخدمة، ومراجع التكوين الآمنة، ودورة حياة تمديد Django."
+
+msgid "Providers"
+msgstr "مقدمو الخدمات"
+
+msgid "Public checkout"
+msgstr "الدفع العام"
+
+msgid "Public portal settings saved."
+msgstr "تم حفظ إعدادات البوابة العامة."
+
+msgid "Public slug"
+msgstr "سبيكة عامة"
+
+msgid "Publication"
+msgstr "النشر"
+
+msgid "Publish"
+msgstr "النشر"
+
+msgid "Published"
+msgstr "النشر"
+
+msgid "Published,Draft"
+msgstr "النشر،مسودة"
+
+msgid "Quarterly"
+msgstr "ربع سنوية"
+
+msgid "Rate"
+msgstr "السعر"
+
+msgid "Rate %(status)s."
+msgstr "السعر %(status)s."
+
+msgid "Rate cannot be negative."
+msgstr "لا يمكن أن يكون السعر سلبيًا."
+
+msgid "Rate could not be added: "
+msgstr "تعذر إضافة السعر:"
+
+msgid "Rates & availability"
+msgstr "الأسعار والتوافر"
+
+msgid "Reading"
+msgstr "القراءة"
+
+msgid "Reading could not be recorded."
+msgstr "تعذر تسجيل القراءة."
+
+msgid "Reading date"
+msgstr "تاريخ القراءة"
+
+msgid "Reading dates must advance chronologically."
+msgstr "يجب أن تتقدم تواريخ القراءة حسب التسلسل الزمني."
+
+msgid "Reading updated."
+msgstr "تم تحديث القراءة."
+
+msgid "Readings"
+msgstr "القراءات"
+
+msgid "Ready"
+msgstr "جاهز"
+
+msgid "Ready to publish"
+msgstr "جاهز للنشر"
+
+msgid "Reason"
+msgstr "السبب"
+
+msgid "Reassign active units before archiving this unit type."
+msgstr "إعادة تعيين الوحدات النشطة قبل أرشفة هذا النوع من الوحدات."
+
+msgid "Receipt"
+msgstr "الإيصال"
+
+msgid "Recent applications"
+msgstr "الطلبات الأخيرة"
+
+msgid "Recent deliveries"
+msgstr "عمليات التسليم الأخيرة"
+
+msgid "Recent invoices"
+msgstr "الفواتير الأخيرة"
+
+msgid "Recent leases"
+msgstr "عقود الإيجار الأخيرة"
+
+msgid "Recent payments"
+msgstr "الدفعات الأخيرة"
+
+msgid "Recent reminders"
+msgstr "التذكيرات الأخيرة"
+
+msgid "Recheck"
+msgstr "إعادة التحقق"
+
+msgid "Recipient"
+msgstr "المستلم"
+
+msgid "Recipient email"
+msgstr "بريد المستلم"
+
+msgid "Recipient phone"
+msgstr "هاتف المستلم"
+
+msgid "Record correction"
+msgstr "تصحيح السجل"
+
+msgid "Record expense"
+msgstr "نفقات السجل"
+
+msgid "Record payment"
+msgstr "الدفع القياسي"
+
+msgid "Record reading"
+msgstr "قراءة السجل"
+
+msgid "Recorded, pending and confirmed receipts."
+msgstr "الإيصالات المسجلة والمعلقة والمؤكدة."
+
+msgid "Recovery codes · Oman Skylight"
+msgstr "رموز الاسترداد · الكوة العمانية"
+
+msgid "Recurring"
+msgstr "التكاليف المتكررة"
+
+msgid "Recurring costs"
+msgstr "التكاليف المتكررة"
+
+msgid "Recurring expense added."
+msgstr "تمت إضافة النفقات المتكررة."
+
+msgid "Recurring expense updated."
+msgstr "تم تحديث النفقات المتكررة."
+
+msgid "Recurring expenses · Oman Skylight PMS"
+msgstr "النفقات المتكررة"
+
+msgid "Reference"
+msgstr "المرجع"
+
+msgid "Reference extension"
+msgstr "التمديد المرجعي"
+
+msgid "Reference extension data"
+msgstr "بيانات التمديد المرجعي"
+
+msgid "Reference, tenant or property"
+msgstr "المرجع أو المستأجر أو العقار"
+
+msgid "Reference:"
+msgstr "المرجع:"
+
+msgid "Refund amount"
+msgstr "مبلغ الاسترداد"
+
+msgid "Refund and collect new"
+msgstr "استرداد وتحصيل جديد"
+
+msgid "Refund and deductions cannot exceed the original deposit."
+msgstr "لا يمكن أن يتجاوز المبلغ المسترد والخصومات الإيداع الأصلي."
+
+msgid "Refund reference"
+msgstr "مرجع رد الأموال"
+
+msgid "Regenerate recovery codes"
+msgstr "إعادة إنشاء رموز الاسترداد"
+
+msgid "Region ref"
+msgstr "مرجع المنطقة"
+
+msgid "Register passkey"
+msgstr "تسجيل مفتاح المرور"
+
+msgid "Reject"
+msgstr "رفض"
+
+msgid "Rejected"
+msgstr "مرفوض"
+
+msgid "Related leases"
+msgstr "عقود الإيجار ذات الصلة"
+
+msgid "Reminder processed with %(count)s failed channels."
+msgstr "تمت معالجة التذكير باستخدام قنوات %(count)s الفاشلة."
+
+msgid "Reminder settings saved."
+msgstr "تم حفظ إعدادات التذكير."
+
+msgid "Remove this amenity from inventory before deleting it."
+msgstr "إزالة هذه الميزة من المخزون قبل حذفها."
+
+msgid "Renew lease"
+msgstr "تجديد عقد الإيجار"
+
+msgid "Renewal chain"
+msgstr "سلسلة التجديد"
+
+msgid "Renewed"
+msgstr "تم التجديد"
+
+msgid "Renewed as %(lease)s."
+msgstr "تم التجديد باسم %(lease)s."
+
+msgid "Renewed:"
+msgstr "تم التجديد:"
+
+msgid "Rent"
+msgstr "الإيجار"
+
+msgid "Rent amount"
+msgstr "مبلغ الإيجار"
+
+msgid "Rent collection"
+msgstr "تحصيل الإيجار"
+
+msgid "Rent collection queue"
+msgstr "قائمة انتظار تحصيل الإيجار"
+
+msgid "Rent collection · Oman Skylight PMS"
+msgstr "تحصيل الإيجار · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Rent periods, balances and payment status."
+msgstr "فترات الإيجار والأرصدة وحالة الدفع."
+
+msgid "Rent reminder sent."
+msgstr "تم إرسال تذكير الإيجار."
+
+msgid "Rent reminders"
+msgstr "تذكيرات الإيجار"
+
+msgid "Rent reminders · Oman Skylight PMS"
+msgstr "تذكيرات الإيجار · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Rent schedule"
+msgstr "جدول الإيجار"
+
+msgid "Rental application"
+msgstr "طلب إيجار"
+
+msgid "Rental applications"
+msgstr "طلبات الإيجار"
+
+msgid "Rental mode"
+msgstr "وضع التأجير"
+
+msgid "Rental mode must be unit, whole_property, or hybrid."
+msgstr "يجب أن يكون نمط التأجير وحدة أو عقاراً كاملاً أو مختلطاً."
+
+msgid "Rental offer snapshot"
+msgstr "عرض التأجير لقطة"
+
+msgid "Rental target"
+msgstr "هدف التأجير"
+
+msgid "Rental targets, occupants, schedules and lifecycle actions."
+msgstr "أهداف التأجير والشاغلين والجداول الزمنية وإجراءات دورة الحياة."
+
+msgid "Report an issue"
+msgstr "الإبلاغ عن مشكلة"
+
+msgid "Report maintenance"
+msgstr "الإبلاغ عن صيانة"
+
+msgid "Reported"
+msgstr "الإبلاغ عن"
+
+msgid "Reported by"
+msgstr "الإبلاغ عن"
+
+msgid "Reports"
+msgstr "التقارير"
+
+msgid "Request"
+msgstr "الطلب"
+
+msgid "Request a new password reset link and try again."
+msgstr "اطلب رابطًا جديدًا لإعادة تعيين كلمة المرور ثم حاول مرة أخرى."
+
+msgid "Request another link"
+msgstr "طلب رابط آخر"
+
+msgid "Requests needing attention"
+msgstr "الطلبات التي تحتاج إلى عناية"
+
+msgid "Resend"
+msgstr "إعادة إرسال"
+
+msgid "Resend invitation"
+msgstr "إعادة إرسال الدعوة"
+
+msgid "Reset by email"
+msgstr "إعادة التعيين بالبريد"
+
+msgid "Reset link requested"
+msgstr "إعادة تعيين الرابط المطلوب"
+
+msgid "Reset password · Oman Skylight"
+msgstr "إعادة تعيين كلمة المرور · عمان سكاي لايت"
+
+msgid "Resident portal"
+msgstr "بوابة المقيمين"
+
+msgid "Resolution"
+msgstr "القرار"
+
+msgid "Resolution notes are required to resolve a ticket."
+msgstr "ملاحظات القرار مطلوبة لحل تذكرة الدعم."
+
+msgid "Resolution notes are required."
+msgstr "ملاحظات الحل مطلوبة."
+
+msgid "Resolve"
+msgstr "حل"
+
+msgid "Resolve pending payment attempts before disabling this gateway."
+msgstr "حل محاولات الدفع المعلقة قبل تعطيل هذه البوابة."
+
+msgid "Resolved"
+msgstr "تم الحل"
+
+msgid "Restore"
+msgstr "استعادة"
+
+msgid "Restore inventory"
+msgstr "استعادة المخزون"
+
+msgid "Restore property"
+msgstr "استعادة العقار"
+
+msgid "Results for"
+msgstr "نتائج البحث عن"
+
+msgid "Resume"
+msgstr "السيرة الذاتية"
+
+msgid "Return securely."
+msgstr "الإرجاع بأمان."
+
+msgid "Return to security"
+msgstr "العودة إلى الأمان"
+
+msgid "Return to sign in"
+msgstr "العودة إلى تسجيل الدخول"
+
+msgid "Reusable ordered checklists are snapshotted into historical inspections."
+msgstr "يتم التقاط قوائم مرجعية مرتبة قابلة لإعادة الاستخدام في عمليات فحص تاريخية."
+
+msgid "Revenue"
+msgstr "الإيرادات"
+
+msgid "Revenue less operating costs"
+msgstr "الإيرادات ناقصًا تكاليف التشغيل"
+
+msgid "Review applicants, offers, decisions, and tenant conversion."
+msgstr "مراجعة المتقدمين والعروض والقرارات وتحويل المستأجر."
+
+msgid "Review availability and current asking rent"
+msgstr "مراجعة الإتاحة والإيجار المطلوب الحالي"
+
+msgid "Review decision"
+msgstr "مراجعة القرار"
+
+msgid "Review due, overdue, and collected rent"
+msgstr "مراجعة الإيجار المستحق والمتأخر والمحصّل"
+
+msgid "Review note"
+msgstr "ملاحظة مراجعة"
+
+msgid "Review priority, assignment, and progress"
+msgstr "مراجعة الأولوية والتعيين والتقدم"
+
+msgid "Reviewed by"
+msgstr "مراجعة بواسطة"
+
+msgid "Reviewing"
+msgstr "مراجعة"
+
+msgid "Revoked"
+msgstr "تم إلغاء"
+
+msgid "Role"
+msgstr "الدور"
+
+msgid "Role cloned."
+msgstr "الدور المستنسخ."
+
+msgid "Role created."
+msgstr "تم إنشاء الدور."
+
+msgid "Role deleted."
+msgstr "تم حذف الدور."
+
+msgid "Role updated."
+msgstr "تم تحديث الدور."
+
+msgid "Roles"
+msgstr "الأدوار"
+
+msgid "Roles and permissions"
+msgstr "الأدوار والأذونات"
+
+msgid "Roles · Oman Skylight"
+msgstr "الأدوار · عُمان سكاي لايت"
+
+msgid "Run reminders now"
+msgstr "تشغيل التذكيرات الآن"
+
+msgid "Running"
+msgstr "الجري"
+
+msgid "SMTP host is required when email is enabled."
+msgstr "مضيف SMTP مطلوب عند تفعيل البريد."
+
+msgid "SMTP server"
+msgstr "خادم SMTP"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Save access"
+msgstr "حفظ الوصول"
+
+msgid "Save changes"
+msgstr "حفظ التغييرات"
+
+msgid "Save decision"
+msgstr "حفظ القرار"
+
+msgid "Save inspection draft"
+msgstr "حفظ مسودة التفتيش"
+
+msgid "Save new password"
+msgstr "حفظ كلمة المرور الجديدة"
+
+msgid "Save profile"
+msgstr "حفظ الملف الشخصي"
+
+msgid "Save reading"
+msgstr "حفظ القراءة"
+
+msgid "Save reminder settings"
+msgstr "حفظ إعدادات التذكير"
+
+msgid "Save settings"
+msgstr "حفظ الإعدادات"
+
+msgid "Save terms"
+msgstr "حفظ الشروط"
+
+msgid "Save your recovery codes"
+msgstr "حفظ رموز الاسترداد"
+
+msgid "Scan the QR code, then enter the six-digit code."
+msgstr "امسح رمز الاستجابة السريعة ضوئيًا، ثم أدخل الرمز المكون من ستة أرقام."
+
+msgid "Scheduled"
+msgstr "بحث مجدول"
+
+msgid "Scheduled for"
+msgstr "المقرر للعقار"
+
+msgid "Scope property"
+msgstr "النطاق"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Search name, phone or email"
+msgstr "بحث عن اسم أو هاتف أو بريد إلكتروني"
+
+msgid "Search properties"
+msgstr "بحث عن عقارات"
+
+msgid "Search properties, tenants, or leases"
+msgstr "بحث عن عقارات أو مستأجرين أو عقود إيجار"
+
+msgid "Search properties, units, tenants, leases, and invoices."
+msgstr "ابحث في العقارات والوحدات والمستأجرين والعقود والفواتير."
+
+msgid "Search ticket title"
+msgstr "بحث عن عنوان تذكرة"
+
+msgid "Search · Oman Skylight"
+msgstr "البحث · عُمان سكاي لايت"
+
+msgid "Secret reference"
+msgstr "مرجع سري"
+
+msgid "Secure invitation link"
+msgstr "رابط دعوة آمن"
+
+msgid "Security"
+msgstr "أمان"
+
+msgid "Security deposit"
+msgstr "إيداع ضمان"
+
+msgid "Security settings"
+msgstr "إعدادات الأمان"
+
+msgid "Security · Oman Skylight"
+msgstr "أمان · عُمان سكاي لايت"
+
+msgid "Select a unit type."
+msgstr "تحديد نوع الوحدة."
+
+msgid "Select a unit."
+msgstr "اختر وحدة."
+
+msgid "Select at least one active tenant."
+msgstr "حدد مستأجرًا نشطًا واحدًا على الأقل."
+
+msgid "Select only the capabilities this role needs."
+msgstr "حدد فقط القدرات التي يحتاجها هذا الدور."
+
+msgid "Select the affected home and tell us what happened."
+msgstr "اختر البيت المتضرر وأخبرنا بما حدث."
+
+msgid "Selected portfolio"
+msgstr "المحفظة المحددة"
+
+msgid "Self service"
+msgstr "الخدمة الذاتية"
+
+msgid "Semi furnished"
+msgstr "شبه مفروشة"
+
+msgid "Send a test"
+msgstr "إرسال اختبار"
+
+msgid "Send for review"
+msgstr "إرسال للمراجعة"
+
+msgid "Send invitation"
+msgstr "إرسال دعوة"
+
+msgid "Send password reset"
+msgstr "إرسال إعادة تعيين كلمة المرور"
+
+msgid "Send reminder"
+msgstr "إرسال تذكير"
+
+msgid "Send reset link"
+msgstr "إرسال رابط إعادة التعيين"
+
+msgid "Send test"
+msgstr "إرسال اختبار"
+
+msgid "Send verification link"
+msgstr "إرسال رابط التحقق"
+
+msgid "Sender"
+msgstr "المرسل"
+
+msgid "Sent"
+msgstr "تاريخ الإرسال"
+
+msgid "Serial number"
+msgstr "الرقم التسلسلي"
+
+msgid "Server log (development only)"
+msgstr "سجل الخادم (للتطوير فقط)"
+
+msgid "Service"
+msgstr "الخدمة"
+
+msgid "Set the unit to maintenance until this ticket is resolved or cancelled."
+msgstr "تعيين الوحدة للصيانة حتى يتم حل هذه التذكرة أو إلغاؤها."
+
+msgid "Set up 2FA"
+msgstr "إعداد المصادقة الثنائية"
+
+msgid "Set up 2FA · Oman Skylight"
+msgstr "إعداد المصادقة الثنائية"
+
+msgid "Set up two-factor authentication"
+msgstr "إعداد المصادقة الثنائية"
+
+msgid "Set your new password"
+msgstr "تعيين كلمة المرور الجديدة"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Settings updated."
+msgstr "تم تحديث الإعدادات."
+
+msgid "Settle deposit"
+msgstr "تسوية الإيداع"
+
+msgid "Settle deposit now"
+msgstr "تسوية الإيداع الآن"
+
+msgid "Settled"
+msgstr "تسوية"
+
+msgid "Settlement date"
+msgstr "تاريخ التسوية"
+
+msgid "Show active"
+msgstr "عرض نشط"
+
+msgid "Show active unit types"
+msgstr "عرض أنواع الوحدات النشطة"
+
+msgid "Show archived"
+msgstr "عرض مؤرشف"
+
+msgid "Show archived unit types"
+msgstr "عرض أنواع الوحدات المؤرشفة"
+
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+msgid "Sign in to your workspace"
+msgstr "تسجيل الدخول إلى مساحة العمل الخاصة بك"
+
+msgid "Sign in with a device PIN, fingerprint, or security key."
+msgstr "تسجيل الدخول باستخدام رقم تعريف شخصي أو بصمة أو مفتاح أمان للجهاز."
+
+msgid "Sign in with a passkey"
+msgstr "تسجيل الدخول باستخدام مفتاح مرور"
+
+msgid "Sign in with your new password."
+msgstr "تسجيل الدخول باستخدام كلمة المرور الجديدة."
+
+msgid "Sign in · Oman Skylight PMS"
+msgstr "تسجيل الدخول · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Sign out"
+msgstr "تسجيل الخروج"
+
+msgid "Signed payment link"
+msgstr "رابط الدفع الموقع"
+
+msgid "Site name"
+msgstr "اسم الموقع"
+
+msgid "Slug"
+msgstr "المعرّف النصي"
+
+msgid "Slug and label are required."
+msgstr "المعرّف النصي والتسمية مطلوبان."
+
+msgid "Slug and name are required."
+msgstr "الاسم والرمز اللطيف مطلوبان."
+
+msgid "Social image url"
+msgstr "رابط الصورة الاجتماعية"
+
+msgid "Sort order"
+msgstr "ترتيب الفرز"
+
+msgid "Space & amenities"
+msgstr "المساحة والميزات"
+
+msgid "Specific unit"
+msgstr "وحدة محددة"
+
+msgid "Staff accounts, roles, and property access."
+msgstr "حسابات الموظفين والأدوار والوصول إلى العقار."
+
+msgid "Staff app"
+msgstr "تطبيق الموظفين"
+
+msgid "Start"
+msgstr "البدء"
+
+msgid "Start attempt"
+msgstr "بدء المحاولة"
+
+msgid "Start checkout"
+msgstr "بدء الدفع"
+
+msgid "Start date"
+msgstr "تاريخ البدء"
+
+msgid "Start payment"
+msgstr "بدء الدفع"
+
+msgid "Starts on"
+msgstr "يبدأ في"
+
+msgid "Status"
+msgstr "الحالة"
+
+msgid "Status / review"
+msgstr "الحالة / المراجعة"
+
+msgid "Status history"
+msgstr "سجل الحالة"
+
+msgid "Status or furnishing value is invalid."
+msgstr "قيمة الحالة أو التأثيث غير صالحة."
+
+msgid "Status updated"
+msgstr "تم تحديث الحالة"
+
+msgid "Storage"
+msgstr "التخزين"
+
+msgid "Stored encrypted. Leave blank to keep the current password."
+msgstr "تُحفظ مشفرة. اتركها فارغة للاحتفاظ بكلمة المرور الحالية."
+
+msgid "Stored encrypted. Leave blank to keep the current secret."
+msgstr "تم تخزينه مشفرًا. اتركه فارغًا للحفاظ على السر الحالي."
+
+msgid "Stored encrypted. Leave blank to keep the current token."
+msgstr "يُحفظ مشفراً. اتركه فارغاً للاحتفاظ بالرمز الحالي."
+
+msgid "String"
+msgstr "سلسلة"
+
+msgid "Stronger communities."
+msgstr "مجتمعات أقوى."
+
+msgid "Submit application"
+msgstr "إرسال الطلب"
+
+msgid "Submit request"
+msgstr "إرسال الطلب"
+
+msgid "Submit transfer proof"
+msgstr "إرسال إثبات النقل"
+
+msgid "Submitted"
+msgstr "تم الإرسال"
+
+msgid "Summary"
+msgstr "ملخص"
+
+msgid "Support email"
+msgstr "البريد الإلكتروني للدعم"
+
+msgid "Supporting"
+msgstr "دعم"
+
+msgid "System"
+msgstr "النظام"
+
+msgid "System extensions cannot be disabled."
+msgstr "لا يمكن تعطيل ملحقات النظام."
+
+msgid "Target"
+msgstr "الهدف"
+
+msgid "Target type"
+msgstr "نوع الهدف"
+
+msgid "Target unit"
+msgstr "الوحدة المستهدفة"
+
+msgid "Team"
+msgstr "الفريق"
+
+msgid "Team feedback"
+msgstr "ملاحظات الفريق"
+
+msgid "Team member"
+msgstr "عضو الفريق"
+
+msgid "Team · Oman Skylight"
+msgstr "الفريق · عُمان سكاي لايت"
+
+msgid "Tell us about yourself."
+msgstr "أخبرنا عن نفسك."
+
+msgid "Template"
+msgstr "قالب"
+
+msgid "Templates"
+msgstr "قوالب"
+
+msgid "Tenant"
+msgstr "المستأجر"
+
+msgid "Tenant access"
+msgstr "وصول المستأجر"
+
+msgid "Tenant access activated. Welcome to your resident portal."
+msgstr "تم تنشيط وصول المستأجر. مرحبًا بك في بوابة المقيمين الخاصة بك."
+
+msgid "Tenant access disabled."
+msgstr "تم تعطيل وصول المستأجر."
+
+msgid "Tenant archived."
+msgstr "تمت أرشفة المستأجر."
+
+msgid "Tenant created."
+msgstr "تم إنشاء المستأجر."
+
+msgid "Tenant documents"
+msgstr "مستندات المستأجر"
+
+msgid "Tenant invitation created."
+msgstr "تم إنشاء دعوة المستأجر."
+
+msgid "Tenant restored."
+msgstr "تمت استعادة المستأجر."
+
+msgid "Tenant updated."
+msgstr "تم تحديث المستأجر."
+
+msgid "Tenant workspace"
+msgstr "مساحة عمل المستأجر"
+
+msgid "Tenants"
+msgstr "المستأجرون"
+
+msgid "Tenants · Oman Skylight PMS"
+msgstr "المستأجرون · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Term"
+msgstr "المدة"
+
+msgid "Terminate"
+msgstr "إنهاء"
+
+msgid "Terminate lease"
+msgstr "إنهاء عقد الإيجار"
+
+msgid "Terminated"
+msgstr "إنهاء"
+
+msgid "Termination cannot precede the lease start date."
+msgstr "لا يمكن أن يسبق الإنهاء تاريخ بدء عقد الإيجار."
+
+msgid "Terms"
+msgstr "الشروط"
+
+msgid "Test"
+msgstr "الاختبار"
+
+msgid "That application status transition is not allowed."
+msgstr "لا يُسمح بانتقال حالة الطلب."
+
+msgid "The code is invalid or has already been used."
+msgstr "الرمز غير صالح أو تم استخدامه بالفعل."
+
+msgid "The document cannot exceed 10 MB."
+msgstr "لا يمكن أن يتجاوز المستند 10 ميجابايت."
+
+msgid "The end date cannot precede the lease start date."
+msgstr "لا يمكن أن يسبق تاريخ الانتهاء تاريخ بدء الإيجار."
+
+msgid "The expense currency snapshot cannot change."
+msgstr "لا يمكن تغيير لقطة عملة المصروفات."
+
+msgid "The extension is not ready."
+msgstr "التمديد غير جاهز."
+
+msgid "The lease does not belong to this property."
+msgstr "عقد الإيجار لا ينتمي إلى هذا العقار."
+
+msgid "The linked tenant record is archived or inactive."
+msgstr "سجل المستأجر المرتبط مؤرشف أو غير نشط."
+
+msgid "The meter is inactive."
+msgstr "العداد غير نشط."
+
+msgid "The password is incorrect."
+msgstr "كلمة المرور غير صحيحة."
+
+msgid "The primary administrator account cannot deactivate itself."
+msgstr "لا يمكن لحساب المسؤول الرئيسي تعطيل نفسه."
+
+msgid "The property type was not found or is inactive."
+msgstr "لم يتم العثور على نوع العقار أو أنه غير نشط."
+
+msgid "The property was not found or is archived."
+msgstr "لم يتم العثور على العقار أو تمت أرشفته."
+
+msgid "The referenced unit could not be resolved."
+msgstr "تعذر حل الوحدة المشار إليها."
+
+msgid "The renewal end date must be after the current lease end date."
+msgstr "يجب أن يكون تاريخ انتهاء التجديد بعد تاريخ انتهاء عقد الإيجار الحالي."
+
+msgid "The rental target has no effective rate."
+msgstr "هدف الإيجار ليس له معدل فعال."
+
+msgid "The server log WhatsApp provider cannot be enabled in production."
+msgstr "لا يمكن تفعيل مزود واتساب لسجل الخادم في بيئة الإنتاج."
+
+msgid "The server log WhatsApp provider is disabled in production."
+msgstr "مزود واتساب لسجل الخادم معطل في بيئة الإنتاج."
+
+msgid "The server log email provider cannot be enabled in production."
+msgstr "لا يمكن تفعيل مزود بريد سجل الخادم في بيئة الإنتاج."
+
+msgid "The target unit capacity is too small."
+msgstr "سعة الوحدة المستهدفة صغيرة جدًا."
+
+msgid "The target unit is unavailable."
+msgstr "الوحدة المستهدفة غير متوفرة."
+
+msgid "The ticket could not be updated: "
+msgstr "تعذر تحديث التذكرة:"
+
+msgid "The unit does not belong to the selected property."
+msgstr "الوحدة لا تنتمي إلى العقار المحدد."
+
+msgid "The unit does not belong to this property."
+msgstr "الوحدة لا تنتمي إلى هذا العقار."
+
+msgid "The unit must belong to the selected property."
+msgstr "يجب أن تنتمي الوحدة إلى الخاصية المحددة."
+
+msgid "The unit type does not belong to this property."
+msgstr "لا ينتمي نوع الوحدة إلى هذا العقار."
+
+msgid "The unit type was not found at this property."
+msgstr "لم يتم العثور على نوع الوحدة في هذا العقار."
+
+msgid "The uploaded file is not a valid image."
+msgstr "الملف الذي تم تحميله ليس صورة صالحة."
+
+msgid "The workspace registry is active."
+msgstr "سجل مساحة العمل نشط."
+
+msgid "There are no units available today. You can still contact us about future availability."
+msgstr "لا توجد وحدات متاحة اليوم. لا يزال بإمكانك الاتصال بنا بشأن الإتاحة في المستقبل."
+
+msgid "This account cannot be deactivated here."
+msgstr "لا يمكن تعطيل هذا الحساب من هنا."
+
+msgid "This built-in extension exercises each supported registry without adding production behavior."
+msgstr "يمارس هذا الملحق المدمج كل سجل مدعوم دون إضافة سلوك إنتاجي."
+
+msgid "This deposit settlement is already settled."
+msgstr "تمت تسوية تسوية الإيداع هذه بالفعل."
+
+msgid "This invoice is fully paid."
+msgstr "تم دفع هذه الفاتورة بالكامل."
+
+msgid "This invoice is not payable."
+msgstr "هذه الفاتورة غير مستحقة الدفع."
+
+msgid "This lease no longer accepts active lifecycle actions."
+msgstr "لم يعد عقد الإيجار هذا يقبل إجراءات دورة الحياة النشطة."
+
+msgid "This property already has an active lease."
+msgstr "هذا العقار لديه بالفعل عقد إيجار نشط."
+
+msgid "This property does not support whole-property rental."
+msgstr "هذا العقار لا يدعم تأجير العقار بالكامل."
+
+msgid "This property rental mode does not support units."
+msgstr "وضع تأجير العقار هذا لا يدعم الوحدات."
+
+msgid "This protects sensitive account changes."
+msgstr "هذا يحمي تغييرات الحساب الحساسة."
+
+msgid "This reminder was already sent today."
+msgstr "تم إرسال هذا التذكير بالفعل اليوم."
+
+msgid "This rental mode does not support whole-property pricing."
+msgstr "لا يدعم وضع التأجير هذا تسعير العقار بالكامل."
+
+msgid "This rental offering has no active price."
+msgstr "عرض التأجير هذا ليس له سعر نشط."
+
+msgid "This reset link is no longer valid"
+msgstr "رابط إعادة التعيين هذا لم يعد صالحًا"
+
+msgid "This schedule has no future occurrence."
+msgstr "لا يوجد أي حدث مستقبلي لهذا الجدول."
+
+msgid "This tenant already exists."
+msgstr "هذا المستأجر موجود بالفعل."
+
+msgid "This unit cannot be leased from the selected property."
+msgstr "لا يمكن تأجير هذه الوحدة من العقار المحدد."
+
+msgid "This unit is unavailable for lease."
+msgstr "هذه الوحدة غير متاحة للإيجار."
+
+msgid "This unit or property already has an active lease."
+msgstr "هذه الوحدة أو العقار لديه بالفعل عقد إيجار نشط."
+
+msgid "Ticket"
+msgstr "تم إنشاء التذكرة"
+
+msgid "Ticket %(ticket)s created."
+msgstr "تم إنشاء التذكرة %(ticket)s."
+
+msgid "Ticket status updated."
+msgstr "تم تحديث حالة التذكرة."
+
+msgid "Timeout"
+msgstr "مهلة الاتصال"
+
+msgid "Timezone"
+msgstr "المنطقة الزمنية"
+
+msgid "Title"
+msgstr "العنوان"
+
+msgid "Total"
+msgstr "إجمالي"
+
+msgid "Total units"
+msgstr "إجمالي الوحدات"
+
+msgid "Total:"
+msgstr "الإجمالي:"
+
+msgid "Track reported issues, assignments, costs, and unit availability."
+msgstr "تتبع المشكلات والمهام والتكاليف وتوافر الوحدة المبلغ عنها."
+
+msgid "Track your rental applications and next steps."
+msgstr "تتبع طلبات التأجير والخطوات التالية."
+
+msgid "Transactional import"
+msgstr "استيراد المعاملات"
+
+msgid "Two-factor authentication"
+msgstr "المصادقة الثنائية"
+
+msgid "Two-factor authentication disabled."
+msgstr "تم تعطيل المصادقة الثنائية."
+
+msgid "Two-factor authentication is not enabled."
+msgstr "المصادقة الثنائية غير مفعلة."
+
+msgid "Two-factor enabled"
+msgstr "تم تمكين عاملين"
+
+msgid "Type"
+msgstr "النوع"
+
+msgid "Types & amenities"
+msgstr "الأنواع والميزات"
+
+msgid "UTC"
+msgstr "UTC"
+
+msgid "Unassigned"
+msgstr "غير معين"
+
+msgid "Unavailable"
+msgstr "غير متاح"
+
+msgid "Unbilled"
+msgstr "غير مفوتر"
+
+msgid "Unfurnished"
+msgstr "غير مفروش"
+
+msgid "Unit"
+msgstr "الوحدة"
+
+msgid "Unit %(unit)s added."
+msgstr "تمت إضافة الوحدة %(unit)s."
+
+msgid "Unit / location"
+msgstr "الوحدة / الموقع"
+
+msgid "Unit archived."
+msgstr "تمت أرشفة الوحدة."
+
+msgid "Unit blocked"
+msgstr "الوحدة محظورة"
+
+msgid "Unit capacity is %(capacity)s occupants."
+msgstr "سعة الوحدة هي شاغلي %(capacity)s."
+
+msgid "Unit could not be added: "
+msgstr "تعذر إضافة الوحدة:"
+
+msgid "Unit is outside the selected property."
+msgstr "الوحدة خارج الخاصية المحددة."
+
+msgid "Unit leases cannot use a property rate."
+msgstr "لا يمكن أن تستخدم عقود إيجار الوحدات سعر العقار."
+
+msgid "Unit lineage"
+msgstr "سلالة الوحدة"
+
+msgid "Unit name is required."
+msgstr "اسم الوحدة مطلوب."
+
+msgid "Unit of measure"
+msgstr "وحدة القياس"
+
+msgid "Unit rates"
+msgstr "أسعار الوحدات"
+
+msgid "Unit restored."
+msgstr "تم استعادة الوحدة."
+
+msgid "Unit type"
+msgstr "نوع الوحدة"
+
+msgid "Unit type added."
+msgstr "تمت إضافة نوع الوحدة."
+
+msgid "Unit type archived."
+msgstr "تمت أرشفة نوع الوحدة."
+
+msgid "Unit type could not be added: "
+msgstr "تعذر إضافة نوع الوحدة:"
+
+msgid "Unit type is outside the selected property."
+msgstr "نوع الوحدة خارج الخاصية المحددة."
+
+msgid "Unit type rates"
+msgstr "معدلات نوع الوحدة"
+
+msgid "Unit type restored."
+msgstr "تم استعادة نوع الوحدة."
+
+msgid "Unit type updated."
+msgstr "تم تحديث نوع الوحدة."
+
+msgid "Unit types"
+msgstr "أنواع الوحدات"
+
+msgid "Unit updated."
+msgstr "تم تحديث الوحدة."
+
+msgid "Units"
+msgstr "الوحدات"
+
+msgid "Unpublish"
+msgstr "إلغاء النشر"
+
+msgid "Unpublish the property before changing its rental model."
+msgstr "إلغاء نشر العقار قبل تغيير نموذج الإيجار."
+
+msgid "Unread"
+msgstr "غير مقروء"
+
+msgid "Upcoming"
+msgstr "قادم"
+
+msgid "Upcoming expirations"
+msgstr "تواريخ انتهاء الصلاحية القادمة"
+
+msgid "Upcoming template"
+msgstr "القالب القادم"
+
+msgid "Update"
+msgstr "تحديث"
+
+msgid "Update password"
+msgstr "تحديث كلمة المرور"
+
+msgid "Update roles, property scope, and account status."
+msgstr "تحديث الأدوار ونطاق العقار وحالة الحساب."
+
+msgid "Update status"
+msgstr "تحديث الحالة"
+
+msgid "Updates"
+msgstr "تحديثات"
+
+msgid "Upload"
+msgstr "تحميل"
+
+msgid "Upload a PDF or image attachment."
+msgstr "تحميل ملف PDF أو مرفق صورة."
+
+msgid "Upload a PDF or image proof."
+msgstr "تحميل ملف PDF أو صورة إثبات."
+
+msgid "Upload a PDF, JPG, or PNG transfer receipt."
+msgstr "تحميل إيصال تحويل PDF أو JPG أو PNG."
+
+msgid "Upload a PDF, image, or Word document."
+msgstr "تحميل ملف PDF أو صورة أو مستند Word."
+
+msgid "Upload document"
+msgstr "تحميل المستند"
+
+msgid "Upload failed: "
+msgstr "فشل التحميل:"
+
+msgid "Upload image or document"
+msgstr "تحميل صورة أو مستند"
+
+msgid "Urgent"
+msgstr "عاجل"
+
+msgid "Use a three-letter ISO currency code."
+msgstr "استخدم رمز عملة ISO المكون من ثلاثة أحرف."
+
+msgid "Use comma-separated whole numbers."
+msgstr "استخدم الأعداد الصحيحة المفصولة بفواصل."
+
+msgid "Use positive whole-day intervals."
+msgstr "استخدم فترات إيجابية طوال اليوم."
+
+msgid "Use ssl"
+msgstr "استخدام SSL"
+
+msgid "Use tls"
+msgstr "استخدام TLS"
+
+msgid "Use your Oman Skylight account to continue."
+msgstr "استخدم حسابك في عُمان سكاي لايت للمتابعة."
+
+msgid "User"
+msgstr "تم تحديث وصول المستخدم"
+
+msgid "User access deactivated. Historical records were preserved."
+msgstr "تم تعطيل وصول المستخدم مع الاحتفاظ بالسجلات السابقة."
+
+msgid "User access updated."
+msgstr "المستخدم."
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "Uses unit-type pricing."
+msgstr "يستخدم التسعير من نوع الوحدة."
+
+msgid "Utilities"
+msgstr "المرافق"
+
+msgid "Utilities · Oman Skylight PMS"
+msgstr "المرافق · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "Utility"
+msgstr "المنفعة"
+
+msgid "Utility and lease currencies must match."
+msgstr "يجب أن تتطابق عملات المنفعة والتأجير."
+
+msgid "Utility charge added to the open invoice."
+msgstr "تمت إضافة رسوم المرافق إلى الفاتورة المفتوحة."
+
+msgid "Utility meter added."
+msgstr "تمت إضافة عداد المرافق."
+
+msgid "Utility meters"
+msgstr "عدادات المرافق"
+
+msgid "Utility name"
+msgstr "اسم الأداة المساعدة"
+
+msgid "Utility workspace"
+msgstr "مساحة عمل المرافق"
+
+msgid "Valid for seven days and bound to this invoice version."
+msgstr "صالحة لمدة سبعة أيام وملزمة بنسخة الفاتورة هذه."
+
+msgid "Validated preview"
+msgstr "معاينة تم التحقق منها"
+
+msgid "Validation issues"
+msgstr "مشكلات التحقق من الصحة"
+
+msgid "Validation passed"
+msgstr "تم اجتياز التحقق من الصحة"
+
+msgid "Vendor"
+msgstr "تم إرسال رابط التحقق"
+
+msgid "Verification link sent."
+msgstr "تم إرسال رابط التحقق."
+
+msgid "Verify and enable"
+msgstr "التحقق والتمكين"
+
+msgid "Verify sign-in · Oman Skylight"
+msgstr "التحقق من تسجيل الدخول · عُمان سكاي لايت"
+
+msgid "Verify your sign-in"
+msgstr "التحقق من تسجيل الدخول"
+
+msgid "Version"
+msgstr "الإصدار"
+
+msgid "View"
+msgstr "عرض"
+
+msgid "View all"
+msgstr "عرض جميع"
+
+msgid "View invoices"
+msgstr "عرض الفواتير"
+
+msgid "View permissions"
+msgstr "عرض الأذونات →"
+
+msgid "View property →"
+msgstr "عرض العقار"
+
+msgid "View your home, account, payments, and service requests."
+msgstr "عرض طلبات البيت والحساب والمدفوعات والخدمة."
+
+msgid "Void"
+msgstr "باطلة"
+
+msgid "Void invoice"
+msgstr "فاتورة باطلة"
+
+msgid "Void reason"
+msgstr "سبب باطل"
+
+msgid "Voided"
+msgstr "باطلة"
+
+msgid "Voided expenses are immutable."
+msgstr "النفقات الملغاة غير قابلة للتغيير."
+
+msgid "Waived"
+msgstr "تم التنازل"
+
+msgid "Walls and paint"
+msgstr "الجدران والطلاء"
+
+msgid "Water"
+msgstr "المياه"
+
+msgid "We will send a time-limited password reset link to your verified email."
+msgstr "سنرسل رابط إعادة تعيين كلمة المرور محدود الوقت إلى بريدك الإلكتروني الذي تم التحقق منه."
+
+msgid "Webhook endpoint is required when WhatsApp is enabled."
+msgstr "رابط الويب هوك مطلوب عند تفعيل واتساب."
+
+msgid "Week"
+msgstr "الأسبوع"
+
+msgid "Weekly"
+msgstr "الأسبوع"
+
+msgid "Welcome back"
+msgstr "مرحبًا بعودتك"
+
+msgid "Welcome,"
+msgstr "مرحبًا،"
+
+msgid "Well-managed homes."
+msgstr "بيوت جيدة الإدارة."
+
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+msgid "WhatsApp integration is disabled or not configured."
+msgstr "تكامل واتساب معطل أو غير مُعد."
+
+msgid "WhatsApp provider %(provider)s is not installed on this server."
+msgstr "لم يتم تثبيت موفر WhatsApp %(provider)s على هذا الخادم."
+
+msgid "WhatsApp settings"
+msgstr "إعدادات واتساب"
+
+msgid "WhatsApp settings saved."
+msgstr "تم حفظ إعدادات واتساب."
+
+msgid "WhatsApp webhook rejected the message."
+msgstr "رفض ويب هوك واتساب الرسالة."
+
+msgid "Whole property"
+msgstr "العقار بأكمله"
+
+msgid "Whole-property inventory cannot contain rentable units."
+msgstr "لا يمكن أن يحتوي مخزون العقار بأكمله على وحدات قابلة للإيجار."
+
+msgid "Whole-property leases require a property rate."
+msgstr "تتطلب عقود إيجار العقار بالكامل سعرًا للعقار."
+
+msgid "Withdraw application"
+msgstr "سحب الطلب"
+
+msgid "Withdrawn"
+msgstr "سحب"
+
+msgid "Workspace"
+msgstr "مساحة العمل"
+
+msgid "Workspace settings"
+msgstr "إعدادات مساحة العمل"
+
+msgid "Year"
+msgstr "السنة"
+
+msgid "Year to date"
+msgstr "حتى الآن"
+
+msgid "Yearly"
+msgstr "سنوي"
+
+msgid "Yes,No"
+msgstr "نعم،لا"
+
+msgid "You already have an open application for this offering."
+msgstr "لديك بالفعل تطبيق مفتوح لهذا العرض."
+
+msgid "You are invited"
+msgstr "أنت مدعو"
+
+msgid "You can withdraw this open application if your plans have changed."
+msgstr "يمكنك سحب هذا الطلب المفتوح إذا تغيرت خططك."
+
+msgid "You do not have import access to this property."
+msgstr "ليس لديك حق استيراد إلى هذا العقار."
+
+msgid "You do not have rate import access to this property."
+msgstr "ليس لديك حق الوصول إلى معدل استيراد هذا العقار."
+
+msgid "Your"
+msgstr "حسابك"
+
+msgid "Your Oman Skylight WhatsApp integration is working."
+msgstr "تكامل واتساب مع عُمان سكاي لايت يعمل."
+
+msgid "Your account is ready"
+msgstr "حسابك جاهز"
+
+msgid "Your application has been received. Our team will contact you soon."
+msgstr "تم استلام طلبك. سيتصل بك فريقنا قريبًا."
+
+msgid "Your details"
+msgstr "تفاصيلك"
+
+msgid "Your home and account in one place."
+msgstr "بيتك وحسابك في مكان واحد."
+
+msgid "Your inbox is clear."
+msgstr "بريدك الوارد واضح."
+
+msgid "Your portfolio starts here"
+msgstr "تبدأ محفظتك هنا"
+
+msgid "accepted at"
+msgstr "مقبول في"
+
+msgid "account is ready to activate."
+msgstr "الحساب جاهز للتنشيط."
+
+msgid "action"
+msgstr "الإجراء"
+
+msgid "activated"
+msgstr "تم التنشيط"
+
+msgid "active"
+msgstr "نشط"
+
+msgid "actor"
+msgstr "الممثل"
+
+msgid "actual cost"
+msgstr "التكلفة الفعلية"
+
+msgid "address"
+msgstr "العنوان"
+
+msgid "adjustment consumption"
+msgstr "تعديل الاستهلاك"
+
+msgid "amenities"
+msgstr "وسائل الراحة"
+
+msgid "amenity"
+msgstr "الميزة"
+
+msgid "amount"
+msgstr "المبلغ"
+
+msgid "amount paid"
+msgstr "المبلغ المدفوع"
+
+msgid "app setting"
+msgstr "إعداد التطبيق"
+
+msgid "app settings"
+msgstr "إعدادات التطبيق"
+
+msgid "applicant feedback"
+msgstr "ملاحظات مقدم الطلب"
+
+msgid "application"
+msgstr "التطبيق"
+
+msgid "application document"
+msgstr "مستند التطبيق"
+
+msgid "application documents"
+msgstr "مستندات التطبيق"
+
+msgid "applications"
+msgstr "التطبيقات"
+
+msgid "archived"
+msgstr "مؤرشف"
+
+msgid "archived at"
+msgstr "مؤرشف في"
+
+msgid "area sqm"
+msgstr "مساحة متر مربع"
+
+msgid "assigned to"
+msgstr "تم تعيينه إلى"
+
+msgid "at"
+msgstr "في"
+
+msgid "attempt"
+msgstr "محاولة"
+
+msgid "attempts"
+msgstr "محاولات"
+
+msgid "audit log"
+msgstr "سجل التدقيق"
+
+msgid "audit logs"
+msgstr "سجلات التدقيق"
+
+msgid "available unit"
+msgstr "الوحدة المتاحة"
+
+msgid "bath"
+msgstr "حمام"
+
+msgid "bath ·"
+msgstr "المرحاض"
+
+msgid "bathrooms"
+msgstr "الحمامات"
+
+msgid "bathrooms ·"
+msgstr "الحمامات"
+
+msgid "bed ·"
+msgstr "سرير ·"
+
+msgid "bedroom"
+msgstr "غرفة النوم"
+
+msgid "bedrooms"
+msgstr "غرف النوم"
+
+msgid "bedrooms ·"
+msgstr "غرف النوم ·"
+
+msgid "billing day"
+msgstr "يوم الفوترة"
+
+msgid "billing interval"
+msgstr "فترة الفوترة"
+
+msgid "billing strategy"
+msgstr "استراتيجية الفوترة"
+
+msgid "billing unit"
+msgstr "وحدة الفوترة"
+
+msgid "blocks unit"
+msgstr "وحدة الكتل"
+
+msgid "bytes"
+msgstr "بايت"
+
+msgid "canceled at"
+msgstr "ألغيت في"
+
+msgid "cancellation reason"
+msgstr "سبب الإلغاء"
+
+msgid "cancelled at"
+msgstr "ألغيت في"
+
+msgid "capabilities"
+msgstr "القدرات"
+
+msgid "capability"
+msgstr "القدرة"
+
+msgid "capacity"
+msgstr "السعة"
+
+msgid "caption"
+msgstr "التسمية التوضيحية"
+
+msgid "category"
+msgstr "الفئة"
+
+msgid "changes"
+msgstr "التغييرات"
+
+msgid "channel"
+msgstr "القناة"
+
+msgid "channels"
+msgstr "القنوات"
+
+msgid "charge"
+msgstr "الرسوم"
+
+msgid "checkout instructions"
+msgstr "تعليمات الدفع"
+
+msgid "checkout url"
+msgstr "رابط الدفع"
+
+msgid "checksum"
+msgstr "المجموع الاختباري"
+
+msgid "city"
+msgstr "المدينة"
+
+msgid "city ref"
+msgstr "مرجع المدينة"
+
+msgid "citys"
+msgstr "المدينة"
+
+msgid "code"
+msgstr "الرمز"
+
+msgid "code hash"
+msgstr "رمز التجزئة"
+
+msgid "collected"
+msgstr "التي تم جمعها"
+
+msgid "color"
+msgstr "اللون"
+
+msgid "completed at"
+msgstr "مكتمل في"
+
+msgid "completed by"
+msgstr "اكتمل بواسطة"
+
+msgid "condition"
+msgstr "الشرط"
+
+msgid "configuration"
+msgstr "التكوين"
+
+msgid "confirmed by"
+msgstr "تم تأكيده بواسطة"
+
+msgid "consumption"
+msgstr "الاستهلاك"
+
+msgid "converted at"
+msgstr "تم تحويله في"
+
+msgid "converted tenant"
+msgstr "المستأجر المحول"
+
+msgid "corrects reading"
+msgstr "يصحح القراءة"
+
+msgid "cost"
+msgstr "التكلفة"
+
+msgid "country code"
+msgstr "رمز البلد"
+
+msgid "created at"
+msgstr "تم إنشاؤه في"
+
+msgid "created by"
+msgstr "تم إنشاؤه بواسطة"
+
+msgid "credential id"
+msgstr "معرف الاعتماد"
+
+msgid "currency"
+msgstr "العملة"
+
+msgid "current reading"
+msgstr "القراءة الحالية"
+
+msgid "currently available"
+msgstr "متوفرة حاليًا"
+
+msgid "damage observations"
+msgstr "ملاحظات الضرر"
+
+msgid "date of birth"
+msgstr "تاريخ الميلاد"
+
+msgid "day"
+msgstr "يوم"
+
+msgid "days before"
+msgstr "قبل أيام"
+
+msgid "days."
+msgstr "أيام."
+
+msgid "deactivated"
+msgstr "معطل"
+
+msgid "dedupe key"
+msgstr "مفتاح منع التكرار"
+
+msgid "default rental mode"
+msgstr "وضع الإيجار الافتراضي"
+
+msgid "dependencies"
+msgstr "التبعيات"
+
+msgid "deposit deduction"
+msgstr "خصم الودائع"
+
+msgid "deposit deductions"
+msgstr "خصومات الودائع"
+
+msgid "deposit paid at"
+msgstr "الإيداع المدفوع في"
+
+msgid "deposit received"
+msgstr "تم استلام الإيداع"
+
+msgid "deposit refund amount"
+msgstr "مبلغ استرداد الإيداع"
+
+msgid "deposit refunded at"
+msgstr "تم استرداد الإيداع في"
+
+msgid "deposit settlement"
+msgstr "تسوية الإيداع"
+
+msgid "deposit settlements"
+msgstr "تسويات الإيداع"
+
+msgid "description"
+msgstr "الوصف"
+
+msgid "desired move in"
+msgstr "الانتقال المطلوب"
+
+msgid "detail"
+msgstr "التفاصيل"
+
+msgid "disabled"
+msgstr "معطل"
+
+msgid "discovered at"
+msgstr "تم اكتشافه في"
+
+msgid "document type"
+msgstr "نوع المستند"
+
+msgid "domains"
+msgstr "نطاقات"
+
+msgid "due date"
+msgstr "تاريخ الاستحقاق"
+
+msgid "due template"
+msgstr "قالب مستحق"
+
+msgid "effective"
+msgstr "ساري"
+
+msgid "effective date"
+msgstr "تاريخ السريان"
+
+msgid "email"
+msgstr "البريد الإلكتروني"
+
+msgid "email verification token"
+msgstr "رمز التحقق من البريد الإلكتروني"
+
+msgid "email verification tokens"
+msgstr "رموز التحقق من البريد الإلكتروني"
+
+msgid "email verified at"
+msgstr "تم التحقق من البريد الإلكتروني في"
+
+msgid "emergency contact"
+msgstr "جهة الاتصال في حالات الطوارئ"
+
+msgid "emergency contact name"
+msgstr "اسم جهة الاتصال في حالات الطوارئ"
+
+msgid "emergency contact phone"
+msgstr "هاتف جهة الاتصال في حالات الطوارئ"
+
+msgid "enabled"
+msgstr "ممكن"
+
+msgid "end date"
+msgstr "تاريخ الانتهاء"
+
+msgid "endpoint"
+msgstr "نقطة النهاية"
+
+msgid "ends on"
+msgstr "تنتهي في"
+
+msgid "error"
+msgstr "خطأ"
+
+msgid "error message"
+msgstr "رسالة خطأ"
+
+msgid "estimated cost"
+msgstr "التكلفة المقدرة"
+
+msgid "event"
+msgstr "حدث"
+
+msgid "event id"
+msgstr "معرف الحدث"
+
+msgid "expense"
+msgstr "نفقات"
+
+msgid "expense categories"
+msgstr "فئات المصروفات"
+
+msgid "expense category"
+msgstr "فئة المصروفات"
+
+msgid "expenses"
+msgstr "نفقات"
+
+msgid "expired at"
+msgstr "انتهت صلاحيتها في"
+
+msgid "expires at"
+msgstr "تنتهي صلاحية"
+
+msgid "expires on"
+msgstr "في"
+
+msgid "extension hook"
+msgstr "خطاف التمديد"
+
+msgid "extension hooks"
+msgstr "خطافات التمديد"
+
+msgid "extension installation"
+msgstr "تثبيت التمديد"
+
+msgid "extension installations"
+msgstr "تركيبات التمديد"
+
+msgid "external id"
+msgstr "المعرف الخارجي"
+
+msgid "failed at"
+msgstr "فشل || في"
+
+msgid "file"
+msgstr "ملف"
+
+msgid "fingerprint"
+msgstr "بصمة"
+
+msgid "floor"
+msgstr "الطابق"
+
+msgid "force password change"
+msgstr "فرض تغيير كلمة المرور"
+
+msgid "frequency"
+msgstr "التردد"
+
+msgid "from status"
+msgstr "من الحالة"
+
+msgid "from unit"
+msgstr "من الوحدة"
+
+msgid "full name"
+msgstr "الاسم الكامل"
+
+msgid "furnishing"
+msgstr "التأثيث"
+
+msgid "gateway"
+msgstr "البوابة"
+
+msgid "gateway reference"
+msgstr "مرجع البوابة"
+
+msgid "generated at"
+msgstr "تم إنشاؤه في"
+
+msgid "group"
+msgstr "المجموعة"
+
+msgid "group profile"
+msgstr "ملف تعريف المجموعة"
+
+msgid "group profiles"
+msgstr "ملفات تعريف المجموعة"
+
+msgid "groups"
+msgstr "المجموعات"
+
+msgid "guidance"
+msgstr "إرشادات"
+
+msgid "icon"
+msgstr "أيقونة"
+
+msgid "id number"
+msgstr "رقم الهوية"
+
+msgid "idempotency key"
+msgstr "مفتاح الصلاحية"
+
+msgid "import · Oman Skylight PMS"
+msgstr "استيراد · نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "incurred on"
+msgstr "المتكبدة في"
+
+msgid "inspection"
+msgstr "التفتيش"
+
+msgid "inspection date"
+msgstr "تاريخ التفتيش"
+
+msgid "inspection item"
+msgstr "عنصر التفتيش"
+
+msgid "inspection items"
+msgstr "عناصر التفتيش"
+
+msgid "inspection photo"
+msgstr "صورة التفتيش"
+
+msgid "inspection photos"
+msgstr "صور التفتيش"
+
+msgid "inspection template"
+msgstr "نموذج التفتيش"
+
+msgid "inspection template item"
+msgstr "عنصر قالب التفتيش"
+
+msgid "inspection template items"
+msgstr "عناصر قالب التفتيش"
+
+msgid "inspection templates"
+msgstr "قوالب التفتيش"
+
+msgid "inspection type"
+msgstr "نوع التفتيش"
+
+msgid "inspections"
+msgstr "عمليات التفتيش"
+
+msgid "inspector"
+msgstr "المفتش"
+
+msgid "integration"
+msgstr "التكامل"
+
+msgid "integration event"
+msgstr "حدث التكامل"
+
+msgid "integration events"
+msgstr "أحداث التكامل"
+
+msgid "integrations"
+msgstr "عمليات التكامل"
+
+msgid "intended move in timeframe"
+msgstr "الانتقال المقصود في الإطار الزمني"
+
+msgid "invitation"
+msgstr "الدعوة"
+
+msgid "invitations"
+msgstr "الدعوات"
+
+msgid "invited by"
+msgstr "المدعوة بواسطة"
+
+msgid "invoice"
+msgstr "الفاتورة"
+
+msgid "invoice line item"
+msgstr "بند سطر الفاتورة"
+
+msgid "invoice line items"
+msgstr "بنود سطر الفاتورة"
+
+msgid "invoice pdf artifact"
+msgstr "ملف PDF للفاتورة"
+
+msgid "invoice pdf artifacts"
+msgstr "ملفات PDF للفواتير"
+
+msgid "invoices"
+msgstr "فواتير"
+
+msgid "ip address"
+msgstr "عنوان IP"
+
+msgid "is active"
+msgstr "نشط"
+
+msgid "is correction"
+msgstr "تصحيح"
+
+msgid "is custom price"
+msgstr "سعر مخصص"
+
+msgid "is enabled"
+msgstr "ممكّن"
+
+msgid "is furnished"
+msgstr "مفروش"
+
+msgid "is paused"
+msgstr "متوقف مؤقتًا"
+
+msgid "is public"
+msgstr "عام"
+
+msgid "is published"
+msgstr "منشور"
+
+msgid "is secret"
+msgstr "سري"
+
+msgid "is system"
+msgstr "نظام"
+
+msgid "issue date"
+msgstr "تاريخ الإصدار"
+
+msgid "item"
+msgstr "عنصر"
+
+msgid "items"
+msgstr "عناصر"
+
+msgid "items ·"
+msgstr "عناصر ·"
+
+msgid "key"
+msgstr "المفتاح"
+
+msgid "kind"
+msgstr "النوع"
+
+msgid "label"
+msgstr "التسمية"
+
+msgid "last error"
+msgstr "آخر خطأ"
+
+msgid "last health check at"
+msgstr "تاريخ آخر فحص للحالة"
+
+msgid "last used at"
+msgstr "تاريخ آخر استخدام"
+
+msgid "latitude"
+msgstr "خطوط العرض"
+
+msgid "lease"
+msgstr "عقد الإيجار"
+
+msgid "lease expiration days"
+msgstr "أيام انتهاء عقد الإيجار"
+
+msgid "lease notification event"
+msgstr "حدث إخطار عقد الإيجار"
+
+msgid "lease notification events"
+msgstr "أحداث إخطار عقد الإيجار"
+
+msgid "lease unit history"
+msgstr "تاريخ وحدة الإيجار"
+
+msgid "lease unit historys"
+msgstr "محفوظات وحدة الإيجار"
+
+msgid "leases"
+msgstr "عقود الإيجار"
+
+msgid "legacy record map"
+msgstr "خريطة السجلات القديمة"
+
+msgid "legacy record maps"
+msgstr "خرائط السجلات القديمة"
+
+msgid "location"
+msgstr "الموقع"
+
+msgid "longitude"
+msgstr "خط الطول"
+
+msgid "maintenance attachment"
+msgstr "مرفق الصيانة"
+
+msgid "maintenance attachments"
+msgstr "مرفقات الصيانة"
+
+msgid "maintenance status history"
+msgstr "سجل حالة الصيانة"
+
+msgid "maintenance status historys"
+msgstr "سجلات حالات الصيانة"
+
+msgid "maintenance ticket"
+msgstr "تذكرة صيانة"
+
+msgid "maintenance tickets"
+msgstr "تذاكر الصيانة"
+
+msgid "message"
+msgstr "الرسالة"
+
+msgid "metadata"
+msgstr "البيانات الوصفية"
+
+msgid "meter"
+msgstr "العداد"
+
+msgid "method"
+msgstr "الطريقة"
+
+msgid "migrated at"
+msgstr "تاريخ الترحيل"
+
+msgid "migration run"
+msgstr "عملية ترحيل"
+
+msgid "migration runs"
+msgstr "عمليات الترحيل"
+
+msgid "mime type"
+msgstr "نوع الملف"
+
+msgid "month"
+msgstr "شهر"
+
+msgid "monthly income"
+msgstr "الدخل الشهري"
+
+msgid "monthly rent"
+msgstr "الإيجار الشهري"
+
+msgid "move out date"
+msgstr "تاريخ المغادرة"
+
+msgid "moved in at"
+msgstr "تاريخ الانتقال إلى الوحدة"
+
+msgid "moved out at"
+msgstr "تاريخ مغادرة الوحدة"
+
+msgid "name"
+msgstr "الاسم"
+
+msgid "nationality"
+msgstr "الجنسية"
+
+msgid "next attempt at"
+msgstr "موعد المحاولة التالية"
+
+msgid "next run on"
+msgstr "موعد التشغيل التالي"
+
+msgid "notes"
+msgstr "الملاحظات"
+
+msgid "notice date"
+msgstr "تاريخ الإشعار"
+
+msgid "number"
+msgstr "الرقم"
+
+msgid "occupants"
+msgstr "الشاغلون"
+
+msgid "occupied"
+msgstr "مشغول"
+
+msgid "of"
+msgstr "من"
+
+msgid "open application key"
+msgstr "مفتاح الطلب المفتوح"
+
+msgid "open invoices"
+msgstr "الفواتير المفتوحة"
+
+msgid "open maintenance request"
+msgstr "طلب صيانة مفتوح"
+
+msgid "operator notes"
+msgstr "ملاحظات المشغّل"
+
+msgid "original amount"
+msgstr "المبلغ الأصلي"
+
+msgid "original name"
+msgstr "الاسم الأصلي"
+
+msgid "outstanding"
+msgstr "مستحق"
+
+msgid "overdue days"
+msgstr "أيام التأخير"
+
+msgid "overdue intervals"
+msgstr "فترات التأخير"
+
+msgid "overdue template"
+msgstr "قالب التأخير"
+
+msgid "paid at"
+msgstr "تاريخ الدفع"
+
+msgid "passkey"
+msgstr "مفتاح المرور"
+
+msgid "passkeys"
+msgstr "مفاتيح المرور"
+
+msgid "paused at"
+msgstr "تاريخ الإيقاف المؤقت"
+
+msgid "payload"
+msgstr "البيانات"
+
+msgid "payment"
+msgstr "الدفعة"
+
+msgid "payment allocation"
+msgstr "تخصيص الدفعة"
+
+msgid "payment allocations"
+msgstr "تخصيصات الدفعات"
+
+msgid "payment anomaly"
+msgstr "حالة دفع غير طبيعية"
+
+msgid "payment anomalys"
+msgstr "حالات دفع غير طبيعية"
+
+msgid "payment attempt"
+msgstr "محاولة دفع"
+
+msgid "payment attempts"
+msgstr "محاولات الدفع"
+
+msgid "payment date"
+msgstr "تاريخ الدفع"
+
+msgid "payment proof"
+msgstr "إثبات الدفع"
+
+msgid "payment proofs"
+msgstr "إثباتات الدفع"
+
+msgid "payment webhook"
+msgstr "إشعار الدفع الإلكتروني"
+
+msgid "payment webhooks"
+msgstr "إشعارات الدفع الإلكترونية"
+
+msgid "payments"
+msgstr "المدفوعات"
+
+msgid "per"
+msgstr "لكل"
+
+msgid "period end"
+msgstr "نهاية الفترة"
+
+msgid "period start"
+msgstr "بداية الفترة"
+
+msgid "periods"
+msgstr "الفترات"
+
+msgid "permissions"
+msgstr "الصلاحيات"
+
+msgid "phone"
+msgstr "الهاتف"
+
+msgid "portal enabled"
+msgstr "البوابة مفعّلة"
+
+msgid "portal notification"
+msgstr "إشعار البوابة"
+
+msgid "portal notifications"
+msgstr "إشعارات البوابة"
+
+msgid "postal code"
+msgstr "الرمز البريدي"
+
+msgid "preferred language"
+msgstr "اللغة المفضلة"
+
+msgid "previous lease"
+msgstr "عقد الإيجار السابق"
+
+msgid "previous reading record"
+msgstr "سجل القراءة السابق"
+
+msgid "previous value"
+msgstr "القيمة السابقة"
+
+msgid "primary tenant"
+msgstr "المستأجر الأساسي"
+
+msgid "priority"
+msgstr "الأولوية"
+
+msgid "processed at"
+msgstr "تاريخ المعالجة"
+
+msgid "properties"
+msgstr "العقارات"
+
+msgid "property"
+msgstr "العقار"
+
+msgid "property access"
+msgstr "صلاحية الوصول إلى العقار"
+
+msgid "property media"
+msgstr "وسائط العقار"
+
+msgid "property medias"
+msgstr "وسائط العقارات"
+
+msgid "property rate"
+msgstr "سعر العقار"
+
+msgid "property rates"
+msgstr "أسعار العقار"
+
+msgid "property type"
+msgstr "نوع العقار"
+
+msgid "property types"
+msgstr "أنواع العقارات"
+
+msgid "provider"
+msgstr "مقدم الخدمة"
+
+msgid "provider reference"
+msgstr "مرجع مقدم الخدمة"
+
+msgid "public key"
+msgstr "المفتاح العام"
+
+msgid "public link version"
+msgstr "إصدار الرابط العام"
+
+msgid "public slug"
+msgstr "المعرّف العام"
+
+msgid "quantity"
+msgstr "الكمية"
+
+msgid "rate"
+msgstr "السعر"
+
+msgid "read at"
+msgstr "تاريخ القراءة"
+
+msgid "reading date"
+msgstr "تاريخ القراءة"
+
+msgid "reading kind"
+msgstr "نوع القراءة"
+
+msgid "reason"
+msgstr "السبب"
+
+msgid "receipt"
+msgstr "الإيصال"
+
+msgid "receipt mime type"
+msgstr "نوع ملف الإيصال"
+
+msgid "receipt original name"
+msgstr "الاسم الأصلي للإيصال"
+
+msgid "receipt size"
+msgstr "حجم الإيصال"
+
+msgid "received at"
+msgstr "تاريخ الاستلام"
+
+msgid "recipient"
+msgstr "المستلم"
+
+msgid "recorded by"
+msgstr "سجّلها"
+
+msgid "records"
+msgstr "السجلات"
+
+msgid "recovery code"
+msgstr "رمز الاسترداد"
+
+msgid "recovery codes"
+msgstr "رموز الاسترداد"
+
+msgid "recurring expense"
+msgstr "مصروف متكرر"
+
+msgid "recurring expenses"
+msgstr "المصروفات المتكررة"
+
+msgid "reference"
+msgstr "المرجع"
+
+msgid "refund amount"
+msgstr "مبلغ الاسترداد"
+
+msgid "refund reference"
+msgstr "مرجع الاسترداد"
+
+msgid "region"
+msgstr "المنطقة"
+
+msgid "region ref"
+msgstr "مرجع المنطقة"
+
+msgid "regions"
+msgstr "المناطق"
+
+msgid "registered"
+msgstr "تم تسجيل"
+
+msgid "reminder date"
+msgstr "تاريخ التذكير"
+
+msgid "reminder log"
+msgstr "سجل التذكير"
+
+msgid "reminder logs"
+msgstr "سجلات التذكير"
+
+msgid "reminder settings"
+msgstr "إعدادات التذكير"
+
+msgid "rent amount"
+msgstr "مبلغ الإيجار"
+
+msgid "rent schedule"
+msgstr "جدول الإيجار"
+
+msgid "rent schedules"
+msgstr "جداول الإيجار"
+
+msgid "rental amount"
+msgstr "مبلغ التأجير"
+
+msgid "rental billing interval"
+msgstr "فاصل فوترة الإيجار"
+
+msgid "rental billing unit"
+msgstr "وحدة فوترة الإيجار"
+
+msgid "rental currency"
+msgstr "عملة الإيجار"
+
+msgid "rental mode"
+msgstr "نمط التأجير"
+
+msgid "request payload"
+msgstr "بيانات الطلب"
+
+msgid "resolution notes"
+msgstr "ملاحظات الحل"
+
+msgid "resolved at"
+msgstr "تاريخ الحل"
+
+msgid "response payload"
+msgstr "بيانات الاستجابة"
+
+msgid "review notes"
+msgstr "ملاحظات المراجعة"
+
+msgid "reviewed at"
+msgstr "تاريخ المراجعة"
+
+msgid "reviewed by"
+msgstr "راجعه"
+
+msgid "row"
+msgstr "الصف"
+
+msgid "rows"
+msgstr "الصفوف"
+
+msgid "rows read ·"
+msgstr "الصفوف"
+
+msgid "rows valid"
+msgstr "الصالحة"
+
+msgid "saved property"
+msgstr "عقار محفوظ"
+
+msgid "saved propertys"
+msgstr "العقارات المحفوظة"
+
+msgid "scheduled for"
+msgstr "مجدول في"
+
+msgid "scope property"
+msgstr "العقار المحدد"
+
+msgid "secret reference"
+msgstr "مرجع السر"
+
+msgid "security deposit"
+msgstr "مبلغ التأمين"
+
+msgid "security updated at"
+msgstr "تاريخ تحديث الأمان"
+
+msgid "sent at"
+msgstr "تاريخ الإرسال"
+
+msgid "serial number"
+msgstr "الرقم التسلسلي"
+
+msgid "settled at"
+msgstr "تاريخ التسوية"
+
+msgid "settlement"
+msgstr "التسوية"
+
+msgid "settlement date"
+msgstr "تاريخ التسوية"
+
+msgid "shown"
+msgstr "الموضحة"
+
+msgid "sign count"
+msgstr "عدد التوقيعات"
+
+msgid "signature valid"
+msgstr "التوقيع صالح"
+
+msgid "size"
+msgstr "الحجم"
+
+msgid "slug"
+msgstr "المعرّف النصي"
+
+msgid "sort order"
+msgstr "ترتيب العرض"
+
+msgid "source"
+msgstr "المصدر"
+
+msgid "source fingerprint"
+msgstr "بصمة المصدر"
+
+msgid "source id"
+msgstr "معرّف المصدر"
+
+msgid "source table"
+msgstr "جدول المصدر"
+
+msgid "start date"
+msgstr "تاريخ البدء"
+
+msgid "started at"
+msgstr "تاريخ البدء"
+
+msgid "starts on"
+msgstr "يبدأ في"
+
+msgid "status"
+msgstr "الحالة"
+
+msgid "subject id"
+msgstr "معرّف الموضوع"
+
+msgid "subject type"
+msgstr "نوع الموضوع"
+
+msgid "submitted at"
+msgstr "تاريخ التقديم"
+
+msgid "subtotal"
+msgstr "المجموع الفرعي"
+
+msgid "summary"
+msgstr "الملخص"
+
+msgid "target id"
+msgstr "معرّف الهدف"
+
+msgid "target model"
+msgstr "نموذج الهدف"
+
+msgid "target type"
+msgstr "نوع الهدف"
+
+msgid "tax"
+msgstr "الضريبة"
+
+msgid "template"
+msgstr "القالب"
+
+msgid "template name"
+msgstr "اسم القالب"
+
+msgid "tenant"
+msgstr "المستأجر"
+
+msgid "tenant document"
+msgstr "مستند المستأجر"
+
+msgid "tenant documents"
+msgstr "مستندات المستأجر"
+
+msgid "tenant invitation"
+msgstr "دعوة المستأجر"
+
+msgid "tenant invitations"
+msgstr "دعوات المستأجرين"
+
+msgid "tenants"
+msgstr "المستأجرون"
+
+msgid "termination date"
+msgstr "تاريخ الإنهاء"
+
+msgid "termination reason"
+msgstr "سبب الإنهاء"
+
+msgid "terms"
+msgstr "الشروط"
+
+msgid "ticket"
+msgstr "التذكرة"
+
+msgid "timezone"
+msgstr "المنطقة الزمنية"
+
+msgid "title"
+msgstr "العنوان"
+
+msgid "to"
+msgstr "إلى"
+
+msgid "to status"
+msgstr "إلى الحالة"
+
+msgid "to unit"
+msgstr "إلى الوحدة"
+
+msgid "token"
+msgstr "الرمز"
+
+msgid "token hash"
+msgstr "بصمة الرمز"
+
+msgid "total"
+msgstr "الإجمالي"
+
+msgid "transferred by"
+msgstr "نقله"
+
+msgid "two factor enabled"
+msgstr "المصادقة الثنائية مفعّلة"
+
+msgid "two factor secret"
+msgstr "سر المصادقة الثنائية"
+
+msgid "type"
+msgstr "النوع"
+
+msgid "unit"
+msgstr "الوحدة"
+
+msgid "unit of measure"
+msgstr "وحدة القياس"
+
+msgid "unit price"
+msgstr "سعر الوحدة"
+
+msgid "unit rate"
+msgstr "سعر الوحدة"
+
+msgid "unit rates"
+msgstr "أسعار الوحدات"
+
+msgid "unit status before block"
+msgstr "حالة الوحدة قبل الحظر"
+
+msgid "unit type"
+msgstr "نوع الوحدة"
+
+msgid "unit type rate"
+msgstr "سعر نوع الوحدة"
+
+msgid "unit type rates"
+msgstr "أسعار أنواع الوحدات"
+
+msgid "unit types"
+msgstr "أنواع الوحدات"
+
+msgid "units"
+msgstr "الوحدات"
+
+msgid "units occupied"
+msgstr "الوحدات المشغولة"
+
+msgid "units ·"
+msgstr "الوحدات"
+
+msgid "unused recovery codes remain."
+msgstr "رموز الاسترداد غير المستخدمة المتبقية."
+
+msgid "upcoming template"
+msgstr "قالب الاستحقاق القادم"
+
+msgid "updated at"
+msgstr "تاريخ التحديث"
+
+msgid "url"
+msgstr "الرابط"
+
+msgid "used at"
+msgstr "تاريخ الاستخدام"
+
+msgid "user"
+msgstr "المستخدم"
+
+msgid "user notification"
+msgstr "إشعار المستخدم"
+
+msgid "user notifications"
+msgstr "إشعارات المستخدم"
+
+msgid "user profile"
+msgstr "ملف المستخدم"
+
+msgid "user profiles"
+msgstr "ملفات المستخدمين"
+
+msgid "utility meter"
+msgstr "عداد المرافق"
+
+msgid "utility meters"
+msgstr "عدادات المرافق"
+
+msgid "utility name"
+msgstr "اسم المرفق"
+
+msgid "utility reading"
+msgstr "قراءة المرفق"
+
+msgid "utility readings"
+msgstr "قراءات المرافق"
+
+msgid "value"
+msgstr "القيمة"
+
+msgid "value type"
+msgstr "نوع القيمة"
+
+msgid "vendor"
+msgstr "المورّد"
+
+msgid "verified at"
+msgstr "تاريخ التحقق"
+
+msgid "verified by"
+msgstr "تحقق منه"
+
+msgid "version"
+msgstr "الإصدار"
+
+msgid "void reason"
+msgstr "سبب الإلغاء"
+
+msgid "voided at"
+msgstr "تاريخ الإلغاء"
+
+msgid "voided by"
+msgstr "ألغاه"
+
+msgid "week"
+msgstr "الأسبوع"
+
+msgid "year"
+msgstr "السنة"
+
+msgid "· Balance"
+msgstr "· الرصيد"
+
+msgid "· Balance:"
+msgstr "· الرصيد:"
+
+msgid "· Cost"
+msgstr "· التكلفة"
+
+msgid "· OMR"
+msgstr "· OMR"
+
+msgid "· Oman Skylight"
+msgstr "· نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "· Oman Skylight PMS"
+msgstr "· نظام عُمان سكاي لايت لإدارة العقارات"
+
+msgid "· currency-aware portfolio totals."
+msgstr "· إجماليات المحفظة الواعية بالعملات."
+
+msgid "· due"
+msgstr "· مستحق"
+
+msgid "· from"
+msgstr "· من"
+
+msgid "· order"
+msgstr "· الطلب"
+
+msgid "· refund"
+msgstr "· رد الأموال"
+
+msgid "← All properties"
+msgstr "← جميع العقارات"
+
+msgid "← Back to"
+msgstr "← العودة إلى"
+
+msgid "← Team list"
+msgstr "قائمة ← الفريق"

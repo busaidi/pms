@@ -1,0 +1,32 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Sign in · Oman Skylight PMS" %}{% endblock %}
+{% block anonymous_content %}
+<main class="login-page">
+  <section class="login-brand">
+    <div class="brand large"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><div><strong>{% translate "Oman Skylight" %}</strong><small>{% translate "Property Management" %}</small></div></div>
+    <div><p class="eyebrow">{% translate "Portfolio clarity" %}</p><h1>{% translate "Well-managed homes." %}<br>{% translate "Stronger communities." %}</h1><p>{% translate "A calm, capable workspace for properties, tenants, leases, and the daily work that connects them." %}</p></div>
+    <small>{% translate "Properties. People. A brighter Oman." %}</small>
+  </section>
+  <section class="login-form-wrap">
+    <form method="post" class="login-form">
+      {% csrf_token %}
+      <p class="eyebrow">{% translate "Welcome back" %}</p>
+      <h2>{% translate "Sign in to your workspace" %}</h2>
+      <p>{% translate "Use your Oman Skylight account to continue." %}</p>
+      {% if form.non_field_errors %}<div class="form-error">{{ form.non_field_errors }}</div>{% endif %}
+      <label for="{{ form.username.id_for_label }}">{% translate "Username" %}</label>
+      {{ form.username }}
+      {% if form.username.errors %}<div class="field-error">{{ form.username.errors }}</div>{% endif %}
+      <label for="{{ form.password.id_for_label }}">{% translate "Password" %}</label>
+      {{ form.password }}
+      {% if form.password.errors %}<div class="field-error">{{ form.password.errors }}</div>{% endif %}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button class="button wide" type="submit">{% translate "Sign in" %} <svg><use href="#icon-arrow"/></svg></button>
+      <button class="button secondary wide" type="button" data-passkey-login>{% translate "Sign in with a passkey" %}</button>
+      <div class="passkey-message" role="status"></div>
+      <a class="form-link" href="{% url 'password_reset' %}">{% translate "Forgot your password?" %}</a>
+    </form>
+    <script>window.passkeyConfig={authOptions:"{% url 'passkey_authentication_options' %}",authVerify:"{% url 'passkey_authentication_verify' %}"};</script>
+  </section>
+</main>
+{% endblock %}

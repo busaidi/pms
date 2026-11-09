@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "CSV data transfer · Oman Skylight PMS" %}{% endblock %}
+{% block content %}
+<section class="page-heading"><div><p class="eyebrow">{% translate "Inventory tools" %}</p><h1>{% translate "CSV data transfer" %}</h1><p>{% translate "Download a template, preview validation, then commit every valid row in one transaction." %}</p></div><a class="button secondary" href="{% url 'property_list' %}">{% translate "Back to properties" %}</a></section>
+<section class="transfer-grid">{% for key,definition in datasets.items %}<article class="panel transfer-card"><h2>{{ key|title }}</h2><p class="muted">{{ definition.headers|join:', ' }}</p><div class="transfer-links"><a href="{% url 'transfer_template' key %}">{% translate "Template" %}</a><a href="{% url 'transfer_export' key %}">{% translate "Export" %}</a></div><form method="post" enctype="multipart/form-data" action="{% url 'transfer_preview' key %}">{% csrf_token %}<label>{% translate "CSV to preview" %}<input type="file" name="file" accept=".csv,text/csv" required></label><button class="button">{% translate "Preview import" %}</button></form></article>{% endfor %}</section>
+{% endblock %}

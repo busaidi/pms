@@ -1,0 +1,37 @@
+server {
+    listen 127.0.0.1:8080;
+    server_name 127.0.0.1 localhost;
+    root /home/hamed/OpenKos/public;
+    index index.php;
+    charset utf-8;
+    server_tokens off;
+    client_max_body_size 25m;
+
+    access_log /var/log/nginx/openkos-local-access.log;
+    error_log /var/log/nginx/openkos-local-error.log;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /index.php {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $realpath_root/index.php;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+        fastcgi_param HTTP_PROXY "";
+        fastcgi_pass unix:/run/php/openkos.sock;
+        fastcgi_buffer_size 32k;
+        fastcgi_buffers 8 32k;
+        fastcgi_busy_buffers_size 64k;
+        fastcgi_hide_header X-Powered-By;
+    }
+
+    location ~ \.php$ { return 404; }
+    location ~ /\. { deny all; }
+
+    location ^~ /build/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+}

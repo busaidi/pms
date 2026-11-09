@@ -1,0 +1,94 @@
+{% load i18n %}{% load static %}{% get_current_language as CURRENT_LANGUAGE %}
+<!doctype html>
+<html lang="{{ CURRENT_LANGUAGE }}" dir="{% if CURRENT_LANGUAGE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#073b43">
+  <title>{% block title %}{% translate "Oman Skylight PMS" %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/app.css' %}">
+  <script defer src="{% static 'js/app.js' %}"></script>
+</head>
+<body>
+  {% include "includes/language_switcher.html" %}
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="icon-grid" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24"><path d="M5 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17M3 21h18M9 7h3M9 11h3M9 15h3M16 9h3v12"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="icon-card" viewBox="0 0 24 24"><path d="M3 6h18v12H3zM3 10h18M7 15h3"/></symbol>
+    <symbol id="icon-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5-5l2.1 2.1-2.4 2.4-2.1-2.1a4 4 0 0 0 5 5L4 17l3 3 7.7-8.3a4 4 0 0 0 5-5l-2.1 2.1-2.4-2.4z"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+    <symbol id="icon-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21h-4v-.08A1.7 1.7 0 0 0 8.94 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.57 15 1.7 1.7 0 0 0 3 14H3v-4h.08A1.7 1.7 0 0 0 4.6 8.94a1.7 1.7 0 0 0-.34-1.88L4.2 7l2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.57 1.7 1.7 0 0 0 10 3V3h4v.08a1.7 1.7 0 0 0 1.06 1.52 1.7 1.7 0 0 0 1.88-.34L17 4.2 19.8 7l-.06.06a1.7 1.7 0 0 0-.34 1.88A1.7 1.7 0 0 0 21 10h.08v4H21a1.7 1.7 0 0 0-1.6 1z"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+    <symbol id="icon-sign-out" viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M15 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4"/></symbol>
+  </svg>
+
+  {% if user.is_authenticated %}
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="{% translate "Primary navigation" %}">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <div><strong>{% translate "Oman Skylight" %}</strong><small>{% translate "Property Management" %}</small></div>
+      </div>
+      <nav class="nav-list">
+        <a class="nav-item{% if active_navigation == 'overview' %} active{% endif %}" href="{% url 'dashboard' %}"{% if active_navigation == 'overview' %} aria-current="page"{% endif %}><svg><use href="#icon-grid"/></svg><span>{% translate "Overview" %}</span></a>
+        {% if can_view_properties %}<a class="nav-item{% if active_navigation == 'properties' %} active{% endif %}" href="{% url 'property_list' %}"{% if active_navigation == 'properties' %} aria-current="page"{% endif %}><svg><use href="#icon-building"/></svg><span>{% translate "Properties" %}</span></a>{% endif %}
+        {% if can_view_tenants %}<a class="nav-item{% if active_navigation == 'tenants' %} active{% endif %}" href="{% url 'tenant_list' %}"{% if active_navigation == 'tenants' %} aria-current="page"{% endif %}><svg><use href="#icon-users"/></svg><span>{% translate "Tenants" %}</span></a>{% endif %}
+        {% if can_view_tenants %}<a class="nav-item{% if active_navigation == 'applications' %} active{% endif %}" href="{% url 'application_list' %}"{% if active_navigation == 'applications' %} aria-current="page"{% endif %}><svg><use href="#icon-file"/></svg><span>{% translate "Applications" %}</span></a>{% endif %}
+        {% if can_view_leases %}<a class="nav-item{% if active_navigation == 'leases' %} active{% endif %}" href="{% url 'lease_list' %}"{% if active_navigation == 'leases' %} aria-current="page"{% endif %}><svg><use href="#icon-file"/></svg><span>{% translate "Leases" %}</span></a>{% endif %}
+        {% if can_view_financials %}<a class="nav-item{% if active_navigation == 'invoices' %} active{% endif %}" href="{% url 'invoice_list' %}"{% if active_navigation == 'invoices' %} aria-current="page"{% endif %}><svg><use href="#icon-doc"/></svg><span>{% translate "Invoices" %}</span></a>
+        <a class="nav-item{% if active_navigation == 'payments' %} active{% endif %}" href="{% url 'payment_list' %}"{% if active_navigation == 'payments' %} aria-current="page"{% endif %}><svg><use href="#icon-card"/></svg><span>{% translate "Payments" %}</span></a>
+        <a class="nav-item{% if active_navigation == 'financial-reports' %} active{% endif %}" href="{% url 'financial_dashboard' %}"{% if active_navigation == 'financial-reports' %} aria-current="page"{% endif %}><svg><use href="#icon-chart"/></svg><span>{% translate "Financial report" %}</span></a>{% endif %}
+        {% if can_view_maintenance %}<a class="nav-item{% if active_navigation == 'maintenance' %} active{% endif %}" href="{% url 'maintenance_list' %}"{% if active_navigation == 'maintenance' %} aria-current="page"{% endif %}><svg><use href="#icon-tool"/></svg><span>{% translate "Maintenance" %}</span></a>{% endif %}
+        {% if can_view_financials %}<a class="nav-item{% if active_navigation == 'expenses' %} active{% endif %}" href="{% url 'expense_list' %}"{% if active_navigation == 'expenses' %} aria-current="page"{% endif %}><svg><use href="#icon-chart"/></svg><span>{% translate "Expenses" %}</span></a>{% endif %}
+        <a class="nav-item{% if active_navigation == 'utilities' %} active{% endif %}" href="{% url 'utility_list' %}"{% if active_navigation == 'utilities' %} aria-current="page"{% endif %}><svg><use href="#icon-card"/></svg><span>{% translate "Utilities" %}</span></a>
+        <a class="nav-item{% if active_navigation == 'inspections' %} active{% endif %}" href="{% url 'inspection_list' %}"{% if active_navigation == 'inspections' %} aria-current="page"{% endif %}><svg><use href="#icon-check"/></svg><span>{% translate "Inspections" %}</span></a>
+      </nav>
+      <div class="sidebar-bottom">
+        {% if has_portal_identity %}<a class="nav-item{% if active_navigation == 'portal' %} active{% endif %}" href="{% url 'portal_dashboard' %}"{% if active_navigation == 'portal' %} aria-current="page"{% endif %}><svg><use href="#icon-building"/></svg><span>{% translate "My portal" %}</span></a>{% endif %}
+        {% if can_manage_users %}<a class="nav-item{% if active_navigation == 'team' %} active{% endif %}" href="{% url 'team' %}"{% if active_navigation == 'team' %} aria-current="page"{% endif %}><svg><use href="#icon-users"/></svg><span>{% translate "Team" %}</span></a>{% endif %}
+        {% if can_manage_roles %}<a class="nav-item{% if active_navigation == 'roles' %} active{% endif %}" href="{% url 'roles' %}"{% if active_navigation == 'roles' %} aria-current="page"{% endif %}><svg><use href="#icon-check"/></svg><span>{% translate "Roles" %}</span></a>{% endif %}
+        {% if can_manage_settings %}<a class="nav-item{% if active_navigation == 'integrations' %} active{% endif %}" href="{% url 'integration_list' %}"{% if active_navigation == 'integrations' %} aria-current="page"{% endif %}><svg><use href="#icon-cog"/></svg><span>{% translate "Integrations" %}</span></a>{% endif %}
+        <a class="nav-item{% if active_navigation == 'administration' %} active{% endif %}" href="/admin/"{% if active_navigation == 'administration' %} aria-current="page"{% endif %}><svg><use href="#icon-cog"/></svg><span>{% translate "Administration" %}</span></a>
+        <p>{% translate "Properties. People." %}<br>{% translate "A brighter Oman." %}</p>
+      </div>
+    </aside>
+    <div class="sidebar-backdrop" data-sidebar-close></div>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="icon-button menu-button" type="button" aria-label="{% translate "Open navigation" %}" aria-controls="sidebar" aria-expanded="false" data-sidebar-open><svg><use href="#icon-menu"/></svg></button>
+        <form class="search-box" method="get" action="{% url 'global_search' %}" role="search">
+          <svg><use href="#icon-search"/></svg>
+          <input type="search" name="q" value="{{ request.GET.q }}" placeholder="{% translate "Search properties, tenants, or leases" %}" aria-label="{% translate "Search" %}">
+        </form>
+        <a class="notification-link" href="{% url 'notifications' %}" aria-label="{% translate "Notifications" %}"><svg><use href="#icon-file"/></svg>{% if unread_notifications %}<span>{{ unread_notifications }}</span>{% endif %}</a>
+        <div class="account" data-user-menu>
+          <button class="account-trigger" type="button" aria-expanded="false" aria-controls="user-menu" data-user-menu-trigger>
+            <span class="avatar">{{ user.username|slice:":2"|upper }}</span>
+            <span class="account-identity"><strong>{{ user.get_full_name|default:user.username }}</strong><small>{% translate "Property manager" %}</small></span>
+            <svg class="account-chevron" aria-hidden="true"><use href="#icon-chevron"/></svg>
+            <span class="visually-hidden">{% translate "My account" %}</span>
+          </button>
+          <div class="user-menu-panel" id="user-menu" data-user-menu-panel hidden>
+            <a href="{% url 'account_profile' %}"{% if active_navigation == 'account' %} aria-current="page"{% endif %}><svg aria-hidden="true"><use href="#icon-cog"/></svg><span>{% translate "Profile" %}</span></a>
+            <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button type="submit" class="user-menu-sign-out"><svg aria-hidden="true"><use href="#icon-sign-out"/></svg><span>{% translate "Sign out" %}</span></button></form>
+          </div>
+        </div>
+      </header>
+      <div class="page-content">
+        {% if messages %}<div class="messages" role="status">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}
+        {% block content %}{% endblock %}
+      </div>
+    </main>
+  </div>
+  {% else %}
+    {% block anonymous_content %}{% endblock %}
+  {% endif %}
+</body>
+</html>

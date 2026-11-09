@@ -1,0 +1,13 @@
+{% extends "portal/public_base.html" %}{% load i18n %}{% load pms_i18n %}
+{% block title %}{{ property.name }} {% translate "· Oman Skylight" %}{% endblock %}
+{% block content %}
+<main class="listing-detail">
+  <a class="back-link" href="{% url 'listing_index' %}">{% translate "← All properties" %}</a>
+  <section class="detail-hero"><div><p class="eyebrow">{{ property.property_type.name|default:_("Managed property") }}</p><h1>{{ property.name }}</h1><p>{{ property.address }}</p></div><a class="button" href="{% url 'listing_apply' property.slug %}">{% translate "Apply now" %}</a></section>
+  {% if gallery_media %}<section class="public-gallery" aria-label="{% translate "Property gallery" %}">{% for media in gallery_media %}<figure><img src="{% url 'public_listing_media' media.pk %}" alt="{{ media.caption|default:property.name }}" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">{% if media.caption %}<figcaption>{{ media.caption }}</figcaption>{% endif %}</figure>{% endfor %}</section>{% endif %}
+  <section class="detail-grid">
+    <article class="panel"><p class="eyebrow">{% translate "About" %}</p><h2>{% translate "A well-managed home in" %} {{ property.city }}</h2><p>{{ property.description|default:_("Comfortable homes supported by a responsive local property management team.") }}</p><div class="amenity-line large">{% for amenity in property.amenities.all %}<span>{{ amenity.name }}</span>{% endfor %}</div></article>
+    <article class="panel"><p class="eyebrow">{% translate "Current availability" %}</p><h2>{% translate "Available units" %}</h2><div class="public-unit-list">{% for unit in available_units %}<div><span><strong>{{ unit.name }}</strong><small>{{ unit.bedrooms }} {% translate "bedroom" %}{{ unit.bedrooms|locale_pluralize }} · {{ unit.bathrooms }} {% translate "bath" %}{% if unit.unit_type.is_published %} · <a href="{% url 'listing_unit_type' property.slug unit.unit_type.public_slug %}">{% translate "View" %} {{ unit.unit_type.name }}</a>{% endif %}</small></span><strong>{% translate "OMR" %} {{ unit.monthly_rent }}<small>{% translate "/ month" %}</small></strong></div>{% empty %}<p>{% translate "There are no units available today. You can still contact us about future availability." %}</p>{% endfor %}</div></article>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "base.html" %}{% load i18n %}{% load pms_i18n %}
+{% load humanize %}
+{% block title %}{% translate "Overview · Oman Skylight PMS" %}{% endblock %}
+{% block content %}
+<section class="page-heading">
+  <div>
+    <p class="eyebrow">{% translate "Good morning," %} {{ user.first_name|default:user.username }}</p>
+    <h1>{% translate "Portfolio overview" %}</h1>
+    <p>{% now "l, j F Y" %} <span aria-hidden="true">·</span> {% translate "Muscat, Oman" %}</p>
+  </div>
+  <a class="button" href="{% url 'property_create' %}">{% translate "Add property" %} <svg><use href="#icon-arrow"/></svg></a>
+</section>
+
+<section class="metric-grid" aria-label="{% translate "Portfolio metrics" %}">
+  <article class="metric-card">
+    <div class="metric-icon"><svg><use href="#icon-users"/></svg></div>
+    <div><p>{% translate "Occupancy rate" %}</p><strong>{{ occupancy }}%</strong><small>{{ occupied_units }} {% translate "of" %} {{ total_units }} {% translate "units occupied" %}</small></div>
+  </article>
+  <article class="metric-card">
+    <div class="metric-icon"><svg><use href="#icon-card"/></svg></div>
+    <div><p>{% translate "Active monthly rent" %}</p><strong>{% translate "OMR" %} {{ monthly_rent|floatformat:3|intcomma }}</strong><small>{% translate "Across current leases" %}</small></div>
+  </article>
+  <article class="metric-card attention">
+    <div class="metric-icon"><svg><use href="#icon-card"/></svg></div>
+    <div><p>{% translate "Overdue rent" %}</p><strong>{% translate "OMR" %} {{ overdue_total|floatformat:3|intcomma }}</strong><small>{% translate "Outstanding issued invoices" %}</small></div>
+  </article>
+  <article class="metric-card">
+    <div class="metric-icon"><svg><use href="#icon-tool"/></svg></div>
+    <div><p>{% translate "Open maintenance" %}</p><strong>{{ open_maintenance }}</strong><small>{% translate "Requests needing attention" %}</small></div>
+  </article>
+</section>
+
+<section class="dashboard-grid">
+  <article class="panel portfolio-panel">
+    <div class="panel-heading"><div><p class="eyebrow">{% translate "Live inventory" %}</p><h2>{% translate "Portfolio occupancy" %}</h2></div><span>{{ property_count }} {% translate "properties" %}</span></div>
+    <div class="occupancy-layout">
+      <div class="donut" style="--value: {{ occupancy }}"><span><strong>{{ occupancy }}%</strong>{% translate "occupied" %}</span></div>
+      <dl class="legend">
+        <div><dt><i class="dot occupied"></i>{% translate "Occupied" %}</dt><dd>{{ occupied_units }}</dd></div>
+        <div><dt><i class="dot available"></i>{% translate "Available" %}</dt><dd>{{ available_units }}</dd></div>
+        <div><dt><i class="dot maintenance"></i>{% translate "Maintenance" %}</dt><dd>{{ maintenance_units }}</dd></div>
+        <div class="legend-total"><dt>{% translate "Total units" %}</dt><dd>{{ total_units }}</dd></div>
+      </dl>
+    </div>
+  </article>
+
+  <article class="panel properties-panel">
+    <div class="panel-heading"><div><p class="eyebrow">{% translate "By property" %}</p><h2>{% translate "Current portfolio" %}</h2></div><a href="{% url 'property_list' %}">{% translate "View all" %}</a></div>
+    <div class="property-list">
+      {% for property in properties %}
+      <div class="property-row">
+        <span class="property-monogram">{{ property.name|slice:":1" }}</span>
+        <div><strong>{{ property.name }}</strong><small>{{ property.city }}</small></div>
+        <span>{{ property.occupied_total }}/{{ property.unit_total }}</span>
+      </div>
+      {% empty %}
+      <div class="empty-state"><strong>{% translate "Your portfolio starts here" %}</strong><p>{% translate "Add the first property and its units to populate this view." %}</p><a href="{% url 'property_create' %}">{% translate "Add a property" %}</a></div>
+      {% endfor %}
+    </div>
+  </article>
+
+  <article class="panel briefing-panel">
+    <div class="panel-heading"><div><p class="eyebrow">{% translate "Action queue" %}</p><h2>{% translate "Operational briefing" %}</h2></div></div>
+    <div class="brief-list">
+      <a href="/admin/properties/unit/?status__exact=available"><span class="brief-icon amber"><svg><use href="#icon-building"/></svg></span><span><strong>{{ available_units }} {% translate "available unit" %}{{ available_units|locale_pluralize }}</strong><small>{% translate "Review availability and current asking rent" %}</small></span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a>
+      <a href="{% url 'maintenance_list' %}"><span class="brief-icon teal"><svg><use href="#icon-tool"/></svg></span><span><strong>{{ open_maintenance }} {% translate "open maintenance request" %}{{ open_maintenance|locale_pluralize }}</strong><small>{% translate "Review priority, assignment, and progress" %}</small></span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a>
+      <a href="{% url 'rent_dashboard' %}"><span class="brief-icon blue"><svg><use href="#icon-file"/></svg></span><span><strong>{% translate "Rent collection queue" %}</strong><small>{% translate "Review due, overdue, and collected rent" %}</small></span><svg class="row-arrow"><use href="#icon-arrow"/></svg></a>
+    </div>
+  </article>
+
+  <article class="panel activity-panel">
+    <div class="panel-heading"><div><p class="eyebrow">{% translate "Latest records" %}</p><h2>{% translate "Recent leases" %}</h2></div><a href="/admin/properties/lease/">{% translate "View all" %}</a></div>
+    <div class="activity-list">
+      {% for lease in recent_leases %}
+      <div><span class="brief-icon teal"><svg><use href="#icon-file"/></svg></span><span><strong>{{ lease.tenant.full_name }}</strong><small>{{ lease.property.name }} · {{ lease.unit.name|default:_("Whole property") }}</small></span><time>{{ lease.start_date|date:"j M Y" }}</time></div>
+      {% empty %}
+      <div class="empty-state compact"><strong>{% translate "No lease activity yet" %}</strong><p>{% translate "New leases will appear here." %}</p></div>
+      {% endfor %}
+    </div>
+  </article>
+</section>
+{% endblock %}

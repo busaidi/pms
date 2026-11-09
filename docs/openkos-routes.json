@@ -1,0 +1,5009 @@
+[
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "/",
+    "name": "public.portal.index",
+    "action": "App\\Http\\Controllers\\PublicListingController@pageIndex",
+    "middleware": [
+      "web",
+      "throttle:60,1"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "api/webhooks/payment/{gateway}",
+    "name": "webhooks.payment",
+    "action": "App\\Http\\Controllers\\PaymentWebhookController",
+    "middleware": [
+      "api"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "payment webhooks",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "applications",
+    "name": "generated::l7o6TQZzzoqTmkW4",
+    "action": "Closure",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "applications/create",
+    "name": "generated::7nhiB1rzWVAcb6mj",
+    "action": "Closure",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "applications/{application}",
+    "name": "generated::bB06Uq45cCv4R0V1",
+    "action": "Closure",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "branding/{asset}",
+    "name": "branding.asset",
+    "action": "App\\Http\\Controllers\\BrandingAssetController",
+    "middleware": [
+      "web"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "dashboard",
+    "name": "dashboard",
+    "action": "App\\Http\\Controllers\\Dashboard\\OverviewController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "reporting dashboards",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "dashboard/financial",
+    "name": "dashboard.financial",
+    "action": "App\\Http\\Controllers\\Dashboard\\FinancialController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:financials.view"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "reporting dashboards",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "dashboard/rent",
+    "name": "dashboard.rent",
+    "action": "App\\Http\\Controllers\\Dashboard\\RentController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "reporting dashboards",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "data-transfer",
+    "name": "data-transfer.index",
+    "action": "App\\Http\\Controllers\\DataTransferController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "data-transfer/commit",
+    "name": "data-transfer.commit",
+    "action": "App\\Http\\Controllers\\DataTransferController@commit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "data-transfer/preview",
+    "name": "data-transfer.preview",
+    "action": "App\\Http\\Controllers\\DataTransferController@preview",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "data-transfer/{dataset}/export",
+    "name": "data-transfer.export",
+    "action": "App\\Http\\Controllers\\DataTransferController@export",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "data-transfer/{dataset}/template",
+    "name": "data-transfer.template",
+    "action": "App\\Http\\Controllers\\DataTransferController@template",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "email/verification-notification",
+    "name": "verification.send",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\EmailVerificationNotificationController@store",
+    "middleware": [
+      "web",
+      "auth:web",
+      "throttle:6,1"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "reminders and notification delivery",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "email/verify",
+    "name": "verification.notice",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\EmailVerificationPromptController@__invoke",
+    "middleware": [
+      "web",
+      "auth:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "email/verify/{id}/{hash}",
+    "name": "verification.verify",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\VerifyEmailController@__invoke",
+    "middleware": [
+      "web",
+      "auth:web",
+      "signed",
+      "throttle:6,1"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "expenses",
+    "name": "expenses.index",
+    "action": "App\\Http\\Controllers\\ExpenseController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.view"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "expenses",
+    "name": "expenses.store",
+    "action": "App\\Http\\Controllers\\ExpenseController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.create"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "expenses/recurring",
+    "name": "expenses.recurring.index",
+    "action": "App\\Http\\Controllers\\RecurringExpenseController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.view"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "expenses/recurring",
+    "name": "expenses.recurring.store",
+    "action": "App\\Http\\Controllers\\RecurringExpenseController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.create"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "expenses/recurring/{recurringExpense}",
+    "name": "expenses.recurring.update",
+    "action": "App\\Http\\Controllers\\RecurringExpenseController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.update"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "expenses/recurring/{recurringExpense}/pause",
+    "name": "expenses.recurring.pause",
+    "action": "App\\Http\\Controllers\\RecurringExpenseController@pause",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.update"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "expenses/recurring/{recurringExpense}/resume",
+    "name": "expenses.recurring.resume",
+    "action": "App\\Http\\Controllers\\RecurringExpenseController@resume",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.update"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "expenses/transfer/export",
+    "name": "expenses.transfer.export",
+    "action": "App\\Http\\Controllers\\DataTransferController@exportPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.export"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "expenses/transfer/import",
+    "name": "expenses.transfer.import",
+    "action": "App\\Http\\Controllers\\DataTransferController@importPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.import"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "expenses/{expense}",
+    "name": "expenses.update",
+    "action": "App\\Http\\Controllers\\ExpenseController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.update"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "expenses/{expense}",
+    "name": "expenses.destroy",
+    "action": "App\\Http\\Controllers\\ExpenseController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.delete"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "expenses/{expense}/receipt",
+    "name": "expenses.receipt",
+    "action": "App\\Http\\Controllers\\ExpenseController@receipt",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:expenses.view"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "forgot-password",
+    "name": "password.request",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\PasswordResetLinkController@create",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "forgot-password",
+    "name": "password.email",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\PasswordResetLinkController@store",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "inspections",
+    "name": "inspections.index",
+    "action": "App\\Http\\Controllers\\InspectionController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.view"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "inspections/templates",
+    "name": "inspections.templates.index",
+    "action": "App\\Http\\Controllers\\InspectionTemplateController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspection-templates.manage"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "inspections/templates",
+    "name": "inspections.templates.store",
+    "action": "App\\Http\\Controllers\\InspectionTemplateController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspection-templates.manage"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "inspections/templates/{inspectionTemplate}",
+    "name": "inspections.templates.update",
+    "action": "App\\Http\\Controllers\\InspectionTemplateController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspection-templates.manage"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "inspections/{inspection}",
+    "name": "inspections.show",
+    "action": "App\\Http\\Controllers\\InspectionController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.view"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "inspections/{inspection}",
+    "name": "inspections.update",
+    "action": "App\\Http\\Controllers\\InspectionController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "inspections/{inspection}/complete",
+    "name": "inspections.complete",
+    "action": "App\\Http\\Controllers\\InspectionController@complete",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.complete"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "inspections/{inspection}/items/{item}/photos",
+    "name": "inspections.items.photos.store",
+    "action": "App\\Http\\Controllers\\InspectionMediaController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "inspections/{inspection}/items/{item}/photos/{media}",
+    "name": "inspections.items.photos.show",
+    "action": "App\\Http\\Controllers\\InspectionMediaController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.view"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "inspections/{inspection}/items/{item}/photos/{media}",
+    "name": "inspections.items.photos.destroy",
+    "action": "App\\Http\\Controllers\\InspectionMediaController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "invitations/accept",
+    "name": "users.invitations.complete",
+    "action": "App\\Http\\Controllers\\UserController@completeInvitation",
+    "middleware": [
+      "web",
+      "guest"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "invitations/{token}",
+    "name": "users.invitations.accept",
+    "action": "App\\Http\\Controllers\\UserController@acceptInvitation",
+    "middleware": [
+      "web",
+      "guest"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases",
+    "name": "leases.index",
+    "action": "App\\Http\\Controllers\\LeaseController@globalIndex",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}",
+    "name": "leases.show",
+    "action": "App\\Http\\Controllers\\LeaseController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "leases/{lease}/deposit-settlement",
+    "name": "leases.deposit-settlement",
+    "action": "App\\Http\\Controllers\\LeaseController@saveDepositSettlement",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.move_out"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/documents",
+    "name": "leases.workspace.documents",
+    "action": "App\\Http\\Controllers\\LeaseController@documents",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/inspections",
+    "name": "leases.workspace.inspections",
+    "action": "App\\Http\\Controllers\\InspectionController@leaseIndex",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.view"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "leases/{lease}/inspections",
+    "name": "leases.inspections.store",
+    "action": "App\\Http\\Controllers\\InspectionController@storeForLease",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.create"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/invoices",
+    "name": "leases.workspace.invoices",
+    "action": "App\\Http\\Controllers\\LeaseInvoiceController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/invoices/{invoice}",
+    "name": "leases.workspace.invoices.show",
+    "action": "App\\Http\\Controllers\\LeaseInvoiceController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/invoices/{invoice}/download",
+    "name": "leases.workspace.invoices.download",
+    "action": "App\\Http\\Controllers\\LeaseInvoiceController@download",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "leases/{lease}/invoices/{invoice}/payment-attempts/{paymentAttempt}/recheck",
+    "name": "leases.workspace.invoices.payment-attempts.recheck",
+    "action": "App\\Http\\Controllers\\PaymentAttemptController@recheck",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:payments.verify"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/invoices/{invoice}/print",
+    "name": "leases.workspace.invoices.print",
+    "action": "App\\Http\\Controllers\\LeaseInvoiceController@print",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "leases/{lease}/move-out",
+    "name": "leases.move-out",
+    "action": "App\\Http\\Controllers\\LeaseController@moveOut",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.move_out"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/payments",
+    "name": "leases.workspace.payments",
+    "action": "App\\Http\\Controllers\\LeaseController@payments",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "payments and proof review",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "leases/{lease}/payments",
+    "name": "leases.payments.store",
+    "action": "App\\Http\\Controllers\\PaymentController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:payments.create"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "payments and proof review",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "leases/{lease}/renew",
+    "name": "leases.renew",
+    "action": "App\\Http\\Controllers\\LeaseController@renew",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.renew"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "leases/{lease}/rent-schedule",
+    "name": "leases.rent-schedule",
+    "action": "App\\Http\\Controllers\\LeaseRentScheduleController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "leases/{lease}/send-reminder",
+    "name": "leases.send-reminder",
+    "action": "App\\Http\\Controllers\\LeaseController@sendReminder",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner",
+      "can:reminders.send"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "reminders and notification delivery",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS",
+    "uri": "listings",
+    "name": "public.portal.redirect",
+    "action": "Illuminate\\Routing\\RedirectController",
+    "middleware": [
+      "web",
+      "throttle:60,1"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "listings/media/{media}",
+    "name": "public.portal.media",
+    "action": "App\\Http\\Controllers\\PublicListingMediaController@show",
+    "middleware": [
+      "web",
+      "throttle:60,1"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "listings/{property:public_slug}",
+    "name": "public.portal.show",
+    "action": "App\\Http\\Controllers\\PublicListingController@pageShow",
+    "middleware": [
+      "web",
+      "throttle:60,1"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "listings/{property:public_slug}/unit-types/{unitType:public_slug}",
+    "name": "public.portal.unit-types.show",
+    "action": "App\\Http\\Controllers\\PublicListingController@pageUnitType",
+    "middleware": [
+      "web",
+      "throttle:60,1"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "login",
+    "name": "login",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\AuthenticatedSessionController@create",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "login",
+    "name": "login.store",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\AuthenticatedSessionController@store",
+    "middleware": [
+      "web",
+      "guest:web",
+      "throttle:login"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "logout",
+    "name": "logout",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\AuthenticatedSessionController@destroy",
+    "middleware": [
+      "web",
+      "auth:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "maintenance-tickets",
+    "name": "maintenance-tickets.index",
+    "action": "App\\Http\\Controllers\\MaintenanceTicketController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:maintenance-tickets.view"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "maintenance",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "maintenance-tickets",
+    "name": "maintenance-tickets.store",
+    "action": "App\\Http\\Controllers\\MaintenanceTicketController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:maintenance-tickets.create"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "maintenance",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "maintenance-tickets/{ticket}",
+    "name": "maintenance-tickets.show",
+    "action": "App\\Http\\Controllers\\MaintenanceTicketController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:maintenance-tickets.view"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "maintenance",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "maintenance-tickets/{ticket}",
+    "name": "maintenance-tickets.update",
+    "action": "App\\Http\\Controllers\\MaintenanceTicketController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:maintenance-tickets.update"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "maintenance",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "maintenance-tickets/{ticket}",
+    "name": "maintenance-tickets.destroy",
+    "action": "App\\Http\\Controllers\\MaintenanceTicketController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:maintenance-tickets.delete"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "maintenance",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "maintenance-tickets/{ticket}/assign",
+    "name": "maintenance-tickets.assign",
+    "action": "App\\Http\\Controllers\\MaintenanceTicketController@assign",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "maintenance",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "passkeys/confirm",
+    "name": "passkey.confirm",
+    "action": "Laravel\\Passkeys\\Http\\Controllers\\PasskeyConfirmationController@store",
+    "middleware": [
+      "web",
+      "auth:web",
+      "throttle:passkeys"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "passkeys/confirm/options",
+    "name": "passkey.confirm-options",
+    "action": "Laravel\\Passkeys\\Http\\Controllers\\PasskeyConfirmationController@index",
+    "middleware": [
+      "web",
+      "auth:web",
+      "throttle:passkeys"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "passkeys/login",
+    "name": "passkey.login",
+    "action": "Laravel\\Passkeys\\Http\\Controllers\\PasskeyLoginController@store",
+    "middleware": [
+      "web",
+      "guest:web",
+      "throttle:passkeys"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "passkeys/login/options",
+    "name": "passkey.login-options",
+    "action": "Laravel\\Passkeys\\Http\\Controllers\\PasskeyLoginController@index",
+    "middleware": [
+      "web",
+      "guest:web",
+      "throttle:passkeys"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "pay/invoices/{token}",
+    "name": "payments.signed.show",
+    "action": "App\\Http\\Controllers\\SignedPaymentController@show",
+    "middleware": [
+      "web",
+      "throttle:30,1"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "pay/invoices/{token}",
+    "name": "payments.signed.pay",
+    "action": "App\\Http\\Controllers\\SignedPaymentController@pay",
+    "middleware": [
+      "web",
+      "throttle:30,1"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "invoicing and rent schedules",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "payments/{payment}/proof/{proof}",
+    "name": "payments.proof",
+    "action": "App\\Http\\Controllers\\PaymentController@proof",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "payments and proof review",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "payments/{payment}/verify",
+    "name": "payments.verify",
+    "action": "App\\Http\\Controllers\\PaymentController@verify",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:payments.verify"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "payments and proof review",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal",
+    "name": "portal.",
+    "action": "Closure",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 1,
+    "feature": "shared application shell",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/applications",
+    "name": "applications.index",
+    "action": "App\\Http\\Controllers\\ApplicationController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "portal/applications",
+    "name": "applications.store",
+    "action": "App\\Http\\Controllers\\ApplicationController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "throttle:10,1"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/applications/create",
+    "name": "applications.create",
+    "action": "App\\Http\\Controllers\\ApplicationController@create",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/applications/{application}",
+    "name": "applications.show",
+    "action": "App\\Http\\Controllers\\ApplicationController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "portal/applications/{application}/convert",
+    "name": "applications.convert",
+    "action": "App\\Http\\Controllers\\ApplicationController@convert",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "portal/applications/{application}/status",
+    "name": "applications.transition",
+    "action": "App\\Http\\Controllers\\ApplicationController@transition",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/billing",
+    "name": "portal.billing.index",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "portal/billing",
+    "name": "portal.billing.store",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/billing/history/invoices",
+    "name": "portal.billing.history.invoices",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@invoiceHistory",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/billing/history/payments",
+    "name": "portal.billing.history.payments",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@paymentHistory",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/billing/invoices/{invoice}",
+    "name": "portal.billing.invoices.show",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@invoice",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/billing/invoices/{invoice}/download",
+    "name": "portal.billing.invoices.download",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@download",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "portal/billing/invoices/{invoice}/pay",
+    "name": "portal.billing.invoices.pay",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@pay",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/billing/invoices/{invoice}/print",
+    "name": "portal.billing.invoices.print",
+    "action": "App\\Http\\Controllers\\TenantPortal\\PaymentController@print",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/dashboard",
+    "name": "portal.dashboard",
+    "action": "App\\Http\\Controllers\\TenantPortal\\DashboardController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/lease",
+    "name": "generated::EcasvrvxLu4VAhQE",
+    "action": "Closure",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/leases",
+    "name": "portal.lease.index",
+    "action": "App\\Http\\Controllers\\TenantPortal\\LeaseController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/leases/{lease}",
+    "name": "portal.lease.show",
+    "action": "App\\Http\\Controllers\\TenantPortal\\LeaseController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/maintenance",
+    "name": "generated::wf0x2qfYUlnQiACV",
+    "action": "Closure",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/maintenance-tickets",
+    "name": "portal.maintenance-tickets.index",
+    "action": "App\\Http\\Controllers\\TenantPortal\\MaintenanceTicketController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "portal/maintenance-tickets",
+    "name": "portal.maintenance-tickets.store",
+    "action": "App\\Http\\Controllers\\TenantPortal\\MaintenanceTicketController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/maintenance-tickets/{ticket}",
+    "name": "portal.maintenance-tickets.show",
+    "action": "App\\Http\\Controllers\\TenantPortal\\MaintenanceTicketController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/notifications",
+    "name": "portal.notifications.index",
+    "action": "App\\Http\\Controllers\\TenantPortal\\NotificationController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "portal/notifications/read-all",
+    "name": "portal.notifications.read-all",
+    "action": "App\\Http\\Controllers\\TenantPortal\\NotificationController@markAllAsRead",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "portal/notifications/{notification}/read",
+    "name": "portal.notifications.read",
+    "action": "App\\Http\\Controllers\\TenantPortal\\NotificationController@markAsRead",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "portal/profile",
+    "name": "portal.profile.edit",
+    "action": "App\\Http\\Controllers\\Settings\\ProfileController@edit",
+    "middleware": [
+      "web",
+      "auth"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "portal/profile",
+    "name": "portal.profile.update",
+    "action": "App\\Http\\Controllers\\Settings\\ProfileController@update",
+    "middleware": [
+      "web",
+      "auth"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties",
+    "name": "properties.index",
+    "action": "App\\Http\\Controllers\\PropertyController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties",
+    "name": "properties.store",
+    "action": "App\\Http\\Controllers\\PropertyController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.create"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/transfer/export",
+    "name": "properties.transfer.export",
+    "action": "App\\Http\\Controllers\\DataTransferController@exportPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.export"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/transfer/import",
+    "name": "properties.transfer.import",
+    "action": "App\\Http\\Controllers\\DataTransferController@importPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.import"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}",
+    "name": "properties.show",
+    "action": "App\\Http\\Controllers\\PropertyController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}",
+    "name": "properties.update",
+    "action": "App\\Http\\Controllers\\PropertyController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "properties/{property}",
+    "name": "properties.destroy",
+    "action": "App\\Http\\Controllers\\PropertyController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.delete"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/documents",
+    "name": "properties.workspace.documents",
+    "action": "App\\Http\\Controllers\\PropertyDocumentsController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/facilities",
+    "name": "properties.facilities.update",
+    "action": "App\\Http\\Controllers\\PropertyAmenityController@syncProperty",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/gallery",
+    "name": "properties.gallery.store",
+    "action": "App\\Http\\Controllers\\PropertyMediaController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/gallery/reorder",
+    "name": "properties.gallery.reorder",
+    "action": "App\\Http\\Controllers\\PropertyMediaController@reorder",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/gallery/{media}",
+    "name": "properties.gallery.show",
+    "action": "App\\Http\\Controllers\\PropertyMediaController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "properties/{property}/gallery/{media}",
+    "name": "properties.gallery.update",
+    "action": "App\\Http\\Controllers\\PropertyMediaController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "properties/{property}/gallery/{media}",
+    "name": "properties.gallery.destroy",
+    "action": "App\\Http\\Controllers\\PropertyMediaController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/inspections",
+    "name": "properties.workspace.inspections",
+    "action": "App\\Http\\Controllers\\InspectionController@propertyIndex",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.view"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/inspections",
+    "name": "properties.inspections.store",
+    "action": "App\\Http\\Controllers\\InspectionController@storeForProperty",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:inspections.create"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/leases",
+    "name": "properties.leases.store",
+    "action": "App\\Http\\Controllers\\LeaseController@storeForProperty",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:leases.create"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/leases",
+    "name": "properties.workspace.leases",
+    "action": "App\\Http\\Controllers\\PropertyLeasesController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/listing",
+    "name": "properties.listing",
+    "action": "App\\Http\\Controllers\\PropertyController@listing",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/pricing",
+    "name": "properties.pricing.index",
+    "action": "App\\Http\\Controllers\\PropertyRateController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.view",
+      "property-rental-mode:property_pricing"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/pricing",
+    "name": "properties.pricing.update",
+    "action": "App\\Http\\Controllers\\PropertyRateController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update",
+      "property-rental-mode:property_pricing"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "properties/{property}/publication",
+    "name": "properties.publication.update",
+    "action": "App\\Http\\Controllers\\PropertyController@updatePublication",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/restore",
+    "name": "properties.restore",
+    "action": "App\\Http\\Controllers\\PropertyController@restore",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/unit-types",
+    "name": "properties.unit-types.index",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/unit-types",
+    "name": "properties.unit-types.store",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/unit-types/{unitType}",
+    "name": "properties.unit-types.show",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/unit-types/{unitType}",
+    "name": "properties.unit-types.update",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "properties/{property}/unit-types/{unitType}",
+    "name": "properties.unit-types.destroy",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/unit-types/{unitType}/gallery",
+    "name": "properties.unit-types.gallery.store",
+    "action": "App\\Http\\Controllers\\UnitTypeMediaController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/unit-types/{unitType}/gallery/reorder",
+    "name": "properties.unit-types.gallery.reorder",
+    "action": "App\\Http\\Controllers\\UnitTypeMediaController@reorder",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/unit-types/{unitType}/gallery/{media}",
+    "name": "properties.unit-types.gallery.show",
+    "action": "App\\Http\\Controllers\\UnitTypeMediaController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "properties/{property}/unit-types/{unitType}/gallery/{media}",
+    "name": "properties.unit-types.gallery.update",
+    "action": "App\\Http\\Controllers\\UnitTypeMediaController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "properties/{property}/unit-types/{unitType}/gallery/{media}",
+    "name": "properties.unit-types.gallery.destroy",
+    "action": "App\\Http\\Controllers\\UnitTypeMediaController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/unit-types/{unitType}/listing",
+    "name": "properties.unit-types.listing",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@listing",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "properties/{property}/unit-types/{unitType}/publication",
+    "name": "properties.unit-types.publication.update",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@updatePublication",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/unit-types/{unitType}/rates",
+    "name": "properties.unit-types.rates.index",
+    "action": "App\\Http\\Controllers\\UnitTypeRateController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/unit-types/{unitType}/rates",
+    "name": "properties.unit-types.rates.update",
+    "action": "App\\Http\\Controllers\\UnitTypeRateController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/unit-types/{unitType}/restore",
+    "name": "properties.unit-types.restore",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@restore",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "properties/{property}/unit-types/{unitType}/status",
+    "name": "properties.unit-types.status.update",
+    "action": "App\\Http\\Controllers\\PropertyUnitTypeController@updateStatus",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:properties.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/unit-types/{unitType}/units",
+    "name": "properties.unit-types.units",
+    "action": "App\\Http\\Controllers\\UnitController@indexForUnitType",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units",
+    "name": "properties.units.index",
+    "action": "App\\Http\\Controllers\\UnitController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units",
+    "name": "properties.units.store",
+    "action": "App\\Http\\Controllers\\UnitController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.create"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/bulk-assign-unit-type",
+    "name": "properties.units.bulk-assign-unit-type",
+    "action": "App\\Http\\Controllers\\UnitController@bulkAssignUnitType",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/transfer/commit",
+    "name": "properties.units.transfer.commit",
+    "action": "App\\Http\\Controllers\\DataTransferController@commit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.import"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/transfer/export",
+    "name": "properties.units.transfer.export",
+    "action": "App\\Http\\Controllers\\DataTransferController@exportPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.export"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/transfer/import",
+    "name": "properties.units.transfer.import",
+    "action": "App\\Http\\Controllers\\DataTransferController@importPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.import"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/transfer/preview",
+    "name": "properties.units.transfer.preview",
+    "action": "App\\Http\\Controllers\\DataTransferController@preview",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.import"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}",
+    "name": "properties.units.show",
+    "action": "App\\Http\\Controllers\\UnitController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/units/{unit}",
+    "name": "properties.units.update",
+    "action": "App\\Http\\Controllers\\UnitController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "properties/{property}/units/{unit}",
+    "name": "properties.units.destroy",
+    "action": "App\\Http\\Controllers\\UnitController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.delete"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/inspections",
+    "name": "properties.units.inspections",
+    "action": "App\\Http\\Controllers\\InspectionController@unitIndex",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "property-rental-mode:unit_inventory",
+      "permission:inspections.view"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/inspections",
+    "name": "properties.units.inspections.store",
+    "action": "App\\Http\\Controllers\\InspectionController@storeForUnit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "property-rental-mode:unit_inventory",
+      "permission:inspections.create"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/lease-history",
+    "name": "properties.units.lease-history",
+    "action": "App\\Http\\Controllers\\UnitController@leaseHistory",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/leases",
+    "name": "properties.units.leases.index",
+    "action": "App\\Http\\Controllers\\LeaseController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:leases.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/leases",
+    "name": "properties.units.leases.store",
+    "action": "App\\Http\\Controllers\\LeaseController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:leases.create"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/units/{unit}/leases/{lease}",
+    "name": "properties.units.leases.update",
+    "action": "App\\Http\\Controllers\\LeaseController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:leases.update"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "properties/{property}/units/{unit}/leases/{lease}",
+    "name": "properties.units.leases.destroy",
+    "action": "App\\Http\\Controllers\\LeaseController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:leases.delete"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/leases/{lease}/move",
+    "name": "properties.units.leases.move",
+    "action": "App\\Http\\Controllers\\LeaseController@move",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:leases.move"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "leases and lifecycle actions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/maintenance-history",
+    "name": "properties.units.maintenance-history",
+    "action": "App\\Http\\Controllers\\UnitController@maintenanceHistory",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:maintenance-tickets.view"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "maintenance",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/rates",
+    "name": "properties.units.rates",
+    "action": "App\\Http\\Controllers\\UnitController@rates",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.view"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/rates/transfer/commit",
+    "name": "properties.units.rates.transfer.commit",
+    "action": "App\\Http\\Controllers\\DataTransferController@commit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:unit-rates.import"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/rates/transfer/export",
+    "name": "properties.units.rates.transfer.export",
+    "action": "App\\Http\\Controllers\\DataTransferController@exportPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:unit-rates.export"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/rates/transfer/import",
+    "name": "properties.units.rates.transfer.import",
+    "action": "App\\Http\\Controllers\\DataTransferController@importPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:unit-rates.import"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/rates/transfer/preview",
+    "name": "properties.units.rates.transfer.preview",
+    "action": "App\\Http\\Controllers\\DataTransferController@preview",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:unit-rates.import"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/restore",
+    "name": "properties.units.restore",
+    "action": "App\\Http\\Controllers\\UnitController@restore",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "properties/{property}/units/{unit}/utilities",
+    "name": "properties.units.utilities",
+    "action": "App\\Http\\Controllers\\UnitUtilityController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.view"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "utilities",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/utilities/meters",
+    "name": "properties.units.utilities.meters.store",
+    "action": "App\\Http\\Controllers\\UnitUtilityController@storeMeter",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "utilities",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/units/{unit}/utilities/meters/{meter}",
+    "name": "properties.units.utilities.meters.update",
+    "action": "App\\Http\\Controllers\\UnitUtilityController@updateMeter",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "utilities",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/utilities/meters/{meter}/readings",
+    "name": "properties.units.utilities.readings.store",
+    "action": "App\\Http\\Controllers\\UnitUtilityController@storeReading",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "utilities",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "properties/{property}/units/{unit}/utilities/meters/{meter}/readings/{reading}",
+    "name": "properties.units.utilities.readings.update",
+    "action": "App\\Http\\Controllers\\UnitUtilityController@updateReading",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "utilities",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "properties/{property}/units/{unit}/utilities/meters/{meter}/readings/{reading}",
+    "name": "properties.units.utilities.readings.destroy",
+    "action": "App\\Http\\Controllers\\UnitUtilityController@destroyReading",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "utilities",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "properties/{property}/units/{unit}/utilities/meters/{meter}/readings/{reading}/correction",
+    "name": "properties.units.utilities.readings.corrections.store",
+    "action": "App\\Http\\Controllers\\UnitUtilityController@storeCorrection",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "property-rental-mode:unit_inventory",
+      "permission:units.update"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "utilities",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS",
+    "uri": "public-portal",
+    "name": "public-portal.overview",
+    "action": "Illuminate\\Routing\\RedirectController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "public-portal/seo",
+    "name": "public-portal.seo",
+    "action": "App\\Http\\Controllers\\Settings\\PublicPortalController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "public-portal/seo",
+    "name": "public-portal.seo.update",
+    "action": "App\\Http\\Controllers\\Settings\\PublicPortalController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "public-portal/seo/social-image",
+    "name": "public-portal.seo.social-image.destroy",
+    "action": "App\\Http\\Controllers\\Settings\\PublicPortalController@removeSocialImage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "public-portal/seo/social-image/{asset}",
+    "name": "public-portal.seo.social-image.update",
+    "action": "App\\Http\\Controllers\\Settings\\PublicPortalController@updateSocialImage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 10,
+    "feature": "tenant/applicant portal",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "register",
+    "name": "register",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\RegisteredUserController@create",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "register",
+    "name": "register.store",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\RegisteredUserController@store",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "reset-password",
+    "name": "password.update",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\NewPasswordController@store",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "reset-password/{token}",
+    "name": "password.reset",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\NewPasswordController@create",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "roles",
+    "name": "roles.index",
+    "action": "App\\Http\\Controllers\\RoleController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "roles",
+    "name": "roles.store",
+    "action": "App\\Http\\Controllers\\RoleController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "roles/create",
+    "name": "roles.create",
+    "action": "App\\Http\\Controllers\\RoleController@create",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "roles/{role}",
+    "name": "roles.show",
+    "action": "App\\Http\\Controllers\\RoleController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "roles/{role}",
+    "name": "roles.update",
+    "action": "App\\Http\\Controllers\\RoleController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "roles/{role}",
+    "name": "roles.destroy",
+    "action": "App\\Http\\Controllers\\RoleController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "roles/{role}/clone",
+    "name": "roles.clone",
+    "action": "App\\Http\\Controllers\\RoleController@clone",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "roles/{role}/edit",
+    "name": "roles.edit",
+    "action": "App\\Http\\Controllers\\RoleController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS",
+    "uri": "settings",
+    "name": "generated::XTva2YtZKvbbOskA",
+    "action": "Illuminate\\Routing\\RedirectController",
+    "middleware": [
+      "web",
+      "auth"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/about",
+    "name": "settings.about.edit",
+    "action": "App\\Http\\Controllers\\Settings\\AboutController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/about/license",
+    "name": "settings.about.license",
+    "action": "App\\Http\\Controllers\\Settings\\AboutController@license",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/amenities",
+    "name": "settings.amenities.index",
+    "action": "App\\Http\\Controllers\\Settings\\AmenityController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/amenities",
+    "name": "settings.amenities.store",
+    "action": "App\\Http\\Controllers\\Settings\\AmenityController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/amenities/{amenity}",
+    "name": "settings.amenities.update",
+    "action": "App\\Http\\Controllers\\Settings\\AmenityController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "settings/amenities/{amenity}",
+    "name": "settings.amenities.destroy",
+    "action": "App\\Http\\Controllers\\Settings\\AmenityController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/expense-categories",
+    "name": "settings.expense-categories.index",
+    "action": "App\\Http\\Controllers\\Settings\\ExpenseCategoryController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/expense-categories",
+    "name": "settings.expense-categories.store",
+    "action": "App\\Http\\Controllers\\Settings\\ExpenseCategoryController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/expense-categories/{expenseCategory}",
+    "name": "settings.expense-categories.update",
+    "action": "App\\Http\\Controllers\\Settings\\ExpenseCategoryController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "settings/expense-categories/{expenseCategory}",
+    "name": "settings.expense-categories.destroy",
+    "action": "App\\Http\\Controllers\\Settings\\ExpenseCategoryController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 7,
+    "feature": "expenses",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/general",
+    "name": "settings.general.edit",
+    "action": "App\\Http\\Controllers\\Settings\\GeneralController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/general",
+    "name": "settings.general.update",
+    "action": "App\\Http\\Controllers\\Settings\\GeneralController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/general/branding/{asset}",
+    "name": "settings.general.branding.update",
+    "action": "App\\Http\\Controllers\\Settings\\GeneralController@updateBranding",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "settings/general/branding/{asset}",
+    "name": "settings.general.branding.destroy",
+    "action": "App\\Http\\Controllers\\Settings\\GeneralController@removeBranding",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS",
+    "uri": "settings/inspection-templates",
+    "name": "generated::IdDL9yDZstQEcEBp",
+    "action": "Illuminate\\Routing\\RedirectController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 8,
+    "feature": "inspections",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/mail",
+    "name": "settings.mail.edit",
+    "action": "App\\Http\\Controllers\\Settings\\MailController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/mail",
+    "name": "settings.mail.update",
+    "action": "App\\Http\\Controllers\\Settings\\MailController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/mail/test",
+    "name": "settings.mail.test",
+    "action": "App\\Http\\Controllers\\Settings\\MailController@test",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "settings/password",
+    "name": "user-password.update",
+    "action": "App\\Http\\Controllers\\Settings\\SecurityController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "throttle:6,1"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/payment-gateway",
+    "name": "settings.payment-gateway.edit",
+    "action": "App\\Http\\Controllers\\Settings\\PaymentGatewayController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "payments and proof review",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/payment-gateway",
+    "name": "settings.payment-gateway.update",
+    "action": "App\\Http\\Controllers\\Settings\\PaymentGatewayController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 5,
+    "feature": "payments and proof review",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/plugins",
+    "name": "settings.plugins.index",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/plugins",
+    "name": "settings.plugins.install",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@install",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/plugins/marketplace",
+    "name": "settings.plugins.marketplace.index",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@marketplace",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/plugins/marketplace/install",
+    "name": "settings.plugins.marketplace.install",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@marketplaceInstall",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/plugins/marketplace/update",
+    "name": "settings.plugins.marketplace.update",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@marketplaceUpdate",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "settings/plugins/recovery",
+    "name": "settings.plugins.recovery.cleanup",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@cleanup",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "settings/plugins/{vendor}/{package}",
+    "name": "settings.plugins.destroy",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/plugins/{vendor}/{package}/disable",
+    "name": "settings.plugins.disable",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@disable",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/plugins/{vendor}/{package}/enable",
+    "name": "settings.plugins.enable",
+    "action": "App\\Http\\Controllers\\Settings\\PluginController@enable",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 11,
+    "feature": "plugins and extensions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/profile",
+    "name": "profile.edit",
+    "action": "App\\Http\\Controllers\\Settings\\ProfileController@edit",
+    "middleware": [
+      "web",
+      "auth"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/profile",
+    "name": "profile.update",
+    "action": "App\\Http\\Controllers\\Settings\\ProfileController@update",
+    "middleware": [
+      "web",
+      "auth"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "settings/profile",
+    "name": "profile.destroy",
+    "action": "App\\Http\\Controllers\\Settings\\ProfileController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/property-types",
+    "name": "settings.property-types.index",
+    "action": "App\\Http\\Controllers\\Settings\\PropertyTypeController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/property-types",
+    "name": "settings.property-types.store",
+    "action": "App\\Http\\Controllers\\Settings\\PropertyTypeController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/property-types/transfer/export",
+    "name": "settings.property-types.transfer.export",
+    "action": "App\\Http\\Controllers\\DataTransferController@exportPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner",
+      "permission:properties.export"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "CSV import/export",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/property-types/{propertyType}",
+    "name": "settings.property-types.update",
+    "action": "App\\Http\\Controllers\\Settings\\PropertyTypeController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "settings/property-types/{propertyType}",
+    "name": "settings.property-types.destroy",
+    "action": "App\\Http\\Controllers\\Settings\\PropertyTypeController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 3,
+    "feature": "property inventory",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS",
+    "uri": "settings/public-portal",
+    "name": "settings.public-portal.edit",
+    "action": "Illuminate\\Routing\\RedirectController",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 9,
+    "feature": "public portal and applications",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/reminders",
+    "name": "settings.reminders.edit",
+    "action": "App\\Http\\Controllers\\Settings\\ReminderController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "reminders and notification delivery",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/reminders",
+    "name": "settings.reminders.update",
+    "action": "App\\Http\\Controllers\\Settings\\ReminderController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 6,
+    "feature": "reminders and notification delivery",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/security",
+    "name": "security.edit",
+    "action": "App\\Http\\Controllers\\Settings\\SecurityController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "Illuminate\\Auth\\Middleware\\RequirePassword"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/values",
+    "name": "settings.values.upsert",
+    "action": "App\\Http\\Controllers\\Settings\\SettingValuesController@upsert",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/whatsapp",
+    "name": "settings.whatsapp.edit",
+    "action": "App\\Http\\Controllers\\Settings\\WhatsAppController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PATCH",
+    "uri": "settings/whatsapp",
+    "name": "settings.whatsapp.update",
+    "action": "App\\Http\\Controllers\\Settings\\WhatsAppController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/whatsapp/status",
+    "name": "settings.whatsapp.status",
+    "action": "App\\Http\\Controllers\\Settings\\WhatsAppController@status",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "settings/whatsapp/test",
+    "name": "settings.whatsapp.test",
+    "action": "App\\Http\\Controllers\\Settings\\WhatsAppController@test",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "settings/{page}",
+    "name": "settings.dynamic.edit",
+    "action": "App\\Http\\Controllers\\Settings\\SettingValuesController@edit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "role:owner"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "settings and audit",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "storage/{path}",
+    "name": "storage.local",
+    "action": "Closure",
+    "middleware": [],
+    "path": null,
+    "phase": 1,
+    "feature": "shared application shell",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "storage/{path}",
+    "name": "storage.local.upload",
+    "action": "Closure",
+    "middleware": [],
+    "path": null,
+    "phase": 1,
+    "feature": "shared application shell",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants",
+    "name": "tenants.index",
+    "action": "App\\Http\\Controllers\\TenantController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants",
+    "name": "tenants.store",
+    "action": "App\\Http\\Controllers\\TenantController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.create"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants/invitations/accept",
+    "name": "tenants.invitations.complete",
+    "action": "App\\Http\\Controllers\\TenantInvitationController@completeInvitation",
+    "middleware": [
+      "web",
+      "guest"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants/invitations/{token}",
+    "name": "tenants.invitations.accept",
+    "action": "App\\Http\\Controllers\\TenantInvitationController@acceptInvitation",
+    "middleware": [
+      "web",
+      "guest"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants/transfer/export",
+    "name": "tenants.transfer.export",
+    "action": "App\\Http\\Controllers\\DataTransferController@exportPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.export"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants/transfer/import",
+    "name": "tenants.transfer.import",
+    "action": "App\\Http\\Controllers\\DataTransferController@importPage",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.import"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants/{tenant}",
+    "name": "tenants.show",
+    "action": "App\\Http\\Controllers\\TenantController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "tenants/{tenant}",
+    "name": "tenants.update",
+    "action": "App\\Http\\Controllers\\TenantController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.update"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "tenants/{tenant}",
+    "name": "tenants.destroy",
+    "action": "App\\Http\\Controllers\\TenantController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.delete"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants/{tenant}/assign-unit",
+    "name": "tenants.assign-unit",
+    "action": "App\\Http\\Controllers\\TenantController@assignUnit",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.update"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants/{tenant}/disable-access",
+    "name": "tenants.disable-access",
+    "action": "App\\Http\\Controllers\\TenantController@disableAccess",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.invite"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants/{tenant}/documents",
+    "name": "tenants.workspace.documents",
+    "action": "App\\Http\\Controllers\\TenantController@documents",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants/{tenant}/documents",
+    "name": "tenants.documents.store",
+    "action": "App\\Http\\Controllers\\TenantDocumentController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.update"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants/{tenant}/documents/{document}",
+    "name": "tenants.documents.show",
+    "action": "App\\Http\\Controllers\\TenantDocumentController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "tenants/{tenant}/documents/{document}",
+    "name": "tenants.documents.destroy",
+    "action": "App\\Http\\Controllers\\TenantDocumentController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.update"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants/{tenant}/invite",
+    "name": "tenants.invite",
+    "action": "App\\Http\\Controllers\\TenantController@invite",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.invite"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "tenants/{tenant}/leases",
+    "name": "tenants.workspace.leases",
+    "action": "App\\Http\\Controllers\\TenantController@leases",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.view"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants/{tenant}/resend-invitation",
+    "name": "tenants.resend-invitation",
+    "action": "App\\Http\\Controllers\\TenantController@resendInvitation",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.invite"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "tenants/{tenant}/restore",
+    "name": "tenants.restore",
+    "action": "App\\Http\\Controllers\\TenantController@restore",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:tenants.update"
+    ],
+    "path": null,
+    "phase": 4,
+    "feature": "tenants and tenant documents",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "two-factor-challenge",
+    "name": "two-factor.login",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\TwoFactorAuthenticatedSessionController@create",
+    "middleware": [
+      "web",
+      "guest:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "two-factor-challenge",
+    "name": "two-factor.login.store",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\TwoFactorAuthenticatedSessionController@store",
+    "middleware": [
+      "web",
+      "guest:web",
+      "throttle:two-factor"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "up",
+    "name": "generated::mkQGdIJohL0367Ra",
+    "action": "Closure",
+    "middleware": [],
+    "path": null,
+    "phase": 1,
+    "feature": "shared application shell",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "user/confirm-password",
+    "name": "password.confirm",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\ConfirmablePasswordController@show",
+    "middleware": [
+      "web",
+      "auth:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "user/confirm-password",
+    "name": "password.confirm.store",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\ConfirmablePasswordController@store",
+    "middleware": [
+      "web",
+      "auth:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "user/confirmed-password-status",
+    "name": "password.confirmation",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\ConfirmedPasswordStatusController@show",
+    "middleware": [
+      "web",
+      "auth:web"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "user/confirmed-two-factor-authentication",
+    "name": "two-factor.confirm",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\ConfirmedTwoFactorAuthenticationController@store",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "user/passkeys",
+    "name": "passkey.store",
+    "action": "Laravel\\Passkeys\\Http\\Controllers\\PasskeyRegistrationController@store",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm",
+      "throttle:passkeys"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "user/passkeys/options",
+    "name": "passkey.registration-options",
+    "action": "Laravel\\Passkeys\\Http\\Controllers\\PasskeyRegistrationController@index",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm",
+      "throttle:passkeys"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "user/passkeys/{passkey}",
+    "name": "passkey.destroy",
+    "action": "Laravel\\Passkeys\\Http\\Controllers\\PasskeyRegistrationController@destroy",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "user/two-factor-authentication",
+    "name": "two-factor.enable",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\TwoFactorAuthenticationController@store",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "user/two-factor-authentication",
+    "name": "two-factor.disable",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\TwoFactorAuthenticationController@destroy",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "user/two-factor-qr-code",
+    "name": "two-factor.qr-code",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\TwoFactorQrCodeController@show",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "user/two-factor-recovery-codes",
+    "name": "two-factor.recovery-codes",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\RecoveryCodeController@index",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "user/two-factor-recovery-codes",
+    "name": "two-factor.regenerate-recovery-codes",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\RecoveryCodeController@store",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "user/two-factor-secret-key",
+    "name": "two-factor.secret-key",
+    "action": "Laravel\\Fortify\\Http\\Controllers\\TwoFactorSecretKeyController@show",
+    "middleware": [
+      "web",
+      "auth:web",
+      "password.confirm"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "account security",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "users",
+    "name": "users.index",
+    "action": "App\\Http\\Controllers\\UserController@index",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:users.view"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "users",
+    "name": "users.store",
+    "action": "App\\Http\\Controllers\\UserController@store",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:users.create"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "GET|HEAD",
+    "uri": "users/{user}",
+    "name": "users.show",
+    "action": "App\\Http\\Controllers\\UserController@show",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:users.view"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "PUT",
+    "uri": "users/{user}",
+    "name": "users.update",
+    "action": "App\\Http\\Controllers\\UserController@update",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:users.update"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "DELETE",
+    "uri": "users/{user}",
+    "name": "users.destroy",
+    "action": "App\\Http\\Controllers\\UserController@destroy",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:users.delete"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "users/{user}/resend-invitation",
+    "name": "users.resend-invitation",
+    "action": "App\\Http\\Controllers\\UserController@resendInvitation",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:users.resend_invitation"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  },
+  {
+    "domain": null,
+    "method": "POST",
+    "uri": "users/{user}/reset-password",
+    "name": "users.reset-password",
+    "action": "App\\Http\\Controllers\\UserController@resetPassword",
+    "middleware": [
+      "web",
+      "auth",
+      "verified",
+      "permission:dashboard.view",
+      "permission:users.reset_password"
+    ],
+    "path": null,
+    "phase": 2,
+    "feature": "users, roles, and permissions",
+    "status": "verified"
+  }
+]

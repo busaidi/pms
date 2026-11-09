@@ -1,0 +1,38 @@
+[Unit]
+Description=Oman Skylight Django PMS
+After=network.target postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=notify
+User=pms
+Group=www-data
+SupplementaryGroups=pms
+WorkingDirectory=/home/hamed/pms
+Environment=DJANGO_DEBUG=false
+Environment=DJANGO_ENV=production
+Environment=DJANGO_ALLOWED_HOSTS=omanskylight.com,127.0.0.1,localhost
+Environment=DJANGO_CSRF_TRUSTED_ORIGINS=https://omanskylight.com
+Environment=DJANGO_DB_ENGINE=postgresql
+Environment=DJANGO_DB_NAME=pms
+Environment=DJANGO_DB_USER=pms
+Environment=DJANGO_DB_HOST=/var/run/postgresql
+Environment=DJANGO_SECRET_KEY_FILE=/etc/pms.secret
+Environment=DJANGO_SECURE_HSTS_SECONDS=31536000
+ExecStart=/home/hamed/pms/.venv/bin/gunicorn --workers 3 --bind unix:/run/pms/gunicorn.sock --umask 007 --no-control-socket --access-logfile - --error-logfile - config.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+KillSignal=SIGQUIT
+TimeoutStopSec=30
+Restart=on-failure
+RestartSec=5
+RuntimeDirectory=pms
+RuntimeDirectoryMode=0755
+UMask=0007
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/hamed/pms/media
+
+[Install]
+WantedBy=multi-user.target

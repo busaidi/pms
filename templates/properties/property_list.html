@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Properties · Oman Skylight PMS" %}{% endblock %}
+{% block content %}
+<section class="page-heading"><div><p class="eyebrow">{% translate "Inventory" %}</p><h1>{% if archived %}{% translate "Archived properties" %}{% else %}{% translate "Properties" %}{% endif %}</h1><p>{% translate "Manage rental models, availability, pricing and publishing." %}</p></div><div class="heading-actions"><a class="button secondary" href="{% url 'inventory_master_data' %}">{% translate "Types & amenities" %}</a><a class="button secondary" href="{% url 'transfer_center' %}">{% translate "CSV transfer" %}</a><a class="button" href="{% url 'property_create' %}">{% translate "Add property" %}</a></div></section>
+<form class="filter-bar" method="get"><input name="q" value="{{ search }}" placeholder="{% translate "Search properties" %}"><button class="button secondary">{% translate "Search" %}</button><a href="?{% if not archived %}status=archived{% endif %}">{% if archived %}{% translate "Active inventory" %}{% else %}{% translate "Archived" %}{% endif %}</a></form>
+<section class="inventory-grid">
+{% for property in properties %}
+<a class="panel inventory-card" href="{% url 'property_workspace' property.slug %}">
+  <div class="inventory-card-top"><span class="property-monogram">{{ property.name|slice:':1' }}</span><span class="status {% if property.is_published %}success{% endif %}">{% if property.archived_at %}{% translate "Archived" %}{% elif property.is_published %}{% translate "Published" %}{% else %}{% translate "Draft" %}{% endif %}</span></div>
+  <h2>{{ property.name }}</h2><p>{{ property.city_ref|default:property.city }} · {{ property.get_rental_mode_display }}</p>
+  <dl><div><dt>{% translate "Units" %}</dt><dd>{{ property.units.count }}</dd></div><div><dt>{% translate "Type" %}</dt><dd>{{ property.property_type|default:'—' }}</dd></div></dl>
+</a>
+{% empty %}<article class="panel empty-state"><strong>{% translate "No properties found" %}</strong><p>{% translate "Create inventory or change the current filter." %}</p></article>{% endfor %}
+</section>
+{% endblock %}

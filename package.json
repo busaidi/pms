@@ -1,0 +1,13 @@
+{
+  "name": "oman-skylight-pms-tests",
+  "private": true,
+  "scripts": {
+    "test:browser": "node tools/browser_smoke.mjs",
+    "test:accessibility": "node tools/accessibility_smoke.mjs",
+    "test:arabic": "node tools/arabic_smoke.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.10.3",
+    "playwright": "1.63.0"
+  }
+}

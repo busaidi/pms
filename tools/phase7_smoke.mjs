@@ -1,0 +1,18 @@
+import { chromium } from "playwright";
+import fs from "node:fs/promises";
+const base = process.env.BASE_URL || "https://omanskylight.com";
+const output = new URL("../artifacts/", import.meta.url); await fs.mkdir(output, { recursive: true });
+const browser = await chromium.launch({ headless: true });
+const context = await browser.newContext({ ignoreHTTPSErrors: true, viewport: { width: 1440, height: 1000 }, acceptDownloads: true });
+const page = await context.newPage(); const failures = [];
+page.on("console", message => { if (message.type() === "error") failures.push(`console: ${message.text()}`); }); page.on("pageerror", error => failures.push(`page: ${error.message}`));
+await page.goto(`${base}/login/`, { waitUntil: "networkidle" }); await page.locator("#id_username").fill("admin"); await page.locator("#id_password").fill("admin"); await Promise.all([page.waitForURL(`${base}/**`), page.getByRole("button", { name: "Sign in", exact: true }).click()]);
+await page.goto(`${base}/expenses/`, { waitUntil: "networkidle" });
+if (!(await page.getByRole("heading", { name: "Expenses" }).isVisible())) failures.push("expense register missing");
+if (await page.locator(".data-table tbody tr").count() < 1) failures.push("demo expense missing");
+await page.screenshot({ path: new URL("phase7-expenses-desktop.png", output).pathname, fullPage: true });
+const downloadPromise = page.waitForEvent("download"); await page.getByRole("link", { name: "Export CSV" }).click(); const download = await downloadPromise; const csv = await fs.readFile(await download.path(), "utf8"); if (!csv.includes("Qurum Heights")) failures.push("expense CSV missing demo data");
+await page.goto(`${base}/dashboard/financial/`, { waitUntil: "networkidle" }); if (!(await page.getByRole("heading", { name: "Financial dashboard" }).isVisible())) failures.push("financial dashboard missing"); await page.screenshot({ path: new URL("phase7-financial-desktop.png", output).pathname, fullPage: true });
+await page.goto(`${base}/dashboard/rent/`, { waitUntil: "networkidle" }); if (!(await page.getByRole("heading", { name: "Rent collection" }).isVisible())) failures.push("rent dashboard missing");
+await page.setViewportSize({ width: 390, height: 844 }); await page.goto(`${base}/dashboard/financial/`, { waitUntil: "networkidle" }); await page.screenshot({ path: new URL("phase7-financial-mobile.png", output).pathname, fullPage: true });
+await browser.close(); if (failures.length) { console.error(failures.join("\n")); process.exit(1); } console.log("Phase 7 browser smoke passed: expenses, CSV export, financial and rent dashboards, and mobile layout.");

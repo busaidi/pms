@@ -1,0 +1,10 @@
+# OpenKos is retained as a local, read-only reference application.
+# Install this file at /etc/apparmor.d/local/php-fpm, reload the php-fpm
+# AppArmor profile, and then reload PHP-FPM.
+/home/hamed/ r,
+/home/hamed/OpenKos/ r,
+/home/hamed/OpenKos/** r,
+/home/hamed/OpenKos/storage/ rw,
+/home/hamed/OpenKos/storage/** rwk,
+/home/hamed/OpenKos/bootstrap/cache/ rw,
+/home/hamed/OpenKos/bootstrap/cache/** rwk,

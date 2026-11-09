@@ -1,0 +1,28 @@
+{% extends "base.html" %}{% load i18n %}
+{% block title %}{% translate "Security · Oman Skylight" %}{% endblock %}
+{% block content %}
+<section class="page-heading"><div><p class="eyebrow">{% translate "My account" %}</p><h1>{% translate "Security" %}</h1><p>{% translate "Protect your account and review authentication methods." %}</p></div></section>
+<div class="settings-layout">
+  <nav class="settings-nav"><a href="{% url 'account_profile' %}">{% translate "Profile" %}</a><a class="active" href="{% url 'account_security' %}">{% translate "Security" %}</a></nav>
+  <div class="settings-stack">
+    <article class="panel security-card">
+      <div><h2>{% translate "Two-factor authentication" %}</h2><p>{% translate "Add an authenticator code after your password." %}</p></div>
+      {% if profile.two_factor_enabled %}
+        <span class="status success">{% translate "Enabled" %}</span>
+        <form method="post" action="{% url 'two_factor_disable' %}" class="inline-confirm">{% csrf_token %}<input type="password" name="password" placeholder="{% translate 'Confirm password' %}" required><button class="button danger" type="submit">{% translate "Disable" %}</button></form>
+        <small>{{ recovery_count }} {% translate "unused recovery codes remain." %}</small>
+        <form method="post" action="{% url 'recovery_codes_regenerate' %}">{% csrf_token %}<button class="button secondary" type="submit">{% translate "Regenerate recovery codes" %}</button></form>
+      {% else %}<span class="status">{% translate "Not enabled" %}</span><a class="button" href="{% url 'two_factor_setup' %}">{% translate "Set up 2FA" %}</a>{% endif %}
+    </article>
+    <article class="panel security-card">
+      <div><h2>{% translate "Passkeys" %}</h2><p>{% translate "Sign in with a device PIN, fingerprint, or security key." %}</p></div>
+      <span class="status">{{ passkeys|length }} {% translate "registered" %}</span>
+      <button class="button secondary" type="button" data-passkey-register>{% translate "Register passkey" %}</button>
+      {% for passkey in passkeys %}<form method="post" action="{% url 'passkey_delete' passkey.pk %}" class="inline-confirm">{% csrf_token %}<span>{{ passkey.name }}</span><button class="button danger" type="submit">{% translate "Delete" %}</button></form>{% endfor %}
+      <div class="passkey-message" role="status"></div>
+    </article>
+    <article class="panel security-card"><div><h2>{% translate "Password" %}</h2><p>{% translate "Change your password while keeping this session active." %}</p></div><a class="button secondary" href="{% url 'password_change' %}">{% translate "Change password" %}</a><a class="button secondary" href="{% url 'password_reset' %}">{% translate "Reset by email" %}</a></article>
+  </div>
+</div>
+<script>window.passkeyConfig={registerOptions:"{% url 'passkey_registration_options' %}",registerVerify:"{% url 'passkey_registration_verify' %}"};</script>
+{% endblock %}

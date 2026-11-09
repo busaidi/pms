@@ -1,0 +1,21 @@
+{% extends "portal/public_base.html" %}{% load i18n %}{% load pms_i18n %}
+{% block content %}
+<main>
+  <section class="public-hero">
+    <p class="eyebrow">{% translate "Homes across Muscat" %}</p>
+    <h1>{% translate "Find a place that feels right." %}</h1>
+    <p>{% translate "Professionally managed homes, clear lease terms, and a local team ready to help." %}</p>
+  </section>
+  <section class="listing-section">
+    <div class="section-heading"><div><p class="eyebrow">{% translate "Available portfolio" %}</p><h2>{% translate "Explore our properties" %}</h2></div><span>{{ properties|length }} {% translate "location" %}{{ properties|length|locale_pluralize }}</span></div>
+    <div class="listing-grid">
+      {% for property in properties %}
+      <article class="listing-card">
+        <a class="listing-art" href="{% url 'listing_detail' property.slug %}"><span>{{ property.name|slice:":1" }}</span><small>{{ property.get_rental_mode_display }}</small></a>
+        <div class="listing-copy"><p>{{ property.city }}{% translate ", Oman" %}</p><h3><a href="{% url 'listing_detail' property.slug %}">{{ property.name }}</a></h3><div class="amenity-line">{% for amenity in property.amenities.all|slice:":3" %}<span>{{ amenity.name }}</span>{% endfor %}</div><a class="listing-link" href="{% url 'listing_detail' property.slug %}">{% translate "View property →" %}</a></div>
+      </article>
+      {% empty %}<div class="empty-state"><strong>{% translate "New homes are coming soon." %}</strong><p>{% translate "Check back for current availability." %}</p></div>{% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}
