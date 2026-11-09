@@ -118,5 +118,6 @@ Its PHP-FPM, queue worker, and scheduler services remain enabled.
 Codex deployment runbook: [deployment/CODEX_DEPLOY.md](deployment/CODEX_DEPLOY.md).
 It covers safe updates to the existing production database, private transfer of
 terms/lessor settings/signatures, Chromium installation, service write permissions,
-verification and rollback boundaries. A Git clone does not include the private
-configuration bundle or uploaded files.
+verification and rollback boundaries. By explicit owner authorization, the
+production configuration bundle and checksum in `artifacts/deployment/` are
+included in Git. Keep them private. Other artifacts and uploaded files are excluded.

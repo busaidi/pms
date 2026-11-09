@@ -1,0 +1,3 @@
+# Preserve deployment bundle bytes so SHA256 remains valid on every platform.
+artifacts/deployment/production.contract-bundle.json -text
+artifacts/deployment/production.sha256.txt -text
