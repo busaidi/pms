@@ -59,7 +59,7 @@ def generate_rent_schedule(lease):
         LeaseNotificationEvent.objects.get_or_create(
             lease=lease,
             kind="expiration",
-            scheduled_for=lease.end_date - timedelta(days=30),
+            scheduled_for=max(lease.start_date, lease.end_date - timedelta(days=30)),
             defaults={"payload": {"end_date": str(lease.end_date)}},
         )
     if not lease.rent_amount:
@@ -88,8 +88,12 @@ def generate_rent_schedule(lease):
 @transaction.atomic
 def create_lease(*, property_obj, tenants, start_date, end_date=None, unit=None, unit_type=None,
                  rent_amount=None, currency=None, billing_interval=None, billing_unit=None,
-                 billing_strategy="advance", billing_day=1, deposit_amount=0, notes=""):
+                 billing_strategy="advance", billing_day=1, deposit_amount=0, notes="", terms_template=None):
     property_obj = Property.objects.select_for_update().get(pk=property_obj.pk)
+    from .contract_terms import default_terms
+    terms_template = terms_template or default_terms(property_obj)
+    if terms_template.property_id != property_obj.pk or not terms_template.is_active:
+        raise ValidationError("اختر قالب شروط متاحًا لهذا العقار.")
     tenants = list(Tenant.objects.select_for_update().filter(pk__in=[item.pk for item in tenants], archived_at__isnull=True, is_active=True))
     if not tenants: raise ValidationError(_("Select at least one active tenant."))
     if tenant_has_active_lease([item.pk for item in tenants]): raise ValidationError(_("A selected tenant already has an active lease."))
@@ -99,7 +103,7 @@ def create_lease(*, property_obj, tenants, start_date, end_date=None, unit=None,
     if unit:
         unit = Unit.objects.select_for_update().get(pk=unit.pk)
         if not property_obj.supports_unit_inventory or unit.property_id != property_obj.pk: raise ValidationError(_("This unit cannot be leased from the selected property."))
-        if unit.status in (Unit.Status.MAINTENANCE, Unit.Status.UNAVAILABLE): raise ValidationError(_("This unit is unavailable for lease."))
+        if unit.status != Unit.Status.AVAILABLE: raise ValidationError(_("This unit is unavailable for lease."))
         if len(tenants) > unit.capacity:
             raise ValidationError(
                 _("Unit capacity is %(capacity)s occupants.")
@@ -117,36 +121,51 @@ def create_lease(*, property_obj, tenants, start_date, end_date=None, unit=None,
                   rent_amount=amount, monthly_rent=amount, currency=selected_currency,
                   billing_interval=billing_interval or (rate.billing_interval if rate else 1), billing_unit=billing_unit or (rate.billing_unit if rate else "month"),
                   billing_strategy=billing_strategy, billing_day=billing_day, security_deposit=Decimal(str(deposit_amount or 0)),
-                  is_custom_price=bool(rate and amount != rate.amount), notes=notes, status=Lease.Status.ACTIVE)
+                  is_custom_price=bool(rate and amount != rate.amount), notes=notes, status=Lease.Status.ACTIVE, terms_template=terms_template)
     if field: setattr(lease, field, rate)
     lease.full_clean(); lease.save(); lease.tenants.set(tenants)
     if unit: unit.status = Unit.Status.OCCUPIED; unit.save(update_fields=("status", "updated_at"))
     generate_rent_schedule(lease)
+    from .contract_services import ensure_contract
+    ensure_contract(lease)
     return lease
 
 
 def _free_unit(unit, excluding):
-    if unit and not active_leases().filter(unit=unit).exclude(pk=excluding).exists() and unit.status != Unit.Status.MAINTENANCE:
+    if unit:
+        unit = Unit.objects.select_for_update().get(pk=unit.pk)
+    if unit and not active_leases().filter(Q(unit=unit) | Q(property=unit.property, unit__isnull=True)).exclude(pk=excluding).exists() and unit.status not in (Unit.Status.MAINTENANCE, Unit.Status.UNAVAILABLE):
         unit.status = Unit.Status.AVAILABLE; unit.save(update_fields=("status", "updated_at"))
 
 
 @transaction.atomic
-def terminate_lease(lease, *, end_date, reason, notes=""):
+def terminate_lease(lease, *, end_date, reason, notes="", handover_confirmed=False, actor=None):
     lease = (
         Lease.objects.select_for_update(of=("self",))
         .select_related("unit")
         .get(pk=lease.pk)
     )
     if lease.status != Lease.Status.ACTIVE: raise ValidationError(_("Only active leases can be terminated."))
+    if not handover_confirmed:
+        raise ValidationError("يجب تأكيد استلام الوحدة والمفاتيح قبل إنهاء العقد وإتاحة الوحدة للحجز.")
+    if end_date > timezone.localdate():
+        raise ValidationError("لا يمكن تأكيد المغادرة والتسليم بتاريخ مستقبلي.")
     if end_date < lease.start_date: raise ValidationError(_("Termination cannot precede the lease start date."))
-    lease.end_date = end_date; lease.termination_date = timezone.localdate(); lease.termination_reason = reason; lease.notes = notes or lease.notes; lease.status = Lease.Status.TERMINATED
-    lease.save(update_fields=("end_date", "termination_date", "termination_reason", "notes", "status", "updated_at")); _free_unit(lease.unit, lease.pk)
+    lease.move_out_date = end_date
+    lease.handover_confirmed_at = timezone.now()
+    lease.handover_confirmed_by = actor
+    lease.termination_date = timezone.localdate(); lease.termination_reason = reason; lease.notes = notes or lease.notes; lease.status = Lease.Status.TERMINATED
+    lease.save(update_fields=("move_out_date", "handover_confirmed_at", "handover_confirmed_by", "termination_date", "termination_reason", "notes", "status", "updated_at")); _free_unit(lease.unit, lease.pk)
     lease.rent_schedule.filter(due_date__gt=end_date, status=RentSchedule.Status.SCHEDULED).update(status=RentSchedule.Status.WAIVED)
     return lease
 
 
 @transaction.atomic
-def move_lease(lease, *, target_unit, effective_date, reason="", actor=None):
+def move_lease(lease, *, target_unit, effective_date, reason="", actor=None, handover_confirmed=False):
+    if not handover_confirmed:
+        raise ValidationError("أكد استلام الوحدة السابقة والمفاتيح قبل نقل العقد.")
+    if effective_date > timezone.localdate() or effective_date < lease.start_date:
+        raise ValidationError("أدخل تاريخ نقل بين بداية العقد واليوم.")
     lease = (
         Lease.objects.select_for_update(of=("self",))
         .select_related("unit")
@@ -155,9 +174,13 @@ def move_lease(lease, *, target_unit, effective_date, reason="", actor=None):
     target = Unit.objects.select_for_update().get(pk=target_unit.pk)
     if lease.status != Lease.Status.ACTIVE or lease.unit_id is None: raise ValidationError(_("Only an active unit lease can be moved."))
     if target.pk == lease.unit_id: raise ValidationError(_("Choose a different unit."))
-    if target.status in (Unit.Status.MAINTENANCE, Unit.Status.UNAVAILABLE) or active_leases().filter(Q(unit=target) | Q(property=target.property, unit__isnull=True)).exists(): raise ValidationError(_("The target unit is unavailable."))
+    if target.status != Unit.Status.AVAILABLE or active_leases().filter(Q(unit=target) | Q(property=target.property, unit__isnull=True)).exists(): raise ValidationError(_("The target unit is unavailable."))
     if lease.tenants.count() > target.capacity: raise ValidationError(_("The target unit capacity is too small."))
-    old = lease.unit; lease.unit = target; lease.property = target.property; lease.save(update_fields=("unit", "property", "updated_at"))
+    old = lease.unit
+    if lease.property_id != target.property_id:
+        from .contract_terms import default_terms
+        lease.terms_template = default_terms(target.property)
+    lease.unit = target; lease.property = target.property; lease.save(update_fields=("unit", "property", "terms_template", "updated_at"))
     LeaseUnitHistory.objects.create(lease=lease, unit=target, from_unit=old, to_unit=target, moved_in_at=effective_date, effective_date=effective_date, reason=reason, transferred_by=actor)
     _free_unit(old, lease.pk); target.status = Unit.Status.OCCUPIED; target.save(update_fields=("status", "updated_at")); return lease
 
@@ -186,8 +209,11 @@ def renew_lease(lease, *, end_date, rent_amount, confirmed_outstanding=False, de
         previous_lease=lease, start_date=lease.end_date + timedelta(days=1), end_date=end_date, rent_amount=rent_amount, monthly_rent=rent_amount,
         currency=lease.currency, billing_interval=lease.billing_interval, billing_unit=lease.billing_unit, billing_strategy=lease.billing_strategy,
         billing_day=lease.billing_day, security_deposit=deposit, status=Lease.Status.ACTIVE, unit_rate=lease.unit_rate,
-        unit_type_rate=lease.unit_type_rate, property_rate=lease.property_rate, is_custom_price=lease.is_custom_price)
+        unit_type_rate=lease.unit_type_rate, property_rate=lease.property_rate, is_custom_price=lease.is_custom_price,
+        terms_template=lease.terms_template if lease.terms_template_id and lease.terms_template.is_active else None)
     renewed.tenants.set(lease.tenants.all()); generate_rent_schedule(renewed)
+    from .contract_services import ensure_contract
+    ensure_contract(renewed)
     return renewed
 
 
@@ -208,8 +234,8 @@ def settle_deposit(lease, *, refund_amount, deductions, status="settled", settle
 
 
 @transaction.atomic
-def move_out_lease(lease, *, end_date, reason, notes="", settlement=None):
-    lease = terminate_lease(lease, end_date=end_date, reason=reason, notes=notes)
+def move_out_lease(lease, *, end_date, reason, notes="", settlement=None, handover_confirmed=False, actor=None):
+    lease = terminate_lease(lease, end_date=end_date, reason=reason, notes=notes, handover_confirmed=handover_confirmed, actor=actor)
     if settlement:
         settle_deposit(lease, **settlement)
     return lease

@@ -19,9 +19,12 @@ from django.views.decorators.http import require_POST
 
 from accounts.access import properties_for_user, user_has_capability
 from accounts.models import UserProfile
-from .forms import LeaseCreateForm, LeaseEditForm, TenantDocumentForm, TenantForm
+from .forms import LeaseCreateForm, LeaseEditForm, TenantDocumentForm, TenantForm, TenantIdentityForm
 from .lease_services import create_lease, generate_rent_schedule, move_lease, move_out_lease, renew_lease, settle_deposit, terminate_lease
 from .models import Lease, LeaseNotificationEvent, Tenant, TenantDocument, TenantInvitation, Unit
+from .contract_services import ensure_contract
+from .contract_views import prepare_contract_pdf
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 
@@ -50,23 +53,43 @@ def tenant_list(request):
 @login_required
 def tenant_create(request):
     if not (user_has_capability(request.user, "tenants.create") or properties_for_user(request.user, "tenants.create").exists()): raise PermissionDenied
-    form = TenantForm(request.POST or None)
-    if request.method == "POST" and form.is_valid():
-        tenant = form.save(commit=False); tenant.created_by = request.user; tenant.save(); messages.success(request, _("Tenant created.")); return redirect("tenant_workspace", tenant_id=tenant.pk)
-    return render(request, "properties/form.html", {"form": form, "title": "Add tenant", "eyebrow": "People"})
+    form = TenantForm(request.POST if request.method == "POST" else None)
+    identity_form = TenantIdentityForm(request.POST if request.method == "POST" else None, request.FILES)
+    if request.method == "POST":
+        valid = form.is_valid()
+        identity_valid = identity_form.is_valid()
+        if valid and identity_valid:
+            with transaction.atomic():
+                tenant = form.save(commit=False)
+                tenant.created_by = request.user
+                tenant.save()
+                identity_form.save_documents(tenant)
+            messages.success(request, _("Tenant created."))
+            return redirect("tenant_workspace", tenant_id=tenant.pk)
+    return render(request, "properties/tenant_form.html", {"form": form, "identity_form": identity_form, "title": "إضافة مستأجر"})
 
 
 @login_required
 def tenant_workspace(request, tenant_id):
     tenant = get_object_or_404(_tenant_queryset(request.user).select_related("user"), pk=tenant_id)
-    return render(request, "properties/tenant_workspace.html", {"tenant": tenant, "leases": tenant.shared_leases.select_related("property", "unit").all(), "documents": tenant.documents.all(), "document_form": TenantDocumentForm(), "can_sensitive": user_has_capability(request.user, "tenants.export_sensitive")})
+    return render(request, "properties/tenant_workspace.html", {"tenant": tenant, "leases": tenant.shared_leases.select_related("property", "unit").all(), "documents": tenant.documents.exclude(document_type__in=("id_card", "passport")), "identity_documents": tenant.documents.filter(document_type__in=("id_card", "passport")), "can_edit_tenant": _tenant_queryset(request.user, "tenants.update").filter(pk=tenant.pk).exists(), "document_form": TenantDocumentForm(), "can_sensitive": user_has_capability(request.user, "tenants.export_sensitive")})
 
 
 @login_required
 def tenant_edit(request, tenant_id):
-    tenant = get_object_or_404(_tenant_queryset(request.user, "tenants.update"), pk=tenant_id); form = TenantForm(request.POST or None, instance=tenant)
-    if request.method == "POST" and form.is_valid(): form.save(); messages.success(request, _("Tenant updated.")); return redirect("tenant_workspace", tenant_id=tenant.pk)
-    return render(request, "properties/form.html", {"form": form, "title": f"Edit {tenant.full_name}", "eyebrow": "Tenant workspace"})
+    tenant = get_object_or_404(_tenant_queryset(request.user, "tenants.update"), pk=tenant_id)
+    form = TenantForm(request.POST if request.method == "POST" else None, instance=tenant)
+    identity_form = TenantIdentityForm(request.POST if request.method == "POST" else None, request.FILES)
+    if request.method == "POST":
+        valid = form.is_valid()
+        identity_valid = identity_form.is_valid()
+        if valid and identity_valid:
+            with transaction.atomic():
+                form.save()
+                identity_form.save_documents(tenant)
+            messages.success(request, _("Tenant updated."))
+            return redirect("tenant_workspace", tenant_id=tenant.pk)
+    return render(request, "properties/tenant_form.html", {"form": form, "identity_form": identity_form, "tenant": tenant, "identity_documents": tenant.documents.filter(document_type__in=("id_card", "passport")), "title": "تعديل بيانات المستأجر"})
 
 
 @login_required
@@ -159,7 +182,11 @@ def lease_list(request):
     if not (user_has_capability(request.user, "leases.view") or properties_for_user(request.user, "leases.view").exists()): raise PermissionDenied
     leases = _lease_queryset(request.user).select_related("property", "unit", "primary_tenant")
     status = request.GET.get("status"); search = request.GET.get("q", "").strip()
-    if status: leases = leases.filter(status=status)
+    if status == "awaiting_action":
+        leases = leases.filter(status=Lease.Status.ACTIVE, end_date__lt=timezone.localdate())
+    elif status == "active":
+        leases = leases.filter(status=status).filter(Q(end_date__gte=timezone.localdate()) | Q(end_date__isnull=True))
+    elif status: leases = leases.filter(status=status)
     if search: leases = leases.filter(Q(reference__icontains=search) | Q(primary_tenant__full_name__icontains=search) | Q(property__name__icontains=search))
     return render(request, "properties/lease_list.html", {"leases": leases, "status": status or "", "search": search})
 
@@ -175,7 +202,8 @@ def lease_create(request):
     if request.method == "POST" and form.is_valid():
         data = form.cleaned_data; target = data["target_type"]
         try:
-            lease = create_lease(property_obj=data["property"], tenants=data["tenants"], unit=data["unit"] if target == "unit" else None, unit_type=data["unit_type"] if target == "unit_type" else None, start_date=data["start_date"], end_date=data["end_date"], rent_amount=data["rent_amount"], currency=data["currency"], billing_interval=data["billing_interval"], billing_unit=data["billing_unit"], billing_strategy=data["billing_strategy"], billing_day=data["billing_day"], deposit_amount=data["deposit_amount"], notes=data["notes"])
+            lease = create_lease(property_obj=data["property"], tenants=data["tenants"], unit=data["unit"] if target == "unit" else None, unit_type=data["unit_type"] if target == "unit_type" else None, start_date=data["start_date"], end_date=data["end_date"], rent_amount=data["rent_amount"], currency=data["currency"], billing_interval=data["billing_interval"], billing_unit=data["billing_unit"], billing_strategy=data["billing_strategy"], billing_day=data["billing_day"], deposit_amount=data["deposit_amount"], notes=data["notes"], terms_template=data["terms_template"])
+            prepare_contract_pdf(request, lease.contracts.first())
             messages.success(request, _("Lease %(lease)s created.") % {"lease": lease.reference}); return redirect("lease_workspace", lease_id=lease.pk)
         except ValidationError as error: form.add_error(None, error.messages[0])
     return render(request, "properties/form.html", {"form": form, "title": "Create lease", "eyebrow": "Occupancy"})
@@ -183,10 +211,13 @@ def lease_create(request):
 
 @login_required
 def lease_workspace(request, lease_id):
+    from .contract_forms import ContractTemplateSelectionForm
     lease = get_object_or_404(_lease_queryset(request.user).select_related("property", "unit", "primary_tenant", "previous_lease").prefetch_related("tenants", "rent_schedule", "unit_history", "invoices"), pk=lease_id)
     available_units = Unit.objects.filter(property__in=properties_for_user(request.user, "leases.move"), archived_at__isnull=True, status=Unit.Status.AVAILABLE).exclude(pk=lease.unit_id)
     tenant_documents = TenantDocument.objects.filter(tenant__shared_leases=lease).select_related("tenant")
-    return render(request, "properties/lease_workspace.html", {"lease": lease, "available_units": available_units, "edit_form": LeaseEditForm(instance=lease), "tenant_documents": tenant_documents, "today": date.today()})
+    return render(request, "properties/lease_workspace.html", {"lease": lease, "available_units": available_units, "edit_form": LeaseEditForm(instance=lease), "tenant_documents": tenant_documents, "today": date.today(),
+        "contracts": lease.contracts.all(), "contract_selection_form": ContractTemplateSelectionForm(lease=lease), "can_generate_contract": properties_for_user(request.user, "leases.update").filter(pk=lease.property_id).exists(),
+        "can_edit_contract_profile": properties_for_user(request.user, "properties.update").filter(pk=lease.property_id).exists()})
 
 
 @login_required
@@ -197,7 +228,9 @@ def lease_update(request, lease_id):
     if lease.status != Lease.Status.ACTIVE:
         messages.error(request, _("Only active leases can be updated."))
     elif form.is_valid():
-        lease = form.save(); generate_rent_schedule(lease); messages.success(request, _("Lease updated and its rent schedule refreshed."))
+        lease = form.save(); generate_rent_schedule(lease)
+        prepare_contract_pdf(request, ensure_contract(lease))
+        messages.success(request, _("Lease updated and its rent schedule refreshed."))
     else: messages.error(request, _("Lease could not be updated: ") + " ".join(sum(form.errors.values(), [])))
     return redirect("lease_workspace", lease_id=lease.pk)
 
@@ -206,7 +239,7 @@ def lease_update(request, lease_id):
 @require_POST
 def lease_terminate(request, lease_id):
     lease = get_object_or_404(_lease_queryset(request.user, "leases.delete"), pk=lease_id)
-    try: terminate_lease(lease, end_date=date.fromisoformat(request.POST["end_date"]), reason=request.POST.get("reason", ""), notes=request.POST.get("notes", "")); messages.success(request, _("Lease terminated."))
+    try: terminate_lease(lease, end_date=date.fromisoformat(request.POST["end_date"]), reason=request.POST.get("reason", ""), notes=request.POST.get("notes", ""), handover_confirmed=request.POST.get("handover_confirmed") == "on", actor=request.user); messages.success(request, _("Lease terminated."))
     except (ValidationError, ValueError) as error: messages.error(request, error.messages[0] if isinstance(error, ValidationError) else "Enter a valid termination date.")
     return redirect("lease_workspace", lease_id=lease.pk)
 
@@ -215,7 +248,7 @@ def lease_terminate(request, lease_id):
 @require_POST
 def lease_move(request, lease_id):
     lease = get_object_or_404(_lease_queryset(request.user, "leases.move"), pk=lease_id); unit = get_object_or_404(Unit, pk=request.POST.get("unit"), property__in=properties_for_user(request.user, "leases.move"))
-    try: move_lease(lease, target_unit=unit, effective_date=date.fromisoformat(request.POST["effective_date"]), reason=request.POST.get("reason", ""), actor=request.user); messages.success(request, _("Lease moved to the new unit."))
+    try: move_lease(lease, target_unit=unit, effective_date=date.fromisoformat(request.POST["effective_date"]), reason=request.POST.get("reason", ""), actor=request.user, handover_confirmed=request.POST.get("handover_confirmed") == "on"); messages.success(request, _("Lease moved to the new unit."))
     except (ValidationError, ValueError) as error: messages.error(request, error.messages[0] if isinstance(error, ValidationError) else "Enter a valid move date.")
     return redirect("lease_workspace", lease_id=lease.pk)
 
@@ -225,7 +258,9 @@ def lease_move(request, lease_id):
 def lease_renew(request, lease_id):
     lease = get_object_or_404(_lease_queryset(request.user, "leases.renew"), pk=lease_id)
     try:
-        renewed = renew_lease(lease, end_date=date.fromisoformat(request.POST["end_date"]), rent_amount=Decimal(request.POST["rent_amount"]), confirmed_outstanding=request.POST.get("confirmed_outstanding") == "on", deposit_handling=request.POST.get("deposit_handling", "carry_forward")); messages.success(request, _("Renewed as %(lease)s.") % {"lease": renewed.reference}); return redirect("lease_workspace", lease_id=renewed.pk)
+        renewed = renew_lease(lease, end_date=date.fromisoformat(request.POST["end_date"]), rent_amount=Decimal(request.POST["rent_amount"]), confirmed_outstanding=request.POST.get("confirmed_outstanding") == "on", deposit_handling=request.POST.get("deposit_handling", "carry_forward"))
+        prepare_contract_pdf(request, renewed.contracts.first())
+        messages.success(request, _("Renewed as %(lease)s.") % {"lease": renewed.reference}); return redirect("lease_workspace", lease_id=renewed.pk)
     except (ValidationError, ValueError, InvalidOperation) as error: messages.error(request, error.messages[0] if isinstance(error, ValidationError) else "Enter valid renewal terms.")
     return redirect("lease_workspace", lease_id=lease.pk)
 
@@ -241,7 +276,7 @@ def lease_move_out(request, lease_id):
             for line in request.POST.get("deductions", "").splitlines():
                 if "|" in line: reason, amount = line.rsplit("|", 1); deductions.append((reason, Decimal(amount.strip())))
             settlement = {"refund_amount": Decimal(request.POST.get("refund_amount") or 0), "deductions": deductions, "status": "settled", "refund_reference": request.POST.get("refund_reference", "")}
-        move_out_lease(lease, end_date=date.fromisoformat(request.POST["end_date"]), reason=request.POST.get("reason", "Move out"), notes=request.POST.get("notes", ""), settlement=settlement)
+        move_out_lease(lease, end_date=date.fromisoformat(request.POST["end_date"]), reason=request.POST.get("reason", "Move out"), notes=request.POST.get("notes", ""), settlement=settlement, handover_confirmed=request.POST.get("handover_confirmed") == "on", actor=request.user)
         messages.success(request, _("Move-out completed."))
     except (ValidationError, ValueError, InvalidOperation) as error: messages.error(request, error.messages[0] if isinstance(error, ValidationError) else "Enter valid move-out values.")
     return redirect("lease_workspace", lease_id=lease.pk)
@@ -273,6 +308,11 @@ def lease_deposit_settlement(request, lease_id):
 
 @login_required
 def lease_expirations(request):
-    properties = properties_for_user(request.user, "leases.view"); days = int(request.GET.get("days", 60)); cutoff = date.today() + timedelta(days=days)
-    leases = Lease.objects.filter(property__in=properties, status=Lease.Status.ACTIVE, end_date__range=(date.today(), cutoff)).select_related("property", "primary_tenant")
-    return render(request, "properties/lease_expirations.html", {"leases": leases, "days": days, "events": LeaseNotificationEvent.objects.filter(lease__in=leases)})
+    from .lease_alerts import lease_alerts_for
+    try:
+        days = int(request.GET.get("days", 30))
+    except (TypeError, ValueError):
+        days = 30
+    days = days if days in (30, 60, 90) else 30
+    leases = lease_alerts_for(request.user, days)
+    return render(request, "properties/lease_expirations.html", {"leases": leases, "days": days, "today": timezone.localdate()})

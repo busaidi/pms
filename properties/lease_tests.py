@@ -67,7 +67,7 @@ class LeaseLifecycleTests(TestCase):
             self.create_unit_lease(tenants=[self.tenant, self.second, third])
 
     def test_move_records_lineage_and_updates_status(self):
-        lease = self.create_unit_lease(); move_lease(lease, target_unit=self.other, effective_date=date(2026, 10, 1), reason="Upgrade")
+        lease = self.create_unit_lease(); move_lease(lease, target_unit=self.other, effective_date=date(2026, 10, 1), reason="Upgrade", handover_confirmed=True)
         lease.refresh_from_db(); self.unit.refresh_from_db(); self.other.refresh_from_db()
         self.assertEqual(lease.unit, self.other); self.assertEqual(self.unit.status, Unit.Status.AVAILABLE); self.assertEqual(self.other.status, Unit.Status.OCCUPIED)
         self.assertEqual(lease.unit_history.get().from_unit, self.unit)
@@ -82,7 +82,7 @@ class LeaseLifecycleTests(TestCase):
 
     def test_move_out_and_deposit_settlement_are_atomic(self):
         lease = self.create_unit_lease()
-        move_out_lease(lease, end_date=date(2026, 10, 1), reason="Leaving", settlement={"refund_amount": Decimal("250"), "deductions": [("Cleaning", Decimal("50"))], "status": "settled"})
+        move_out_lease(lease, end_date=date(2026, 10, 1), reason="Leaving", handover_confirmed=True, settlement={"refund_amount": Decimal("250"), "deductions": [("Cleaning", Decimal("50"))], "status": "settled"})
         lease.refresh_from_db(); self.assertEqual(lease.status, Lease.Status.TERMINATED)
         self.assertEqual(lease.deposit_settlement.status, DepositSettlement.Status.SETTLED); self.assertEqual(lease.deposit_settlement.deductions.get().amount, Decimal("50"))
 

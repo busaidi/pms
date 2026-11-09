@@ -27,11 +27,17 @@ def public_property(slug):
 
 
 def resolve_offer(property_obj, unit_type=None):
+    from properties.lease_services import active_leases
+    blockers = active_leases().filter(property=property_obj)
     if unit_type is None:
+        if blockers.exists():
+            return None
         rate = current_rates(property_obj.rates.all()).first()
     else:
+        if blockers.filter(unit__isnull=True).exists():
+            return None
         rates = []
-        for unit in unit_type.units.filter(status="available", archived_at__isnull=True):
+        for unit in unit_type.units.filter(status="available", archived_at__isnull=True).exclude(pk__in=blockers.values("unit_id")):
             rates.extend(item["rate"] for item in effective_unit_rates(unit))
         rate = sorted(rates, key=lambda item: (item.amount, item.currency))[0] if rates else None
     if not rate: return None

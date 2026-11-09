@@ -31,4 +31,6 @@ History uses Conventional Commit prefixes such as `feat:` and `fix:` with impera
 
 ## Security & Configuration
 
+Before production deployment, read and follow `deployment/CODEX_DEPLOY.md`. Contract configuration transfers use the add-only `export_contract_config` / `import_contract_config` commands; never restore the local production backup over the live database. Private transfer bundles are excluded from Git and must be transferred separately.
+
 Never commit `.env`, `.secret_key`, credentials, database dumps, `media/`, or generated artifacts. Configure production through `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`, and `DJANGO_ALLOWED_HOSTS`, and preserve existing property-scoped authorization and immutable audit behavior.

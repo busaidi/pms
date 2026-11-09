@@ -33,6 +33,7 @@ PrivateTmp=true
 ProtectSystem=strict
 ProtectHome=read-only
 ReadWritePaths=/home/hamed/pms/media
+ReadWritePaths=/home/hamed/pms/private-contracts
 
 [Install]
 WantedBy=multi-user.target

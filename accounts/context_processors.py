@@ -62,7 +62,12 @@ def access_navigation(request):
     if user.is_authenticated:
         from portal.selectors import has_portal_identity as portal_identity
         has_portal_identity = portal_identity(user)
+    lease_alert_count = 0
+    if user.is_authenticated:
+        from properties.lease_alerts import lease_alerts_for
+        lease_alert_count = lease_alerts_for(user).count()
     return {
+        "lease_alert_count": lease_alert_count,
         "can_manage_users": user_has_capability(user, "users.view"),
         "can_manage_roles": user_has_capability(user, "roles.view"),
         "can_manage_settings": user_has_capability(user, "roles.update"),

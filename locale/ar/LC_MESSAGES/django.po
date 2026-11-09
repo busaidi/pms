@@ -13,6 +13,9 @@ msgstr "%(unit)s ليس لديه عقد إيجار نشط."
 msgid ", Oman"
 msgstr "، عُمان"
 
+msgid "- Select an option -"
+msgstr "- اختر خيارًا -"
+
 msgid ". Our team will review your details and contact you about the next step."
 msgstr ". سيراجع فريقنا تفاصيلك ويتصل بك بشأن الخطوة التالية."
 
@@ -144,9 +147,6 @@ msgstr "النفقات النشطة"
 
 msgid "Active inventory"
 msgstr "المخزون النشط"
-
-msgid "Active leases ending in the next"
-msgstr "عقود الإيجار النشطة التي تنتهي في اليوم التالي"
 
 msgid "Active monthly rent"
 msgstr "الإيجار الشهري النشط"
@@ -391,6 +391,9 @@ msgstr "قدّم الآن"
 msgid "Apply to selected"
 msgstr "تنطبق على"
 
+msgid "Approved template"
+msgstr "النموذج المعتمد"
+
 msgid "Arabic"
 msgstr "العربية"
 
@@ -538,6 +541,9 @@ msgstr "استراتيجية الفوترة"
 msgid "Billing unit"
 msgstr "وحدة الفوترة"
 
+msgid "Block number"
+msgstr "رقم المجمع"
+
 msgid "Block unit"
 msgstr "وحدة الكتلة"
 
@@ -549,6 +555,9 @@ msgstr "كلاهما"
 
 msgid "Browse homes"
 msgstr "تصفح البيوت"
+
+msgid "Building number"
+msgstr "رقم المبنى"
 
 msgid "By property"
 msgstr "حسب العقار"
@@ -766,6 +775,21 @@ msgstr "متابعة"
 msgid "Continue to payment"
 msgstr "متابعة الدفع"
 
+msgid "Contract defaults saved. Existing contract versions are unchanged."
+msgstr "تم حفظ إعدادات النموذج. الإصدارات السابقة محفوظة دون تغيير."
+
+msgid "Contract generated from the current lease data."
+msgstr "تم توليد العقد من بياناته الحالية."
+
+msgid "Contract location"
+msgstr "موقع العقار في العقد"
+
+msgid "Contract saved. PDF is temporarily unavailable; preview it or retry downloading."
+msgstr "تم حفظ العقد. ملف PDF غير متاح مؤقتًا؛ يمكنك معاينته أو إعادة محاولة التنزيل."
+
+msgid "Contract template settings"
+msgstr "إعدادات نموذج العقد"
+
 msgid "Control reusable property classifications and facility labels."
 msgstr "التحكم في تصنيفات الممتلكات القابلة لإعادة الاستخدام وملصقات المرافق."
 
@@ -972,6 +996,9 @@ msgstr "تنزيل ملف PDF"
 
 msgid "Download a template, preview validation, then commit every valid row in one transaction."
 msgstr "قم بتنزيل قالب، ومعاينة التحقق من الصحة، ثم التزم بكل صف صالح في معاملة واحدة."
+
+msgid "Download contract PDF"
+msgstr "تنزيل العقد PDF"
 
 msgid "Draft"
 msgstr "مسودة"
@@ -1288,11 +1315,17 @@ msgstr "الإعدادات العامة"
 msgid "General settings · Oman Skylight"
 msgstr "الإعدادات العامة · عُمان سكاي لايت"
 
+msgid "Generate from current data"
+msgstr "توليد العقد من البيانات الحالية"
+
 msgid "Generate scheduled invoices"
 msgstr "إنشاء فواتير مجدولة"
 
 msgid "Generated %(count)s new invoices."
 msgstr "إنشاء فواتير جديدة %(count)s."
+
+msgid "Generated contract"
+msgstr "العقد المولّد"
 
 msgid "Good"
 msgstr "صباح الخير"
@@ -1600,6 +1633,9 @@ msgstr "آخر فحص"
 msgid "Last name"
 msgstr "اسم العائلة"
 
+msgid "Last rental day"
+msgstr "آخر يوم إيجاري"
+
 msgid "Latest reading"
 msgstr "أحدث قراءة"
 
@@ -1617,6 +1653,9 @@ msgstr "تم إنشاء عقد الإيجار %(lease)s."
 
 msgid "Lease could not be updated: "
 msgstr "تعذر تحديث عقد الإيجار:"
+
+msgid "Lease data and the configured lessor signature are filled automatically. Tenant signatures remain blank."
+msgstr "تُعبّأ بيانات العقد وتوقيع المؤجر المعتمد تلقائيًا، وتبقى خانات توقيع المستأجر فارغة."
 
 msgid "Lease expiration days"
 msgstr "أيام انتهاء عقد الإيجار"
@@ -1653,6 +1692,15 @@ msgstr "عقود إيجار · نظام عُمان سكاي لايت لإدار�
 
 msgid "Leasing pipeline"
 msgstr "خط أنابيب التأجير"
+
+msgid "Lessor email"
+msgstr "بريد المؤجر"
+
+msgid "Lessor name"
+msgstr "اسم المؤجر"
+
+msgid "Lessor phone"
+msgstr "هاتف المؤجر"
 
 msgid "Lifecycle complete"
 msgstr "دورة الحياة كاملة"
@@ -1800,9 +1848,6 @@ msgstr "نقل عقد الإيجار"
 
 msgid "Move out"
 msgstr "الانتقال"
-
-msgid "Move out & settle deposit"
-msgstr "الانتقال وتسوية الإيداع"
 
 msgid "Move secret values to the encrypted API token field: "
 msgstr "نقل القيم السرية إلى حقل رمز API المشفر:"
@@ -2094,9 +2139,6 @@ msgstr "غير محدد"
 
 msgid "Not enabled"
 msgstr "غير ممكّن"
-
-msgid "Not scheduled"
-msgstr "غير مجدول"
 
 msgid "Notes"
 msgstr "ملاحظات"
@@ -2449,6 +2491,9 @@ msgstr "الهاتف"
 msgid "Platform settings"
 msgstr "إعدادات المنصة"
 
+msgid "Plot number"
+msgstr "رقم القطعة"
+
 msgid "Plugin"
 msgstr "المكون الإضافي"
 
@@ -2490,6 +2535,9 @@ msgstr "معاينة CSV"
 
 msgid "Preview and validate CSV rows before saving financial records."
 msgstr "معاينة صفوف CSV والتحقق من صحتها قبل حفظ السجلات المالية."
+
+msgid "Preview contract"
+msgstr "معاينة العقد"
 
 msgid "Preview import"
 msgstr "معاينة الاستيراد"
@@ -2583,6 +2631,9 @@ msgstr "تم نشر العقار الآن."
 
 msgid "Property manager"
 msgstr "مدير العقار"
+
+msgid "Property name on contract"
+msgstr "اسم العقار في العقد"
 
 msgid "Property operations"
 msgstr "عمليات العقار"
@@ -3021,6 +3072,9 @@ msgstr "مراجعة"
 
 msgid "Revoked"
 msgstr "تم إلغاء"
+
+msgid "Road number"
+msgstr "رقم الطريق"
 
 msgid "Role"
 msgstr "الدور"
@@ -3481,6 +3535,9 @@ msgstr "لا يُسمح بانتقال حالة الطلب."
 msgid "The code is invalid or has already been used."
 msgstr "الرمز غير صالح أو تم استخدامه بالفعل."
 
+msgid "The departure date on the contract is the following day."
+msgstr "تاريخ المغادرة في العقد هو اليوم التالي لآخر يوم إيجاري."
+
 msgid "The document cannot exceed 10 MB."
 msgstr "لا يمكن أن يتجاوز المستند 10 ميجابايت."
 
@@ -3573,6 +3630,9 @@ msgstr "يمارس هذا الملحق المدمج كل سجل مدعوم دو�
 
 msgid "This deposit settlement is already settled."
 msgstr "تمت تسوية تسوية الإيداع هذه بالفعل."
+
+msgid "This existing lease has no generated version yet. Generate it from its current data."
+msgstr "هذا العقد السابق ليس له إصدار مولّد بعد. يمكنك توليده من بياناته الحالية."
 
 msgid "This invoice is fully paid."
 msgstr "تم دفع هذه الفاتورة بالكامل."
@@ -3777,9 +3837,6 @@ msgstr "غير مقروء"
 
 msgid "Upcoming"
 msgstr "قادم"
-
-msgid "Upcoming expirations"
-msgstr "تواريخ انتهاء الصلاحية القادمة"
 
 msgid "Upcoming template"
 msgstr "القالب القادم"
@@ -4195,8 +4252,17 @@ msgstr "استراتيجية الفوترة"
 msgid "billing unit"
 msgstr "وحدة الفوترة"
 
+msgid "block number"
+msgstr "رقم المجمع"
+
 msgid "blocks unit"
 msgstr "وحدة الكتل"
+
+msgid "body"
+msgstr "المحتوى"
+
+msgid "building number"
+msgstr "رقم المبنى"
 
 msgid "bytes"
 msgstr "بايت"
@@ -4285,6 +4351,12 @@ msgstr "تم تأكيده بواسطة"
 msgid "consumption"
 msgstr "الاستهلاك"
 
+msgid "contract terms template"
+msgstr "قالب الشروط والأحكام"
+
+msgid "contract terms templates"
+msgstr "قوالب الشروط والأحكام"
+
 msgid "converted at"
 msgstr "تم تحويله في"
 
@@ -4329,9 +4401,6 @@ msgstr "يوم"
 
 msgid "days before"
 msgstr "قبل أيام"
-
-msgid "days."
-msgstr "أيام."
 
 msgid "deactivated"
 msgstr "معطل"
@@ -4383,6 +4452,9 @@ msgstr "معطل"
 
 msgid "discovered at"
 msgstr "تم اكتشافه في"
+
+msgid "display name"
+msgstr "اسم العرض"
 
 msgid "document type"
 msgstr "نوع المستند"
@@ -4540,6 +4612,12 @@ msgstr "المجموعات"
 msgid "guidance"
 msgstr "إرشادات"
 
+msgid "handover confirmed at"
+msgstr "وقت تأكيد التسليم"
+
+msgid "handover confirmed by"
+msgstr "مؤكد التسليم"
+
 msgid "icon"
 msgstr "أيقونة"
 
@@ -4648,6 +4726,9 @@ msgstr "تصحيح"
 msgid "is custom price"
 msgstr "سعر مخصص"
 
+msgid "is default"
+msgstr "افتراضي"
+
 msgid "is enabled"
 msgstr "ممكّن"
 
@@ -4705,6 +4786,18 @@ msgstr "خطوط العرض"
 msgid "lease"
 msgstr "عقد الإيجار"
 
+msgid "lease contract"
+msgstr "مستند عقد الإيجار"
+
+msgid "lease contract profile"
+msgstr "إعدادات نموذج عقد العقار"
+
+msgid "lease contract profiles"
+msgstr "إعدادات نماذج عقود العقارات"
+
+msgid "lease contracts"
+msgstr "مستندات عقود الإيجار"
+
 msgid "lease expiration days"
 msgstr "أيام انتهاء عقد الإيجار"
 
@@ -4728,6 +4821,18 @@ msgstr "خريطة السجلات القديمة"
 
 msgid "legacy record maps"
 msgstr "خرائط السجلات القديمة"
+
+msgid "lessor email"
+msgstr "بريد المؤجر"
+
+msgid "lessor name"
+msgstr "اسم المؤجر"
+
+msgid "lessor phone"
+msgstr "هاتف المؤجر"
+
+msgid "lessor signature"
+msgstr "توقيع المؤجر"
 
 msgid "location"
 msgstr "الموقع"
@@ -4926,6 +5031,9 @@ msgstr "الصلاحيات"
 
 msgid "phone"
 msgstr "الهاتف"
+
+msgid "plot number"
+msgstr "رقم القطعة"
 
 msgid "portal enabled"
 msgstr "البوابة مفعّلة"
@@ -5134,6 +5242,12 @@ msgstr "تاريخ المراجعة"
 msgid "reviewed by"
 msgstr "راجعه"
 
+msgid "revision"
+msgstr "الإصدار"
+
+msgid "road number"
+msgstr "رقم الطريق"
+
 msgid "row"
 msgstr "الصف"
 
@@ -5197,6 +5311,9 @@ msgstr "الحجم"
 msgid "slug"
 msgstr "المعرّف النصي"
 
+msgid "snapshot"
+msgstr "البيانات المحفوظة"
+
 msgid "sort order"
 msgstr "ترتيب العرض"
 
@@ -5257,6 +5374,9 @@ msgstr "القالب"
 msgid "template name"
 msgstr "اسم القالب"
 
+msgid "template version"
+msgstr "إصدار النموذج"
+
 msgid "tenant"
 msgstr "المستأجر"
 
@@ -5283,6 +5403,9 @@ msgstr "سبب الإنهاء"
 
 msgid "terms"
 msgstr "الشروط"
+
+msgid "terms template"
+msgstr "قالب الشروط"
 
 msgid "ticket"
 msgstr "التذكرة"

@@ -1,6 +1,7 @@
 import builtins
 import hashlib
 import secrets
+from django.conf import settings
 from datetime import timedelta
 from decimal import Decimal
 
@@ -11,6 +12,7 @@ from django.utils import timezone
 from django.utils.text import slugify
 from PIL import Image, UnidentifiedImageError
 from django.utils.translation import gettext_lazy as _
+from .contract_storage import contract_storage
 
 
 class Region(models.Model):
@@ -434,7 +436,10 @@ class Lease(models.Model):
     billing_day = models.PositiveSmallIntegerField(default=1)
     notice_date = models.DateField(null=True, blank=True)
     move_out_date = models.DateField(null=True, blank=True)
+    handover_confirmed_at = models.DateTimeField(null=True, blank=True)
+    handover_confirmed_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name="confirmed_lease_handovers")
     terms = models.TextField(blank=True)
+    terms_template = models.ForeignKey("ContractTermsTemplate", on_delete=models.PROTECT, null=True, blank=True, related_name="leases")
     notes = models.TextField(blank=True)
     termination_date = models.DateField(null=True, blank=True)
     termination_reason = models.TextField(blank=True)
@@ -455,6 +460,8 @@ class Lease(models.Model):
     def clean(self):
         if self.end_date and self.end_date < self.start_date:
             raise ValidationError({"end_date": _("End date must be on or after start date.")})
+        if self.terms_template_id and self.property_id and self.terms_template.property_id != self.property_id:
+            raise ValidationError({"terms_template": "قالب الشروط لا يتبع العقار المحدد."})
         if not 1 <= self.billing_day <= 28:
             raise ValidationError({"billing_day": _("Billing day must be between 1 and 28.")})
         if self.property_id and self.unit_id and self.unit.property_id != self.property_id:
@@ -486,8 +493,64 @@ class Lease(models.Model):
         return "unit" if self.unit_id else "whole_property"
 
     @builtins.property
+    def awaiting_action(self):
+        # Expiry does not end occupancy or release the unit.
+        return self.status == self.Status.ACTIVE and bool(self.end_date and self.end_date < timezone.localdate())
+
+    @builtins.property
+    def lifecycle_label(self):
+        return "انتهت المدة — بانتظار الإجراء" if self.awaiting_action else self.get_status_display()
+
+    @builtins.property
     def outstanding_balance(self):
         return sum((invoice.balance for invoice in self.invoices.exclude(status__in=("paid", "void"))), Decimal("0"))
+
+
+class ContractTermsTemplate(models.Model):
+    property = models.ForeignKey(Property, on_delete=models.PROTECT, related_name="terms_templates")
+    name = models.CharField(max_length=160)
+    body = models.TextField()
+    is_active = models.BooleanField(default=True)
+    is_default = models.BooleanField(default=False)
+    revision = models.PositiveIntegerField(default=1)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ("property__name", "name")
+        constraints = [models.UniqueConstraint(fields=("property",), condition=models.Q(is_default=True), name="one_default_terms_per_property")]
+
+    def __str__(self):
+        return f"{self.property.name} — {self.name}"
+
+
+class LeaseContractProfile(models.Model):
+    property = models.OneToOneField(Property, on_delete=models.CASCADE, related_name="contract_profile")
+    display_name = models.CharField(max_length=160, blank=True)
+    location = models.CharField(max_length=255, blank=True)
+    lessor_name = models.CharField(max_length=160, blank=True)
+    lessor_phone = models.CharField(max_length=30, blank=True)
+    lessor_email = models.EmailField(blank=True)
+    lessor_signature = models.FileField(upload_to="signatures", storage=contract_storage, blank=True)
+    plot_number = models.CharField(max_length=40, blank=True)
+    building_number = models.CharField(max_length=40, blank=True)
+    block_number = models.CharField(max_length=40, blank=True)
+    road_number = models.CharField(max_length=40, blank=True)
+
+
+class LeaseContract(models.Model):
+    """A versioned snapshot; later lease edits never rewrite an issued version."""
+
+    lease = models.ForeignKey(Lease, on_delete=models.PROTECT, related_name="contracts")
+    revision = models.PositiveIntegerField()
+    template_version = models.CharField(max_length=40, default="atheer-short-v2")
+    fingerprint = models.CharField(max_length=64)
+    snapshot = models.JSONField()
+    file = models.FileField(upload_to="%Y/%m", storage=contract_storage, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ("-revision",)
+        constraints = [models.UniqueConstraint(fields=("lease", "revision"), name="unique_lease_contract_revision")]
 
 
 class TenantDocument(models.Model):

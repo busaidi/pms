@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>{{ data.reference }} — عقد الإقامة</title>
+<style>
+@page { size:A4; margin:0; }
+* { box-sizing:border-box; }
+body { margin:0; background:#e9ece9; color:#193f35; font-family:"Times New Roman",serif; font-size:15pt; }
+.page { width:210mm; height:297mm; margin:7mm auto; background:white; position:relative; break-after:page; }
+.page:last-child { break-after:auto; }
+.dynamic { padding:22mm 25mm; }
+h1 { font-size:28pt; margin:0 0 12mm; } h2 { font-size:21pt; margin:8mm 0 3mm; }
+h3 { font-size:17pt; margin:5mm 0 1mm; } p { margin:2mm 0; line-height:1.55; overflow-wrap:anywhere; }
+.gold { color:#ae9060; } .small { font-size:11pt; } .muted { color:#65786e; }
+.rule { border-bottom:1px solid #b39564; padding-bottom:3mm; }
+.box { border:1px solid #d3dcd5; padding:3mm 4mm; margin:3mm 0; }
+.tenant-grid { display:flex; flex-wrap:wrap; gap:2mm; }.tenant { flex:1 1 45%; font-size:12pt; }
+table { width:100%; border-collapse:collapse; } td,th { border:1px solid #d3dcd5; padding:2.3mm 3mm; text-align:right; vertical-align:top; }
+td:first-child { width:37%; } .fields { font-size:13pt; } .fields td:last-child { text-align:left; }
+.footer { position:absolute; bottom:9mm; left:15mm; font:9pt Arial,sans-serif; direction:ltr; }
+.brand { font-size:13pt; }.cover h1 { margin-top:7mm; margin-bottom:0; }
+.cover-box { margin-top:22mm; padding:32mm 12mm; border:1px solid #cfc2a9; text-align:center; height:145mm; }
+.cover-box h2 { font-size:43pt; margin:5mm 0; }.cover-details { margin-top:8mm; border-top:1px solid #cfc2a9; padding-top:5mm; }
+.image-page img { width:210mm; height:297mm; display:block; }
+.signatures { display:flex; border:1px solid #d3dcd5; }.signature { width:50%; padding:4mm; font-size:13pt; }
+.signature+.signature { border-right:1px solid #d3dcd5; }.signature .line { margin-top:11mm; }
+.inventory { font-size:13pt; }.inventory th { background:#193f35; color:white; }.inventory td { height:11mm; }
+.terms-page { font-size:14pt; } .terms-page p { line-height:1.65; text-align:justify; } .terms-page h1 { font-size:24pt; margin-bottom:6mm; } .terms-page h3 { margin-top:5mm; } .terms-page ul { margin:2mm 0; padding-right:6mm; line-height:1.7; }
+.notice { font:14px Arial,sans-serif; max-width:210mm; margin:12px auto; padding:12px; background:#fff3d6; color:#604400; }
+@media print { body{background:white;} .page{margin:0;} .notice{display:none;} }
+@media screen and (max-width:800px) { body { overflow-x:auto; } .notice{margin:8px;} }
+</style></head><body>
+<div class="notice">نسخة مولّدة من النظام — الإصدار {{ revision }}. {% if data.lessor_signature %}أُدرجت صورة توقيع المؤجر المعتمدة تلقائيًا؛ توقيع المستأجر يُستكمل بعد المراجعة.{% else %}خانات التوقيع تُستكمل بعد مراجعة الأطراف.{% endif %} {% for warning in data.warnings %}<p>{{ warning }}</p>{% endfor %}</div>
+<section class="page dynamic cover">
+  <div class="brand muted">{{ data.profile.display_name }} — شقق مفروشة</div>
+  <h1>عقد إقامة</h1><h3 class="gold">إقامة تشبه ذوقك</h3>
+  <p class="small muted">في {{ data.profile.display_name }}، تبدأ إقامتك من مكان يمنح يومك هدوءه، والتفاصيل الجميلة أثرها.</p>
+  <div class="cover-box"><p class="gold">الموقع</p><h2>{{ data.profile.display_name }}</h2><h3 class="gold">{{ data.profile.location }}</h3>
+    <div class="cover-details small muted">رقم القطعة {{ data.profile.plot_number|default:"________" }} · رقم المبنى {{ data.profile.building_number|default:"________" }}<br>رقم المجمع {{ data.profile.block_number|default:"________" }} · رقم الطريق {{ data.profile.road_number|default:"________" }}</div>
+  </div>
+  <p class="gold small">{{ data.reference }} · الإصدار {{ revision }}</p>
+  <h3>{% for tenant in data.tenants %}{{ tenant.name }}{% if not forloop.last %} و{% endif %}{% endfor %}</h3>
+  <p>{{ data.unit }} · {% if data.nights != None %}إقامة لمدة {{ data.nights }} ليلة{% else %}المدة غير محددة{% endif %}</p>
+  <p dir="ltr" style="text-align:right">{{ data.start }} — {{ data.checkout|default:"________" }}</p>
+  <span class="footer">1 / 12</span>
+</section>
+<section class="page dynamic">
+  <h1>عقد إقامة</h1><h2 class="rule">أطراف الاتفاق وبيانات الإقامة</h2>
+  <div class="box"><strong>المؤجر / مشغّل الوحدة</strong><p>{{ data.profile.lessor_name|default:"________________" }}</p><p class="small">الهاتف: {{ data.profile.lessor_phone|default:"________" }}{% if data.profile.lessor_email %} · البريد: {{ data.profile.lessor_email }}{% endif %}</p></div>
+  <div class="box"><strong>النزيل / المستأجر</strong><div class="tenant-grid">{% for tenant in data.tenants %}<div class="tenant"><p>{{ tenant.name }}</p><p>الجنسية: {{ tenant.nationality|default:"________" }} · رقم الوثيقة: {{ tenant.id_number|default:"________" }}</p><p>الهاتف: {{ tenant.phone|default:"________" }}{% if tenant.email %} · {{ tenant.email }}{% endif %}</p></div>{% endfor %}</div></div>
+  <table class="fields"><tr><td>رقم العقد</td><td>{{ data.reference }}</td></tr><tr><td>تاريخ إصدار النسخة</td><td>{{ created }}</td></tr><tr><td>العقار / الوحدة</td><td>{{ data.profile.display_name }} / {{ data.unit }}</td></tr><tr><td>تاريخ الدخول</td><td>{{ data.start }}</td></tr><tr><td>تاريخ المغادرة</td><td>{{ data.checkout|default:"________" }}</td></tr><tr><td>آخر يوم إيجاري</td><td>{{ data.last_rental_day|default:"________" }}</td></tr><tr><td>مدة الإقامة</td><td>{{ data.nights|default_if_none:"________" }} ليلة</td></tr><tr><td>قيمة الإقامة كاملة</td><td>{{ data.total|default:"________" }} {{ data.currency }}</td></tr><tr><td>التأمين المستقل</td><td>{{ data.deposit }} {{ data.currency }}</td></tr></table>
+  <p class="small">قيمة الدفعة: {{ data.rent }} {{ data.currency }} · كل {{ data.billing_interval }} {% if data.billing_unit == 'day' %}يوم{% elif data.billing_unit == 'week' %}أسبوع{% elif data.billing_unit == 'year' %}سنة{% else %}شهر{% endif %}. {% if data.schedule %}أول استحقاق: {{ data.schedule.0.date }}.{% endif %}</p>
+  <p class="small muted">صفحة البيانات جزء لا يتجزأ من العقد وتقرأ مع الشروط العامة. وقتا الدخول والمغادرة يُثبتان كتابة عند الحجز. قيمة التأمين مستقلة عن الإيجار؛ هذه النسخة لا تثبت قبض المبالغ. عند اختلاف جدول الدفعات عن الدورية المبينة يعتمد ملحق مالي متفق عليه كتابة.</p>
+  <span class="footer">2 / 12</span>
+</section>
+{% include "properties/contracts/terms_v3.html" only %}
+<section class="page dynamic">
+  <h1>إقرار الاستلام والتوقيعات</h1><p>أقر أنا النزيل المذكور أعلاه باستلام الوحدة ومحتوياتها وفق قائمة الجرد، وأتعهد بالمحافظة عليها وإعادتها عند المغادرة بالحالة التي استلمتها عليها، مع مراعاة الاستهلاك الطبيعي.</p>
+  <div class="signatures"><div class="signature lessor-signature"><strong>المؤجر / ممثل إدارة العقار</strong><p>{{ data.profile.lessor_name|default:"________" }}</p>{% if data.lessor_signature %}<img src="{{ data.lessor_signature }}" alt="توقيع المؤجر" style="display:block;width:45mm;height:17mm;object-fit:contain;margin:3mm 0">{% else %}<p class="line">التوقيع: __________________</p><p>التاريخ: ____ / ____ / ______</p>{% endif %}</div><div class="signature tenant-signature"><strong>النزيل / المستأجر</strong>{% for tenant in data.tenants %}<p>{{ tenant.name }}</p><p>التوقيع: __________________</p>{% endfor %}<p>التاريخ: ____ / ____ / ______</p></div></div>
+  <h2 class="rule">محضر التسليم النهائي</h2><p>تاريخ المغادرة المقرر: {{ data.checkout|default:"________" }} · الفعلي: ____________</p>
+  <table class="inventory"><thead><tr><th>البيان</th><th>الحالة</th><th>الملاحظات</th></tr></thead><tbody><tr><td>الأثاث</td><td></td><td></td></tr><tr><td>الأجهزة</td><td></td><td></td></tr><tr><td>أدوات المطبخ</td><td></td><td></td></tr><tr><td>المفروشات</td><td></td><td></td></tr><tr><td>المفاتيح</td><td></td><td></td></tr><tr><td>بطاقة الدخول</td><td></td><td></td></tr></tbody></table>
+  <p class="small">الأضرار / الملاحظات: __________________________________________</p><p class="small">قيمة الأضرار أو المستحقات: _____________________________________</p><p class="small">مبلغ التأمين: {{ data.deposit }} {{ data.currency }} · المبلغ المسترد: ______________</p><p class="small">المبلغ الإضافي المستحق: ________________________________________</p><p class="small">توقيع النزيل: _______________ · توقيع إدارة العقار: _______________</p>
+  <span class="footer">12 / 12 · {{ data.reference }} · v{{ revision }}</span>
+</section></body></html>

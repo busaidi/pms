@@ -83,6 +83,7 @@
       </header>
       <div class="page-content">
         {% if messages %}<div class="messages" role="status">{% for message in messages %}<p>{{ message }}</p>{% endfor %}</div>{% endif %}
+        {% if lease_alert_count %}<aside class="messages" role="status"><p><a href="{% url 'lease_expirations' %}"><strong>تنبيهات العقود: {{ lease_alert_count }}</strong> — عقود تنتهي خلال 30 يومًا أو انتهت مدتها وتنتظر إجراءك. مراجعة وتجديد أو تسجيل المغادرة.</a></p></aside>{% endif %}
         {% block content %}{% endblock %}
       </div>
     </main>

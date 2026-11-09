@@ -119,7 +119,13 @@ class ApplicationWorkflowTests(TestCase):
             is_public=True,
         )
         response = self.client.get(reverse("public_listing_media", kwargs={"media_id": media.pk}))
-        self.assertEqual(response.status_code, 200)
+        try:
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(b"".join(response.streaming_content), b"public-image")
+        finally:
+            if not response.closed:
+                response.close()
+        self.assertTrue(response.closed)
         media.is_public = False
         media.save(update_fields=("is_public",))
         self.assertEqual(self.client.get(reverse("public_listing_media", kwargs={"media_id": media.pk})).status_code, 404)

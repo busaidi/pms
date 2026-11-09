@@ -1,7 +1,16 @@
 from django.urls import path
 from . import leasing_views as views
+from . import contract_views
 
 urlpatterns = [
+    path("contract-terms/", contract_views.terms_template_list, name="terms_template_list"),
+    path("properties/<int:property_id>/contract-terms/preview/", contract_views.terms_template_preview, name="terms_template_preview"),
+    path("properties/<int:property_id>/contract-terms/new/", contract_views.terms_template_edit, name="terms_template_create"),
+    path("properties/<int:property_id>/contract-terms/<int:template_id>/edit/", contract_views.terms_template_edit, name="terms_template_edit"),
+    path("properties/<int:property_id>/contract-template/", contract_views.contract_profile, name="contract_profile"),
+    path("leases/<int:lease_id>/contracts/generate/", contract_views.contract_generate, name="contract_generate"),
+    path("leases/<int:lease_id>/contracts/<int:contract_id>/preview/", contract_views.contract_preview, name="contract_preview"),
+    path("leases/<int:lease_id>/contracts/<int:contract_id>/download/", contract_views.contract_download, name="contract_download"),
     path("tenants/", views.tenant_list, name="tenant_list"),
     path("tenants/new/", views.tenant_create, name="tenant_create"),
     path("tenants/<int:tenant_id>/", views.tenant_workspace, name="tenant_workspace"),

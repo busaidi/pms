@@ -4,10 +4,14 @@
   "scripts": {
     "test:browser": "node tools/browser_smoke.mjs",
     "test:accessibility": "node tools/accessibility_smoke.mjs",
-    "test:arabic": "node tools/arabic_smoke.mjs"
+    "test:arabic": "node tools/arabic_smoke.mjs",
+    "test:contracts": "node tools/test_contract_pagination.mjs"
   },
   "devDependencies": {
-    "axe-core": "4.10.3",
-    "playwright": "1.63.0"
+    "axe-core": "4.10.3"
+  },
+  "dependencies": {
+    "playwright": "1.63.0",
+    "quill": "2.0.3"
   }
 }

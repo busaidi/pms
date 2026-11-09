@@ -97,7 +97,13 @@ class PortalOwnershipTests(TestCase):
         self.assertEqual(payment.status, Payment.Status.PENDING)
         proof = payment.proofs.get()
         response = self.client.get(reverse("portal_payment_proof", kwargs={"proof_id": proof.pk}))
-        self.assertEqual(response.status_code, 200)
+        try:
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(b"".join(response.streaming_content), b"receipt")
+        finally:
+            if not response.closed:
+                response.close()
+        self.assertTrue(response.closed)
         self.client.post(reverse("portal_gateway_start", kwargs={"invoice_id": self.invoice.pk}), {"gateway": "manual"})
         self.assertEqual(self.invoice.payment_attempts.count(), 1)
 
@@ -132,7 +138,13 @@ class PortalOwnershipTests(TestCase):
     def test_invoice_print_pdf_and_profile(self):
         self.assertEqual(self.client.get(reverse("portal_invoice_print", kwargs={"invoice_id": self.invoice.pk})).status_code, 200)
         response = self.client.get(reverse("portal_invoice_pdf", kwargs={"invoice_id": self.invoice.pk}))
-        self.assertEqual(response.status_code, 200)
+        try:
+            self.assertEqual(response.status_code, 200)
+            self.assertTrue(b"".join(response.streaming_content).startswith(b"%PDF-"))
+        finally:
+            if not response.closed:
+                response.close()
+        self.assertTrue(response.closed)
         response = self.client.post(reverse("portal_profile"), {"first_name": "Updated", "last_name": "Resident", "email": "updated@example.test", "phone": "92009999", "preferred_language": "en", "timezone": "Asia/Muscat"})
         self.assertRedirects(response, reverse("portal_profile"))
         self.user.refresh_from_db()

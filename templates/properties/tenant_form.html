@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% load i18n %}{% block title %}{{ title }}{% endblock %}{% block content %}
+<section class="page-heading"><div><p class="eyebrow">المستأجرون</p><h1>{{ title }}</h1><p>أدخل بيانات المستأجر وأرفق وثائق هويته في النموذج نفسه.</p></div><a class="button secondary" href="{% if tenant %}{% url 'tenant_workspace' tenant.pk %}{% else %}{% url 'tenant_list' %}{% endif %}">رجوع</a></section>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+<section class="panel"><h2>بيانات المستأجر</h2>{{ form.non_field_errors }}<div class="resource-form">
+{% for field in form %}<div class="field {% if field.field.widget.input_type == 'checkbox' %}checkbox-field{% endif %}"><label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>{{ field }}{{ field.errors }}</div>{% endfor %}
+</div></section>
+<section class="panel" id="identity-documents"><h2>وثائق الهوية</h2><p class="muted">يمكن إرفاق البطاقة الشخصية أو جواز السفر أو كليهما. الصيغ المقبولة: PDF وJPG وPNG، بحد أقصى 10 ميجابايت لكل ملف.</p>
+{% if tenant %}<h3>الوثائق الحالية</h3>{% include "properties/tenant_identity_documents.html" %}<h3>إرفاق وثيقة إضافية</h3><p class="muted">إرفاق ملف جديد يضيفه إلى وثائق المستأجر ويحافظ على الملفات الحالية.</p>{% endif %}
+{{ identity_form.non_field_errors }}<div class="resource-form">{% for field in identity_form %}<div class="field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}</div>
+</section><div class="form-actions"><button class="button" type="submit">حفظ البيانات والوثائق</button></div></form>
+{% endblock %}
